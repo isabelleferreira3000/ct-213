@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  6 MAR 2019 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  6 MAR 2019 16:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,81 +868,28 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 58.
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 61.
-
-
-LaTeX Warning: Reference `AA' on page 1 undefined on input line 89.
-
-
-LaTeX Warning: Reference `SCM' on page 1 undefined on input line 89.
-
-
-LaTeX Warning: Reference `eq' on page 1 undefined on input line 123.
-
-
-LaTeX Warning: Reference `eq' on page 1 undefined on input line 123.
-
-
-LaTeX Warning: Reference `eq' on page 1 undefined on input line 123.
-
-
-LaTeX Warning: Reference `eq' on page 1 undefined on input line 124.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 128.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 98.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-
-LaTeX Warning: Citation `b7' on page 2 undefined on input line 177.
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-LaTeX Warning: Reference `fig' on page 2 undefined on input line 213.
+]
+
+LaTeX Warning: Reference `fig' on page 2 undefined on input line 183.
 
 [2]
-
-LaTeX Warning: Citation `b1' on page 3 undefined on input line 253.
-
-
-LaTeX Warning: Citation `b2' on page 3 undefined on input line 254.
-
-
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 255.
-
-
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 255.
-
-
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 255.
-
-
-LaTeX Warning: Citation `b3' on page 3 undefined on input line 256.
-
-
-LaTeX Warning: Citation `b4' on page 3 undefined on input line 264.
-
-
-LaTeX Warning: Citation `b5' on page 3 undefined on input line 265.
-
-
-LaTeX Warning: Citation `b6' on page 3 undefined on input line 270.
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -954,7 +901,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3] (./conference_041818.aux)
+[3
+
+] (./conference_041818.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -963,13 +912,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5539 strings out of 493029
- 75360 string characters out of 6136235
- 152342 words of memory out of 5000000
- 8957 multiletter control sequences out of 15000+600000
- 129804 words of font info for 153 fonts, out of 8000000 for 9000
+ 5502 strings out of 493029
+ 74867 string characters out of 6136235
+ 151413 words of memory out of 5000000
+ 8926 multiletter control sequences out of 15000+600000
+ 119899 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,11n,35p,587b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,35p,587b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -980,7 +929,7 @@ ic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on conference_041818.pdf (3 pages, 116296 bytes).
+Output written on conference_041818.pdf (3 pages, 117365 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
