@@ -92,7 +92,6 @@ class MoveInSpiralState(State):
         elif time > MOVE_IN_SPIRAL_TIME:
             move_forward_state = MoveForwardState()
             state_machine.change_state(move_forward_state)
-        pass
 
     def execute(self, agent):
         # Todo: add execution logic
@@ -117,7 +116,6 @@ class GoBackState(State):
         if time > GO_BACK_TIME:
             rotate_state = RotateState()
             state_machine.change_state(rotate_state)
-        pass
 
     def execute(self, agent):
         # Todo: add execution logic
@@ -143,7 +141,6 @@ class RotateState(State):
         if time > ROTATE_TIME:
             move_forward_state = MoveForwardState()
             state_machine.change_state(move_forward_state)
-        pass
     
     def execute(self, agent):
         # Todo: add execution logic
