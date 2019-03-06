@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  6 MAR 2019 16:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  6 MAR 2019 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,28 +868,38 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 39.
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 39.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 98.
+Underfull \hbox (badness 1546) in paragraph at lines 42--43
+\T1/ptm/m/n/10 ta-dos, era ne-ces-sá-rio pre-en-cher os có-di-gos das fun-ções
+ []
+
+<maquina_estados.png, id=1, 428.60126pt x 309.155pt>
+File: maquina_estados.png Graphic file (type png)
+ <use maquina_estados.png>
+Package pdftex.def Info: maquina_estados.png used on input line 49.
+(pdftex.def)             Requested size: 171.43745pt x 123.6598pt.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./maquina_estados.png>]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 114.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [2]
 
+LaTeX Warning: Reference `fig' on page 3 undefined on input line 199.
 
-]
-
-LaTeX Warning: Reference `fig' on page 2 undefined on input line 183.
-
-[2]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -901,21 +911,16 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
-
-] (./conference_041818.aux)
+[3] (./conference_041818.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 5502 strings out of 493029
- 74867 string characters out of 6136235
- 151413 words of memory out of 5000000
- 8926 multiletter control sequences out of 15000+600000
+ 5509 strings out of 493029
+ 75000 string characters out of 6136235
+ 150419 words of memory out of 5000000
+ 8931 multiletter control sequences out of 15000+600000
  119899 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,11n,35p,587b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -929,10 +934,10 @@ ic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on conference_041818.pdf (3 pages, 117365 bytes).
+Output written on conference_041818.pdf (3 pages, 175351 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

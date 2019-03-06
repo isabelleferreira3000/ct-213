@@ -15,7 +15,6 @@
 \begin{document}
 
 \title{Relatório do Laboratório 1: \\ Máquina de Estados Finita e Behavior Tree\\
-\thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
 \author{\IEEEauthorblockN{Isabelle Ferreira de Oliveira}
@@ -40,20 +39,35 @@ This document is a model and instructions for \LaTeX.
 Please observe the conference page limits. 
 
 \section{Implementação de Estados}
+Na parte relativa a implementação da máquina de estados, era necessário preencher os códigos das funções \textit{check\underline{\space}transition} e \textit{execute}, além do construtor das classes \textit{MoveForwardState}, \textit{MoveInSpiralState}, \textit{GoBackState} e \textit{RotateState}.
+
+Para calcular quanto tempo já está sendo executado um determinado estado, foi adicionado nos respectivos construtores um contador que é acrescido cada vez que executamos o comportamento desse estado. Assim, o tempo será esse contador vezes o tempo gasto em cada execução, conforme sugerido no roteiro do laboratório \cite{b1}.
+
+As transições em cada estado foram implementadas nas respectivas funções \textit{check\underline{\space}transition} de cada classe de estado, conforme o apresentado na Figura \ref{state_machine}, retirado do roteiro do laboratório \cite{b1}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.4]{maquina_estados.png}}
+\caption{Máquina de estados finita do comportamento do Roomba.}
+\label{state_machine}
+\end{figure}
+
+Já as funções \textit{execute}, além de realizarem o acréscimo do contador de execuções, também eram responsáveis por atualizar as velocidades do Roomba, a fim de que ele realizasse os movimentos esperados para cada estado.
+
+Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir.
+
+\subsection{Estado Move Forward}
+\subsection{Estado Move In Spiral}
+\subsection{Estado Go Back}
+\subsection{Estado Rotate}
 
 \section{Implementação de Behaviors}
+\subsection{Roomba Behavior Tree}
+\subsection{Behavior Move Forward}
+\subsection{Behavior Move In Spiral}
+\subsection{Behavior Go Back}
+\subsection{Behavior Rotate}
 
-\subsection{Maintaining the Integrity of the Specifications}
-
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
-
-\section{Prepare Your Paper Before Styling}
+\section{Resultados e Conclusões}
 Before you begin to format your paper, first write and save the content as a 
 separate text file. Complete all content and organizational editing before 
 formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
@@ -62,6 +76,8 @@ proofreading, spelling and grammar.
 Keep your text and graphic files separate until after the text has been 
 formatted and styled. Do not number text heads---{\LaTeX} will do that 
 for you.
+
+
 
 \subsection{Abbreviations and Acronyms}\label{AA}
 Define abbreviations and acronyms the first time they are used in the text, 
