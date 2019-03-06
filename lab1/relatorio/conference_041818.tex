@@ -75,7 +75,7 @@ As transições em cada estado foram implementadas nas respectivas funções \te
 \label{state_machine}
 \end{figure}
 
-Já as funções \textit{execute}, além de realizarem o acréscimo do contador de execuções, também eram responsáveis por atualizar as velocidades do Roomba, a fim de que ele realizasse os movimentos esperados para cada estado.
+Já as funções \textit{execute}, além de realizarem o acréscimo do contador de execuções, também eram responsáveis por atualizar as velocidades do Roomba, a fim de que ele realizasse os movimentos esperados para cada estado. A ideia de cada uma das implementações também foi apresentada nas subseções abaixo, escritas em pseudo-Python.
 
 Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir.
 
@@ -88,6 +88,11 @@ elif TEMPO_NESSE_ESTADO > TEMPO_NO_MOVE_FORWARD:
 	MUDAR PARA ESTADO "MOVE IN SPIRAL"
 \end{lstlisting}
 
+Atualização das velocidades do Roomba na função \textit{execute} para o estado \textit{Move Forward}:
+\begin{lstlisting}
+ROOMBA.set_velocity(VELOCIDADE_LINEAR = FORWARD_SPEED, VELOCIDADE_ANGULAR = 0)
+\end{lstlisting}
+
 \subsection{Estado Move In Spiral}
 Verificação das transições da máquina de estados na função \textit{check\underline{\space}transition} para o estado \textit{Move in Spiral}:
 \begin{lstlisting}
@@ -97,6 +102,13 @@ elif TEMPO_NESSE_ESTADO > TEMPO_NO_MOVE_IN_SPIRAL:
 	MUDAR PARA ESTADO "MOVE FORWARD"
 \end{lstlisting}
 
+Atualização das velocidades do Roomba na função \textit{execute} para o estado \textit{Move In Spiral}:
+\begin{lstlisting}
+ROOMBA.set_velocity(VELOCIDADE_LINEAR = FORWARD_SPEED, VELOCIDADE_ANGULAR = FORWARD_SPEED/(INITIAL_RADIUS_SPIRAL + SPIRAL_FACTOR * TEMPO)
+\end{lstlisting}
+
+O cálculo dessa velocidade angular foi feito tendo em vista que o raio da espiral varia conforme a equação $r(t) = r_0 + b \cdot t$, onde $r_0$ é o raio inicial do espiral e $b$ é o fator do espiral, e que velocidade angular é velocidade linear dividido pelo raio da curva no instante.
+
 \subsection{Estado Go Back}
 Verificação das transições da máquina de estados na função \textit{check\underline{\space}transition} para o estado \textit{Go Back}:
 \begin{lstlisting}
@@ -104,11 +116,26 @@ if TEMPO_NESSE_ESTADO > TEMPO_NO_GO_BACK:
 	MUDAR PARA ESTADO "ROTATE"
 \end{lstlisting}
 
+Atualização das velocidades do Roomba na função \textit{execute} para o estado \textit{Go Back}:
+\begin{lstlisting}
+ROOMBA.set_velocity(VELOCIDADE_LINEAR = BACKWARD_SPEED, VELOCIDADE_ANGULAR = 0)
+\end{lstlisting}
+
 \subsection{Estado Rotate}
 Verificação das transições da máquina de estados na função \textit{check\underline{\space}transition} para o estado \textit{Rotate}:
 \begin{lstlisting}
 if TEMPO_NESSE_ESTADO > TEMPO_NO_ROTATE:
 	MUDAR PARA ESTADO "MOVE FORWARD"
+\end{lstlisting}
+
+O tempo que o Roomba passa no estado Rotate é calculado da seguinte maneira: um ângulo aleatório é escolhido entre $-\pi$ e $\pi$ para que ele faça a rotação e, dado a velocidade angular pré-estabelecida empregada nesse movimento, o tempo será o módulo desse ângulo dividido por essa velocidade.
+
+Atualização das velocidades do Roomba na função \textit{execute} para o estado \textit{Go Back}:
+\begin{lstlisting}
+if ANGULO EH NEGATIVO:
+	ROOMBA.set_velocity(VELOCIDADE_LINEAR = 0, VELOCIDADE_ANGULAR = -ANGULAR_SPEED)
+else:
+	ROOMBA.set_velocity(VELOCIDADE_LINEAR = 0, VELOCIDADE_ANGULAR = ANGULAR_SPEED)
 \end{lstlisting}
 
 \section{Implementação de Behaviors}

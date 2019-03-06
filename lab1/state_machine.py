@@ -98,8 +98,6 @@ class MoveInSpiralState(State):
         self.count += 1
         time = self.count * SAMPLE_TIME
         agent.set_velocity(FORWARD_SPEED, FORWARD_SPEED/(INITIAL_RADIUS_SPIRAL+SPIRAL_FACTOR*time))
-        
-        pass
 
 
 class GoBackState(State):
@@ -121,8 +119,6 @@ class GoBackState(State):
         # Todo: add execution logic
         self.count += 1
         agent.set_velocity(BACKWARD_SPEED, 0)
-        
-        pass
 
 
 class RotateState(State):
@@ -149,5 +145,3 @@ class RotateState(State):
             agent.set_velocity(0, ANGULAR_SPEED)
         else:
             agent.set_velocity(0, -ANGULAR_SPEED)
-        
-        pass
