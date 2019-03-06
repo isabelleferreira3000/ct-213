@@ -67,7 +67,7 @@ Na parte relativa a implementação da máquina de estados, era necessário pree
 
 Para calcular quanto tempo já está sendo executado um determinado estado, foi adicionado nos respectivos construtores um contador que era acrescido cada vez que era executado o comportamento desse estado. Assim, o tempo seria esse contador vezes o tempo gasto em cada execução, conforme sugerido no roteiro do laboratório \cite{b1}.
 
-As transições em cada estado foram implementadas nas respectivas funções \textit{check\underline{\space}transition} de cada classe de estado, conforme o apresentado na Figura \ref{state_machine}, retirado do roteiro do laboratório \cite{b1}. A ideia de cada uma das implementações foi apresentada nas subseções abaixo, escritas em pseudo-Python.
+As transições em cada estado foram implementadas nas respectivas funções \textit{check\underline{\space}transition} de cada classe de estado, conforme o apresentado na Figura \ref{state_machine}, retirado do roteiro do laboratório \cite{b1}.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.4]{maquina_estados.png}}
@@ -77,7 +77,7 @@ As transições em cada estado foram implementadas nas respectivas funções \te
 
 Já as funções \textit{execute}, além de realizarem o acréscimo do contador de execuções, também eram responsáveis por atualizar as velocidades do Roomba, a fim de que ele realizasse os movimentos esperados para cada estado. A ideia de cada uma das implementações também foi apresentada nas subseções abaixo, escritas em pseudo-Python.
 
-Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir.
+Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir, com implementações escritas em pseudo-Python.
 
 \subsection{Estado Move Forward}
 Verificação das transições da máquina de estados na função \textit{check\underline{\space}transition} para o estado \textit{Move Forward}:
@@ -153,13 +153,89 @@ Ao entrar em um Behavior, ou seja, na execução da função \textit{enter}, era
 
 Já as funções \textit{execute}, além de realizarem o acréscimo do contador de execuções, também retornavam \textit{Success}, \textit{Failure} ou \textit{Running}, dependendo da situação que se encontrava o Roomba.
 
-Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir.
+Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir, com implementações escritas em pseudo-Python.
 
 \subsection{Roomba Behavior Tree}
+A Behavior Tree precisou ser inicializada no construtor da classe \textit{RoombaBehaviorTree}. Sua implementação aconteceu fazendo de raiz o nó do tipo Selector, e adicionando como filhos da raiz dois nós do tipo Sequence. Por fim, foram adicionados nós folhas de cada behavior, conforme apresentado na Figura \ref{behavior_tree}. Dessa forma, a ideia de implementação, apresentada em pseudo-Python, foi apresentada abaixo.
+\begin{lstlisting}
+raiz = SelectorNode("root")
+
+sequence_node_left = SequenceNode("left")
+sequence_node_left.add_child(MoveForwardNode())
+sequence_node_left.add_child(MoveInSpiralNode())
+
+sequence_node_right = SequenceNode("right")
+sequence_node_right.add_child(GoBackNode())
+sequence_node_right.add_child(RotateNode())
+
+raiz.add_child(sequence_node_left)
+raiz.root.add_child(sequence_node_right)
+\end{lstlisting}
+
 \subsection{Behavior Move Forward}
+Execução do behavior na função \textit{execute} para o estado \textit{Move Forward}:
+\begin{lstlisting}
+if TEMPO > TEMPO_NO_MOVE_FORWARD:
+	return SUCCESS
+if COLIDIU COM A PAREDE:
+	return FAILURE
+else:
+	return RUNNING
+\end{lstlisting}
+
+Atualização das velocidades do Roomba na função \textit{enter} para o estado \textit{Move Forward}:
+\begin{lstlisting}
+ROOMBA.set_velocity(VELOCIDADE_LINEAR = FORWARD_SPEED, VELOCIDADE_ANGULAR = 0)
+\end{lstlisting}
+
 \subsection{Behavior Move In Spiral}
+Execução do behavior na função \textit{execute} para o estado \textit{Move In Spiral}:
+\begin{lstlisting}
+if TEMPO > TEMPO_NO_MOVE_IN_SPIRAL:
+	return SUCCESS
+if COLIDIU COM A PAREDE:
+	return FAILURE
+else:
+	return RUNNING
+\end{lstlisting}
+
+Atualização das velocidades do Roomba na função \textit{enter} para o estado \textit{Move In Spiral}:
+\begin{lstlisting}
+ROOMBA.set_velocity(VELOCIDADE_LINEAR = FORWARD_SPEED, VELOCIDADE_ANGULAR = FORWARD_SPEED / (INITIAL_RADIUS_SPIRAL + SPIRAL_FACTOR * TEMPO)
+\end{lstlisting}
+
 \subsection{Behavior Go Back}
+Execução do behavior na função \textit{execute} para o estado \textit{Go Back}:
+\begin{lstlisting}
+if TEMPO > TEMPO_NO_GO_BACK:
+	return SUCCESS
+else:
+	return RUNNING
+\end{lstlisting}
+
+Atualização das velocidades do Roomba na função \textit{enter} para o estado \textit{Go Back}:
+\begin{lstlisting}
+ROOMBA.set_velocity(VELOCIDADE_LINEAR = BACKWARD_SPEED, VELOCIDADE_ANGULAR = 0)
+\end{lstlisting}
+
 \subsection{Behavior Rotate}
+Execução do behavior na função \textit{execute} para o estado \textit{Rotate}:
+\begin{lstlisting}
+if TEMPO > TEMPO_NO_ROTATE:
+	return SUCCESS
+else:
+	return RUNNING
+\end{lstlisting}
+
+O tempo que o Roomba passa no estado Rotate e o ângulo que é rotacionado foram calculados de forma análoga ao que foi feito na implementação por máquina de estados.
+
+Atualização das velocidades do Roomba na função \textit{enter} para o estado \textit{Rotate}:
+\begin{lstlisting}
+if ANGULO EH NEGATIVO:
+	ROOMBA.set_velocity(VELOCIDADE_LINEAR = 0, VELOCIDADE_ANGULAR = -ANGULAR_SPEED)
+else:
+	ROOMBA.set_velocity(VELOCIDADE_LINEAR = 0, VELOCIDADE_ANGULAR = ANGULAR_SPEED)
+\end{lstlisting}
 
 \section{Resultados e Conclusões}
 Before you begin to format your paper, first write and save the content as a 

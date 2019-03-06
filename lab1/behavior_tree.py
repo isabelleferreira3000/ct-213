@@ -232,9 +232,6 @@ class MoveInSpiralNode(LeafNode):
         # Todo: add enter logic
         print("MOVE IN SPIRAL STATE")
         self.count = 0
-        # time = self.count * SAMPLE_TIME
-
-        pass
 
     def execute(self, agent):
         # Todo: add execution logic
@@ -248,7 +245,6 @@ class MoveInSpiralNode(LeafNode):
             return ExecutionStatus.FAILURE
         else:
             return ExecutionStatus.RUNNING
-        pass
 
 
 class GoBackNode(LeafNode):
@@ -271,7 +267,6 @@ class GoBackNode(LeafNode):
             return ExecutionStatus.SUCCESS
         else:
             return ExecutionStatus.RUNNING
-        pass
 
 
 class RotateNode(LeafNode):
@@ -301,5 +296,3 @@ class RotateNode(LeafNode):
             return ExecutionStatus.SUCCESS
         else:
             return ExecutionStatus.RUNNING
-        pass
-
