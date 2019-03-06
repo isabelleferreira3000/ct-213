@@ -41,7 +41,7 @@ Please observe the conference page limits.
 \section{Implementação de Estados}
 Na parte relativa a implementação da máquina de estados, era necessário preencher os códigos das funções \textit{check\underline{\space}transition} e \textit{execute}, além do construtor das classes \textit{MoveForwardState}, \textit{MoveInSpiralState}, \textit{GoBackState} e \textit{RotateState}.
 
-Para calcular quanto tempo já está sendo executado um determinado estado, foi adicionado nos respectivos construtores um contador que é acrescido cada vez que executamos o comportamento desse estado. Assim, o tempo será esse contador vezes o tempo gasto em cada execução, conforme sugerido no roteiro do laboratório \cite{b1}.
+Para calcular quanto tempo já está sendo executado um determinado estado, foi adicionado nos respectivos construtores um contador que era acrescido cada vez que era executado o comportamento desse estado. Assim, o tempo seria esse contador vezes o tempo gasto em cada execução, conforme sugerido no roteiro do laboratório \cite{b1}.
 
 As transições em cada estado foram implementadas nas respectivas funções \textit{check\underline{\space}transition} de cada classe de estado, conforme o apresentado na Figura \ref{state_machine}, retirado do roteiro do laboratório \cite{b1}.
 
@@ -56,11 +56,28 @@ Já as funções \textit{execute}, além de realizarem o acréscimo do contador 
 Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir.
 
 \subsection{Estado Move Forward}
+
 \subsection{Estado Move In Spiral}
 \subsection{Estado Go Back}
 \subsection{Estado Rotate}
 
 \section{Implementação de Behaviors}
+Já na parte relativa a implementação da Behavior Tree, era necessário preencher os códigos das funções \textit{enter} e \textit{execute}, além do construtor das classes \textit{RoombaBehaviorTree}, \textit{MoveForwardNode}, \textit{MoveInSpiralNode}, \textit{GoBackNode} e \textit{RotateNode}.
+
+Para calcular quanto tempo já está sendo executado um determinado estado, foi feito de forma análoga ao feito na máquina de estados. Assim, foi adicionado nos construtores das classes folhas o contador que era acrescido cada vez que era executado o comportamento desse estado. Assim, o tempo também seria esse contador vezes o tempo gasto em cada execução.
+
+Ao entrar em um Behavior, ou seja, na execução da função \textit{enter}, eram setadas as velocidades que permaneceriam constantes durante aquele behavior, além de serem zerados os contadores. No caso específico do behavior \textit{Move In Spiral}, como sua velocidade era alterada em cada instante, essa atualização da velocidade foi feita na função \textit{execute}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.4]{behavior_tree.png}}
+\caption{\textit{Behavior tree} do comportamento do Roomba.}
+\label{behavior_tree}
+\end{figure}
+
+Já as funções \textit{execute}, além de realizarem o acréscimo do contador de execuções, também retornavam \textit{Success}, \textit{Failure} ou \textit{Running}, dependendo da situação que se encontrava o Roomba.
+
+Uma breve descrição em alto nível das implementações foi apresentada nas subsessões a seguir.
+
 \subsection{Roomba Behavior Tree}
 \subsection{Behavior Move Forward}
 \subsection{Behavior Move In Spiral}
