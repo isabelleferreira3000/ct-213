@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  6 MAR 2019 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  6 MAR 2019 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -900,26 +900,26 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count126
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 1546) in paragraph at lines 66--67
+Underfull \hbox (badness 1546) in paragraph at lines 71--72
 \T1/ptm/m/n/10 ta-dos, era ne-ces-sá-rio pre-en-cher os có-di-gos das fun-ções
  []
 
 <maquina_estados.png, id=1, 428.60126pt x 309.155pt>
 File: maquina_estados.png Graphic file (type png)
  <use maquina_estados.png>
-Package pdftex.def Info: maquina_estados.png used on input line 73.
+Package pdftex.def Info: maquina_estados.png used on input line 78.
 (pdftex.def)             Requested size: 171.43745pt x 123.6598pt.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 84.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 89.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -927,27 +927,49 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 
 
  <./maquina_estados.png>]
-<behavior_tree.png, id=16, 653.44125pt x 293.095pt>
+<behavior_tree.png, id=12, 653.44125pt x 293.095pt>
 File: behavior_tree.png Graphic file (type png)
  <use behavior_tree.png>
-Package pdftex.def Info: behavior_tree.png used on input line 149.
+Package pdftex.def Info: behavior_tree.png used on input line 154.
 (pdftex.def)             Requested size: 261.37187pt x 117.23592pt.
 
-Overfull \hbox (1.79971pt too wide) in paragraph at lines 164--165
-[][][][][][][][][]  
- []
-
-
-Overfull \hbox (7.1997pt too wide) in paragraph at lines 165--167
-[][][][][][][][][]  
- []
-
 [2 <./behavior_tree.png>]
+Overfull \hbox (1.79971pt too wide) in paragraph at lines 169--170
+[][][][][][][][][]  
+ []
 
-LaTeX Warning: Reference `AA' on page 3 undefined on input line 243.
 
+Overfull \hbox (7.1997pt too wide) in paragraph at lines 170--172
+[][][][][][][][][]  
+ []
 
-LaTeX Warning: Reference `SCM' on page 3 undefined on input line 243.
+<test_state_machine_1.png, id=20, 641.39626pt x 503.8825pt>
+File: test_state_machine_1.png Graphic file (type png)
+
+<use test_state_machine_1.png>
+Package pdftex.def Info: test_state_machine_1.png used on input line 251.
+(pdftex.def)             Requested size: 256.55396pt x 201.54942pt.
+
+<test_state_machine_2.png, id=21, 638.385pt x 503.8825pt>
+File: test_state_machine_2.png Graphic file (type png)
+
+<use test_state_machine_2.png>
+Package pdftex.def Info: test_state_machine_2.png used on input line 257.
+(pdftex.def)             Requested size: 255.34947pt x 201.54942pt.
+
+<test_behavior_tree_1.png, id=22, 639.38875pt x 498.86375pt>
+File: test_behavior_tree_1.png Graphic file (type png)
+
+<use test_behavior_tree_1.png>
+Package pdftex.def Info: test_behavior_tree_1.png used on input line 271.
+(pdftex.def)             Requested size: 255.75096pt x 199.54196pt.
+
+<test_behavior_tree_2.png, id=23, 640.3925pt x 485.815pt>
+File: test_behavior_tree_2.png Graphic file (type png)
+
+<use test_behavior_tree_2.png>
+Package pdftex.def Info: test_behavior_tree_2.png used on input line 277.
+(pdftex.def)             Requested size: 256.15245pt x 194.32256pt.
 
 
 ** Conference Paper **
@@ -960,19 +982,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3] (./conference_041818.aux)
+[3] [4 <./test_state_machine_1.png> <./test_state_machine_2.png> <./test_behavi
+or_tree_1.png> <./test_behavior_tree_2.png>] (./conference_041818.aux)
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 7304 strings out of 493029
- 98607 string characters out of 6136235
- 222083 words of memory out of 5000000
- 10717 multiletter control sequences out of 15000+600000
- 109380 words of font info for 115 fonts, out of 8000000 for 9000
+ 7324 strings out of 493029
+ 99229 string characters out of 6136235
+ 226083 words of memory out of 5000000
+ 10735 multiletter control sequences out of 15000+600000
+ 107195 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,40p,479b,1246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,40p,707b,1633s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -982,10 +1005,10 @@ w/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_041818.pdf (3 pages, 215287 bytes).
+Output written on conference_041818.pdf (4 pages, 250717 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

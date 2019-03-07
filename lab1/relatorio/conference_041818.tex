@@ -59,8 +59,13 @@ Roomba, máquina de estados, behavior tree
 \end{IEEEkeywords}
 
 \section{Introdução}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+Comportamentos autônamos de agentes podem ser implementados por diversos métodos atualmente. Entre esses métodos, pode-se organizar os possíveis comportamentos em Máquinas de Estados e Árvores de Comportamento (Behavior Trees).
+
+Máquina de Estados é um modelo matemático para descrever um sistema. Nesse modelo, apenas um estado está sendo executado a cada momento e, para transitar entre um estado e outro, são necessários acontecimentos em específicos\cite{b1}. É possível representar o comportamento de um sistema descrito por Máquina de Estados por meio de um grafo direcionado, como o apresentado na Figura \ref{state_machine}.
+
+Behavior Tree é outro modelo matemático também com a finalidade de descrever um sistema. Já nesse modelo, as folhas da árvore guardam os comportamentos mais básicos e os nós mais internos podem definir se os comportamentos básicos acontecerão em sequência, em ordem randômica, em paralelo, etc., acrescentando grau de complexidade aos comportamentos do agente. Após a execução de cada nó, é retornado Success (quando tarefa terminou com sucesso), Failure (quando tarefa falhou) ou Running (quando a tarefa deve continuar execução na próxima iteração) \cite{b1}. A representação de uma Behavior Tree pode ser vista na Figura \ref{behavior_tree}.
+
+É possível modelar o comportamento de um robô de limpeza autônomo do tipo Roomba (desenvolvido pela empresa iRobot) a partir desses métodos descritos anteriormente, conforme foi descrito nesse relatório.
 
 \section{Implementação de Estados}
 Na parte relativa a implementação da máquina de estados, era necessário preencher os códigos das funções \textit{check\underline{\space}transition} e \textit{execute}, além do construtor das classes \textit{MoveForwardState}, \textit{MoveInSpiralState}, \textit{GoBackState} e \textit{RotateState}.
@@ -238,14 +243,41 @@ else:
 \end{lstlisting}
 
 \section{Resultados e Conclusões}
-Before you begin to format your paper, first write and save the content as a 
-separate text file. Complete all content and organizational editing before 
-formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
-proofreading, spelling and grammar.
+Os resultados obtidos após a implementação do comportamento do Roomba por meio de \textit{Máquina de Estados} foram apresentados nas Figuras \ref{test_state_machine_1} e \ref{test_state_mahine_2}; e por meio de \textit{Behavior Tree} nas Figuras \ref{test_behavior_tree_1} e \ref{test_behavior_tree_2}.
 
-Keep your text and graphic files separate until after the text has been 
-formatted and styled. Do not number text heads---{\LaTeX} will do that 
-for you.
+Foi possível notar que o comportamento do Roomba pode ser independentemente implementados por \textit{Máquina de Estados} e por \textit{Behavior Tree}. Suas simulações são inclusive idênticas até certo ponto, como pode-se observar a partir da comparação entre as Figuras \ref{test_state_machine_1} e Figura \ref{test_behavior_tree_1}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.4]{test_state_machine_1.png}}
+\caption{Simulação do Roomba para implementação por \textit{Máquina de Estados}. Na figura, é possível notar os estados Move Forward e Move In Spiral.}
+\label{test_state_machine_1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.4]{test_state_machine_2.png}}
+\caption{Simulação do Roomba para implementação por \textit{Máquina de Estados} segundos após a Figura \ref{test_state_machine_1}. Na figura, é possível notar os estados Move Forward, Move In Spiral, Go Back e Rotate.}
+\label{test_state_mahine_2}
+\end{figure} 
+
+Isso era esperado, uma vez que, até o instante da imagem, a simulação tinha poucos segundos de execução, somente os estados/nós \textit{Move Forward} e \textit{Move In Spiral} tinham sido executados e nesses comportamentos não há nenhum fator que modifique os resultados independente das quantidade de vezes executadas.
+
+Já para as Figuras \ref{test_state_mahine_2} e \ref{test_behavior_tree_2}, o Roomba já tinha sofrido pelo menos 1 colisão com a parede. Nesse instante, o robô executa o comportamento \textit{Go Back} e passa para o \textit{Rotate}, no qual um ângulo aleatório entre $-\pi$ e $\pi$ foi escolhido e rotacionado. 
+
+Observou-se conforme o esperado que não há mais garantia que os movimentos sejam idênticos, dada a aleatoriedade dos ângulos. Para o caso da Figura \ref{test_state_mahine_2}, por exemplo, foram necessárias algumas colisões com a parede até que o Roomba consiga andar tempo suficiente para entrar no comportamento \textit{Move In Spiral}. Já no caso da Figura \ref{test_behavior_tree_2}, apenas uma colisão foi necessária. 
+
+
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.4]{test_behavior_tree_1.png}}
+\caption{Simulação do Roomba para implementação por \textit{Behavior tree}. Na figura, é possível notar os estados Move Forward e Move In Spiral.}
+\label{test_behavior_tree_1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.4]{test_behavior_tree_2.png}}
+\caption{Simulação do Roomba para implementação por \textit{Behavior tree} segundos após a Figura \ref{test_behavior_tree_1}. Na figura, é possível notar os estados Move Forward, Move In Spiral, Go Back e Rotate.}
+\label{test_behavior_tree_2}
+\end{figure}
 
 \begin{thebibliography}{00}
 \bibitem{b1} M. Maximo, ``Roteiro: Laboratório 1 - Máquina de Estados Finita e Behavior Tree''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
