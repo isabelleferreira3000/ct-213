@@ -48,10 +48,31 @@ class PathPlanner(object):
         :rtype: list of tuples and float.
         """
         # Todo: implement the Dijkstra algorithm
+        start_node = self.node_grid.get_node(start_position[0], start_position[1])
+        goal_node = self.node_grid.get_node(goal_position[0], goal_position[1])
+
+        pq = []
+        start_node.g = 0
+        heapq.heappush(pq, (start_node.g, start_node))
+
+        while not pq:
+            g, node = heapq.heappop(pq)
+            node.closed = True
+            if node == goal_node:
+                break
+
+            node_i, node_j = node.get_position()
+            for successor in self.node_grid.get_successors(node_i, node_j):
+                if not successor.closed and successor.g > \
+                        node.g + self.cost_map.get_edge_cost(node.get_position(), successor.get_position()):
+                    successor.g = node.g + self.cost_map.get_edge_cost(node.get_position(), successor.get_position())
+                    successor.parent = node
+                    heapq.heappush(pq, (successor.g, successor))
         # The first return is the path as sequence of tuples (as returned by the method construct_path())
         # The second return is the cost of the path
         self.node_grid.reset()
-        return [], inf  # Feel free to change this line of code
+        print(self.construct_path(goal_node))
+        return self.construct_path(goal_node), goal_node.g  # Feel free to change this line of code
 
     def greedy(self, start_position, goal_position):
         """
