@@ -50,29 +50,42 @@ class PathPlanner(object):
         # Todo: implement the Dijkstra algorithm
         start_node = self.node_grid.get_node(start_position[0], start_position[1])
         goal_node = self.node_grid.get_node(goal_position[0], goal_position[1])
+        print("start_node: ("+str(start_node.get_position()[0])+", "+str(start_node.get_position()[1])+")")
+        print("goal_node: (" + str(goal_node.get_position()[0]) + ", " + str(goal_node.get_position()[1]) + ")")
 
         pq = []
         start_node.g = 0
         heapq.heappush(pq, (start_node.g, start_node))
 
-        while not pq:
-            g, node = heapq.heappop(pq)
-            node.closed = True
-            if node == goal_node:
+        while pq:
+            g, current_node = heapq.heappop(pq)
+            current_node.closed = True
+            print("------------")
+            print("CURRENT NODE: ("+str(current_node.get_position()[0])+", "+str(current_node.get_position()[1])+")")
+            if current_node == goal_node:
                 break
 
-            node_i, node_j = node.get_position()
-            for successor in self.node_grid.get_successors(node_i, node_j):
-                if not successor.closed and successor.g > \
-                        node.g + self.cost_map.get_edge_cost(node.get_position(), successor.get_position()):
-                    successor.g = node.g + self.cost_map.get_edge_cost(node.get_position(), successor.get_position())
-                    successor.parent = node
-                    heapq.heappush(pq, (successor.g, successor))
+            current_node_i, current_node_j = current_node.get_position()
+            for successor in self.node_grid.get_successors(current_node_i, current_node_j):
+                successor_node = self.node_grid.get_node(successor[0], successor[1])
+                if not successor_node.closed and \
+                        successor_node.g > current_node.g + self.cost_map.get_edge_cost(current_node.get_position(),
+                                                                                        successor_node.get_position()):
+                    successor_node.g = current_node.g + self.cost_map.get_edge_cost(current_node.get_position(),
+                                                                                    successor_node.get_position())
+                    successor_node.parent = current_node
+                    print("parent of (" +
+                          str(successor_node.get_position()[0])+", " +
+                          str(successor_node.get_position()[1])+"): (" +
+                          str(successor_node.parent.get_position()[0])+", " +
+                          str(successor_node.parent.get_position()[1])+")")
+                    heapq.heappush(pq, (successor_node.g, successor_node))
         # The first return is the path as sequence of tuples (as returned by the method construct_path())
         # The second return is the cost of the path
         self.node_grid.reset()
-        print(self.construct_path(goal_node))
-        return self.construct_path(goal_node), goal_node.g  # Feel free to change this line of code
+        path = self.construct_path(goal_node)
+        print("final: "+str(path))
+        return path, goal_node.g  # Feel free to change this line of code
 
     def greedy(self, start_position, goal_position):
         """
