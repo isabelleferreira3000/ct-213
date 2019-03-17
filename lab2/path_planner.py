@@ -54,11 +54,11 @@ class PathPlanner(object):
         print("goal_node: (" + str(goal_node.get_position()[0]) + ", " + str(goal_node.get_position()[1]) + ")")
 
         pq = []
-        start_node.g = 0
-        heapq.heappush(pq, (start_node.g, start_node))
+        start_node.f = 0
+        heapq.heappush(pq, (start_node.f, start_node))
 
         while pq:
-            g, current_node = heapq.heappop(pq)
+            f, current_node = heapq.heappop(pq)
             current_node.closed = True
             print("------------")
             print("CURRENT NODE: ("+str(current_node.get_position()[0])+", "+str(current_node.get_position()[1])+")")
@@ -69,9 +69,9 @@ class PathPlanner(object):
             for successor in self.node_grid.get_successors(current_node_i, current_node_j):
                 successor_node = self.node_grid.get_node(successor[0], successor[1])
                 if not successor_node.closed and \
-                        successor_node.g > current_node.g + self.cost_map.get_edge_cost(current_node.get_position(),
+                        successor_node.f > current_node.f + self.cost_map.get_edge_cost(current_node.get_position(),
                                                                                         successor_node.get_position()):
-                    successor_node.g = current_node.g + self.cost_map.get_edge_cost(current_node.get_position(),
+                    successor_node.f = current_node.f + self.cost_map.get_edge_cost(current_node.get_position(),
                                                                                     successor_node.get_position())
                     successor_node.parent = current_node
                     print("parent of (" +
@@ -79,13 +79,20 @@ class PathPlanner(object):
                           str(successor_node.get_position()[1])+"): (" +
                           str(successor_node.parent.get_position()[0])+", " +
                           str(successor_node.parent.get_position()[1])+")")
-                    heapq.heappush(pq, (successor_node.g, successor_node))
+                    if goal_node.parent:
+                        print("PARENT OF GOAL: (" +
+                              str(goal_node.parent.get_position()[0])+", " +
+                              str(goal_node.parent.get_position()[1])+")")
+                    else:
+                        print("GOAL WITHOUT PARENT")
+                    heapq.heappush(pq, (successor_node.f, successor_node))
         # The first return is the path as sequence of tuples (as returned by the method construct_path())
         # The second return is the cost of the path
-        self.node_grid.reset()
+
         path = self.construct_path(goal_node)
         print("final: "+str(path))
-        return path, goal_node.g  # Feel free to change this line of code
+        self.node_grid.reset()
+        return path, goal_node.f  # Feel free to change this line of code
 
     def greedy(self, start_position, goal_position):
         """
