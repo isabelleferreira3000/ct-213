@@ -98,19 +98,20 @@ class PathPlanner(object):
         start_node.f = start_node.distance_to(goal_node.get_position()[0], goal_node.get_position()[1])
         heapq.heappush(pq, (start_node.f, start_node))
 
-        while pq:
+        finished = False
+        while pq and not finished:
             f, current_node = heapq.heappop(pq)
             current_node.closed = True
-            if current_node == goal_node:
-                break
-
             current_node_i, current_node_j = current_node.get_position()
             for successor in self.node_grid.get_successors(current_node_i, current_node_j):
                 successor_node = self.node_grid.get_node(successor[0], successor[1])
 
                 if not successor_node.closed:
+                    successor_node.closed = True
                     successor_node.parent = current_node
-
+                    if current_node == goal_node:
+                        finished = True
+                        break
                     successor_node.f = successor_node.distance_to(goal_node.get_position()[0], goal_node.get_position()[1])
                     heapq.heappush(pq, (successor_node.f, successor_node))
 
@@ -134,8 +135,6 @@ class PathPlanner(object):
         # Todo: implement the A* algorithm
         start_node = self.node_grid.get_node(start_position[0], start_position[1])
         goal_node = self.node_grid.get_node(goal_position[0], goal_position[1])
-        # print("start_node: (" + str(start_node.get_position()[0]) + ", " + str(start_node.get_position()[1]) + ")")
-        # print("goal_node: (" + str(goal_node.get_position()[0]) + ", " + str(goal_node.get_position()[1]) + ")")
 
         pq = []
         start_node.g = 0

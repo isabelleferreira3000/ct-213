@@ -1,0 +1,11 @@
+DIJKSTRA
+Monte Carlo:
+Compute time: mean: 0.2792776393890381, std: 0.15502063960684193
+
+GREEDY
+Monte Carlo:
+Compute time: mean: 0.024784789085388184, std: 0.06775448796589989
+
+A_STAR:
+Monte Carlo:
+Compute time: mean: 0.3112218689918518, std: 0.21008082494962604
