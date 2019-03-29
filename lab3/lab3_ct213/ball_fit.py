@@ -80,7 +80,14 @@ def fit_hill_climbing():
         :return: neighbors of theta.
         :rtype: list of numpy.array.
         """
-        neighbors_list = []
+        neighbors_list = [np.array([theta[0] + delta, theta[1]]),
+                          np.array([theta[0] + delta * np.sqrt(2), theta[1] + delta * np.sqrt(2)]),
+                          np.array([theta[0], theta[1] + delta]),
+                          np.array([theta[0] - delta * np.sqrt(2), theta[1] + delta * np.sqrt(2)]),
+                          np.array([theta[0] - delta, theta[1]]),
+                          np.array([theta[0] - delta * np.sqrt(2), theta[1] - delta * np.sqrt(2)]),
+                          np.array([theta[0], theta[1] - delta]),
+                          np.array([theta[0] + delta * np.sqrt(2), theta[1] - delta * np.sqrt(2)])]
         # Todo: Implement
         return neighbors_list
 

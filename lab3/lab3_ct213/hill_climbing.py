@@ -23,4 +23,26 @@ def hill_climbing(cost_function, neighbors, theta0, epsilon, max_iterations):
     theta = theta0
     history = [theta0]
     # Todo: Implement Hill Climbing
+    iteration = 0
+    while not check_stopping_condition(cost_function(theta), epsilon, iteration, max_iterations):
+        best = None  # cost_function(None) = inf
+
+        for neighbor in neighbors(theta):
+            if best is None or cost_function(neighbor) < cost_function(best):
+                best = neighbor
+
+        if cost_function(best) > cost_function(theta):
+            best = theta
+
+        theta = best
+        history.append(theta)
+        iteration = iteration + 1
     return theta, history
+
+
+def check_stopping_condition(cost_function_theta, epsilon, iteration, max_iterations):
+    if iteration > max_iterations:
+        return True
+    if cost_function_theta < epsilon:
+        return True
+    return False
