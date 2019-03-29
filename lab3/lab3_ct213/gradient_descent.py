@@ -22,4 +22,15 @@ def gradient_descent(cost_function, gradient_function, theta0, alpha, epsilon, m
     theta = theta0
     history = [theta0]
     # Todo: Implement Gradient Descent
+    iteration = 0
+    while not check_stopping_condition(gradient_function(theta), epsilon, iteration, max_iterations):
+        theta = theta - alpha * gradient_function(theta)
+        iteration = iteration + 1
+        history.append(theta)
     return theta, history
+
+
+def check_stopping_condition(gradient_function_theta, epsilon, iteration, max_iterations):
+    if iteration > max_iterations:
+        return True
+    return False
