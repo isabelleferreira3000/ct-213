@@ -122,7 +122,10 @@ def fit_simulated_annealing():
         :rtype: numpy.array.
         """
         # Todo: Implement
-        pass  # Remove pass after implementing
+        random_angle = random.uniform(-np.pi, np.pi)
+        neighbor = np.array([theta[0] + delta * np.cos(random_angle), theta[1] + delta * np.sin(random_angle)])
+        return neighbor
+        # pass  # Remove pass after implementing
 
     def schedule(i):
         """
@@ -134,7 +137,9 @@ def fit_simulated_annealing():
         :rtype: float.
         """
         # Todo: Implement
-        pass  # Remove pass after implementing
+        temperature = temperature0/(1 + beta * (i ** 2))
+        return temperature
+        # pass  # Remove pass after implementing
 
     theta, history = simulated_annealing(cost_function, random_neighbor, schedule, np.array([0.0, 0.0]), 1.0e-10, 5000)
     return theta, history
