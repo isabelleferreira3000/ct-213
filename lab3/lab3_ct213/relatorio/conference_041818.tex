@@ -57,64 +57,56 @@ Esse relatório documenta a implementação dos seguintes algoritmos de otimiza�
 \end{abstract}
 
 \begin{IEEEkeywords}
-Algoritmos de Otimização, busca local, Descida de Gradiente, Hill Climbing, Simulated Annealing, regressão linear
+Algoritmos de Otimização, busca local, Descida do Gradiente, Hill Climbing, Simulated Annealing, regressão linear
 \end{IEEEkeywords}
 
 \section{Introdução}
-Planejamento de ações de agentes podem ser implementados por diversos métodos atualmente. Construindo-se um grafo que represente diferentes opções de estados para o agente, por exemplo, um planejamento de ação pode ser definido aplicando um algoritmo de busca em grafo, partindo da situação inicial do agente até o estado desejado, onde cada aresta representa uma possível ação, atrelada a um custo para executá-la.
+Otimização consiste em encontrar o mínimo (ou máximo) de uma função, ou seja, encontrar o conjunto de parâmetros que levem essa função ao seu mínimo (ou máximo). Também pode ser visto como encontrar a melhor solução dentre todas as soluções viáveis. Nesses problemas de otimização também é possível haver restrições acerca dos parâmetros que serão analisados.
 
-Seguindo esse contexto, para decidir qual melhor planejamento a se escolher (considerando que essa escolha é baseada em menor custo de se sair de uma situação de início para um objetivo), pode-se aplicar algoritmos de busca de caminho mínimo, como Dijkstra, Greedy (ou Guloso) e A*. 
+Quando não se é possível encontrar essa solução de forma analítica, podem ser utilizados métodos numéricos. Dentre esses, estão algoritmos da classe de Metaheurísticas, que testam um número alto de soluções, conduzindo seus testes de forma a convergirem em alguma solução otimizada. 
 
-Os pseudo-códigos desses algoritmos podem ser vistos nas subseções a seguir. Em seguida, será apresentado como esses algoritmos foram implementados no contexto do laboratório.
+Um exemplo famoso de solução analítica é o Método dos Mínimos Quadrados (MMQ). Já exemplos de algoritmos da classe de Metaheurísticas são o Descida do Gradiente, o Hill Climbing e o Simulated Annealing. 
 
-\subsection{Algoritmo de Dijkstra}
+Os pseudo-códigos desses algoritmos de Metaheurísticas podem ser vistos nas subseções a seguir. Em seguida, será apresentado como esses algoritmos foram implementados no contexto do laboratório.
+
+\subsection{Descida do Gradiente}
 \begin{lstlisting}
-dijkstra(start):
-	pq = PriorityQueue()
-	start.cost = 0
-	pq.insert_or_update(start.cost, start)
-	while not pq.empty():
-		node = pq.extract_min()
-		for successor in node.successors():
-			if successor.cost > node.cost + cost(node, successor):
-				successor.cost = node.cost + cost(node, successor)
-				successor.parent = node
-				pq.insert_or_update(successor.cost, node)
+def gradient_descent(dJ, theta, alpha):
+	while not check_stopping_condition():
+		theta = theta - alpha * dJ(theta)
+	return theta
 \end{lstlisting}
 
-\subsection{Algoritmo Greedy}
+\subsection{Hill Climbing}
 \begin{lstlisting}
-greedy_search(start, goal):
-	pq = PriorityQueue()
-	start.cost = h(start, goal)
-	pq.insert_or_update(start.cost, start)
-	while not pq.empty():
-		node = pq.extract_min()
-		for successor in node.successors():
-			successor.parent = node
-			if successor.content == goal:
-				return successor
-			successor.cost = h(successor, goal)
-			pq.insert_or_update(successor.cost, successor)
+def hill_climbing(J, theta):
+	while not check_stopping_condition():
+		best = None # J(None) = inf
+		for neighbor in neighbors(theta):
+			if J(neighbor) < J(best):
+				best = neighbor
+		if J(best) > J(theta):
+			return theta
+		theta = best
+	return theta
 \end{lstlisting}
 
-\subsection{Algoritmo A*}
+\subsection{Simulated Annealing}
 \begin{lstlisting}
-a_star(start, goal):
-	pq = PriorityQueue()
-	start.g = 0
-	start.f = h(start, goal)
-	pq.insert_or_update(start.f, start)
-	while not pq.empty():
-		node = pq.extract_min()
-		if node.content == goal:
-			return successor
-		for successor in node.successors():
-			if successor.f > node.g + cost(node, successor) + h(successor, goal):
-				successor.g = node.g + cost(node, successor)
-				successor.f = successor.g + h(successor, goal)
-				successor.parent = node
-				pq.insert_or_update(successor.f, successor)
+def simulated_annealing(J, theta):
+	while not check_stopping_condition():
+		T = temperature_schedule(i)
+		if T < 0.0:
+			return theta
+		neighbor = random_neighbor(theta)
+		deltaE = J(neighbor) - J(theta)
+		if deltaE < 0:
+			theta = neighbor
+		else:
+			r = random_uniform(0.0, 1.0) # Draws random number w/ uniform dist.
+			if r <= exp(-deltaE / T):
+			theta = neighbor
+	return theta
 \end{lstlisting}
 
 \section{Implementação dos algoritmos}
@@ -128,78 +120,93 @@ Já as funções heurísticas dos algoritmos Greedy e A* foram calculadas a part
 
 Na etapa de percorrer os sucessores de um determinado nó para se calcular os custos relativos aquele caminho analisado, utilizou-se a função \textit{get\underline{\space}successors} para se obter esses sucessores. Para cada nó analisado, então, seu nó sucessor foi adicionado à fila de prioridade, sendo o custo dependente se o movimento se deu pela diagonal ou pela lateral do nó do \textit{grid}. Dessa forma, passos laterais tiveram custos menores que passos diagonais, na proporção de 1:$\sqrt{2}$. Uma representação de um nó específico do grafo e seus 8 vizinhos foi apresentado na Figura \ref{8-conectado}.
 
-\begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.4]{8-conectado.png}}
-\caption{Representação de 8-conectado. Cada nó apresenta 8 vizinhos, sendo 4 laterais e 8 diagonais.}
-\label{8-conectado}
-\end{figure}
+%\begin{figure}[htbp]
+%\centerline{\includegraphics[scale=0.4]{8-conectado.png}}
+%\caption{Representação de 8-conectado. Cada nó apresenta 8 vizinhos, sendo 4 laterais e 8 %diagonais.}
+%\label{8-conectado}
+%\end{figure}
 
 Quando um determinado nó era, por fim, retirado da fila de prioridade, o custo mínimo do início do trajeto até aquele ponto já estaria definido. Nesse instante, então, o atributo \textit{closed} daquele nó foi setado como \textit{True}. Ao nó com custo definido de caminho do início até ele for o nó objetivo, a busca encerrou-se. No algoritmo Greedy, excepcionalmente, o custo já estava definido desde a primeira vez que o nó em específico era visitado.
 
 \section{Resultados e Conclusões}
-Os resultados obtidos após 1 execução das implementações dos algoritmos descritos acima foram apresentados nas Figuras \ref{dijkstra}, \ref{greedy} e \ref{a_star} para Dijkstra, Greedy e A*, respectivamente.
-
-Foi executado também 100 vezes cada um dos códigos, para se calcular as médias e as variâncias dos custos de tempo computacional e de caminho para os três algoritmos, e os resultados foram apresentados na Tabela \ref{tabelaX}.
+Os resultados das trajetórias de otimização obtidos após a execução das implementações dos algoritmos descritos acima foram apresentados nas Figuras \ref{gradient_descent}, \ref{hill_climbing} e \ref{simulated_annealing} para Descida do Gradiente, Hill Climbing e Simulated Annealing, respectivamente, e a sobreposição dessas trajetórias foi apresentada na Figura \ref{optimization_comparison} para melhor comparação visual.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.4]{dijkstra_0.png}}
-\caption{Execução do algoritmo de Dijkstra para busca do caminho mínimo no grafo em grid do laboratório.}
-\label{dijkstra}
+\centering
+\centerline{\includegraphics[scale=0.4]{gradient_descent.png}}
+\caption{Trajetória de otimização usando Descida do Gradiente.}
+\label{gradient_descent}
 \end{figure}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.4]{greedy_0.png}}
-\caption{Execução do algoritmo Greedy para busca do caminho mínimo no grafo em grid do laboratório.}
-\label{greedy}
+\centering
+\centerline{\includegraphics[scale=0.4]{hill_climbing.png}}
+\caption{Trajetória de otimização usando Hill Climbing.}
+\label{hill_climbing}
 \end{figure} 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.4]{a_star_0.png}}
-\caption{Execução do algoritmo A* para busca do caminho mínimo no grafo em grid do laboratório.}
-\label{a_star}
+\centering
+\centerline{\includegraphics[scale=0.4]{simulated_annealing.png}}
+\caption{Trajetória de otimização usando Simulated Annealing.}
+\label{simulated_annealing}
 \end{figure}
 
-\begin{table}[H]
-\caption{Comparação dos custos de tempo computacional e custos de caminho para os algoritmos do laboratório.}
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.4]{optimization_comparison.png}}
+\caption{Comparação de trajetórias de otimização usando Descida do Gradiente, Hill Climbing e Simulated Annealing.}
+\label{optimization_comparison}
+\end{figure}
+
+Aplicando os valores encontrados para os parâmetros $v_0$ e $f$, o gráfico de velocidade da bola por tempo foi apresentado na Figura \ref{fit_comparison}. Esses valores numéricos de $v_0$ e $f$ podem ser vistos na Tabela \ref{tabelaX} para cada método estudado nesse laboratório, além do resultado fornecido inicialmente para o método de Mínimos Quadrados.
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.4]{fit_comparison.png}}
+\caption{Comparação das regressões lineares das otimizações usando Descida do Gradiente, Hill Climbing e Simulated Annealing.}
+\label{fit_comparison}
+\end{figure}
+
+Para os três casos, os algoritmos foram parados pelo critério de quantidade de iterações. Foram executadas, então, 1000 iterações para Descida do Gradiente e Hill Climbing, e 5000 para Simulated Annealing.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparação das soluções encontradas para os parâmetros físicos da bola para os algoritmos implementados no laboratório.}
 \label{tabelaX}
 \begin{tabular}{cc|c|c|c|c|l}
-\cline{1-5}
+\cline{1-3}
 \multicolumn{1}{ |c  }{\multirow{2}{*}{\textbf{Algoritmo}}} & 
-\multicolumn{2}{ |c  }{\textbf{Tempo Computacional (s)}} &
-\multicolumn{2}{ |c| }{\textbf{Custo do caminho}}
-\\ \cline{2-5}
+\multicolumn{2}{ |c| }{\textbf{Solução}}
+\\ \cline{2-3}
 \multicolumn{1}{ |c  }{} & 
-\multicolumn{1}{ |c  }{\textbf{Média}} & 
-\multicolumn{1}{ |c  }{\textbf{Desvio Padrão}} & 
-\multicolumn{1}{ |c  }{\textbf{Média}} & 
-\multicolumn{1}{ |c| }{\textbf{Desvio Padrão}}
-\\ \cline{1-5} 
-\multicolumn{1}{ |c  }{Dijkstra} &
-\multicolumn{1}{ |c  }{0.2796} &
-\multicolumn{1}{ |c  }{0.1616} &
-\multicolumn{1}{ |c  }{79.8291} &
-\multicolumn{1}{ |c| }{38.5709}
-\\ \cline{1-5}
-\multicolumn{1}{ |c  }{Greedy Search} &
-\multicolumn{1}{ |c  }{0.03101} &
-\multicolumn{1}{ |c  }{0.0864} &
-\multicolumn{1}{ |c  }{175.9340} &
-\multicolumn{1}{ |c| }{91.9683}
-\\ \cline{1-5}
-\multicolumn{1}{ |c  }{A*} &
-\multicolumn{1}{ |c  }{0.3112} &
-\multicolumn{1}{ |c  }{0.2100} &
-\multicolumn{1}{ |c  }{79.8291} &
-\multicolumn{1}{ |c| }{38.5709}
-\\ \cline{1-5}
+\multicolumn{1}{ |c  }{\textbf{$v_0$}} & 
+\multicolumn{1}{ |c| }{\textbf{$f$}}
+\\ \cline{1-3} 
+\multicolumn{1}{ |c  }{Mínimos Quadrados} &
+\multicolumn{1}{ |c  }{0.43337277} &
+\multicolumn{1}{ |c| }{-0.10102096}
+\\ \cline{1-3}
+\multicolumn{1}{ |c  }{Descida do Gradiente} &
+\multicolumn{1}{ |c  }{0.4333707} &
+\multicolumn{1}{ |c| }{-0.10101849}
+\\ \cline{1-3}
+\multicolumn{1}{ |c  }{Hill Climbing} &
+\multicolumn{1}{ |c  }{0.43274935} &
+\multicolumn{1}{ |c| }{-0.10099495}
+\\ \cline{1-3}
+\multicolumn{1}{ |c  }{Simulated Annealing} &
+\multicolumn{1}{ |c  }{0.43397656} &
+\multicolumn{1}{ |c| }{-0.10134529}
+\\ \cline{1-3}
 
 \end{tabular}
 \end{table}
 
-Isso era esperado, uma vez que, os custos de caminho dos algoritmos de Dijkstra e A* são equivalentes (ambos ótimos), e o do Greedy é significantemente maior. Além disso, os tempos computacionais são crescentes na ordem dos algoritmos Greedy, A* e Dijkstra.
+Tendo em vista o que foi apresentado, pode-se notar, por fim, que esses algoritmos realmente se demonstraram eficazes em encontrar parâmetros otimizados para uma determinada função de custo e um ponto inicial de partida.
 
 \begin{thebibliography}{00}
-\bibitem{b1} M. Maximo, ``Roteiro: Laboratório 2 - Busca Informada''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+\bibitem{b1} M. Maximo, ``Roteiro: Laboratório 3 - Otimização com Métodos de Busca Local''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 \end{thebibliography}
 
 \end{document}

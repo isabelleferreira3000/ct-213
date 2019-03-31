@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  30 MAR 2019 20:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  30 MAR 2019 21:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -911,52 +911,63 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count127
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 71.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 121.
+LaTeX Font Info:    Try loading font information for U+msa on input line 113.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 121.
+LaTeX Font Info:    Try loading font information for U+msb on input line 113.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+)
+
+LaTeX Warning: Reference `8-conectado' on page 1 undefined on input line 121.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<8-conectado.png, id=11, 193.72375pt x 195.73125pt>
-File: 8-conectado.png Graphic file (type png)
- <use 8-conectado.png>
-Package pdftex.def Info: 8-conectado.png used on input line 132.
-(pdftex.def)             Requested size: 77.48811pt x 78.2911pt.
+<gradient_descent.png, id=11, 462.528pt x 346.896pt>
+File: gradient_descent.png Graphic file (type png)
 
-<dijkstra_0.png, id=12, 462.528pt x 346.896pt>
-File: dijkstra_0.png Graphic file (type png)
- <use dijkstra_0.png>
-Package pdftex.def Info: dijkstra_0.png used on input line 145.
+<use gradient_descent.png>
+Package pdftex.def Info: gradient_descent.png used on input line 136.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+ <hill_climbing.png, id=13, 462.528pt x 346.896pt>
+File: hill_climbing.png Graphic file (type png)
+
+<use hill_climbing.png>
+Package pdftex.def Info: hill_climbing.png used on input line 143.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<greedy_0.png, id=14, 462.528pt x 346.896pt>
-File: greedy_0.png Graphic file (type png)
- <use greedy_0.png>
-Package pdftex.def Info: greedy_0.png used on input line 151.
+<simulated_annealing.png, id=14, 462.528pt x 346.896pt>
+File: simulated_annealing.png Graphic file (type png)
+
+<use simulated_annealing.png>
+Package pdftex.def Info: simulated_annealing.png used on input line 150.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<a_star_0.png, id=15, 462.528pt x 346.896pt>
-File: a_star_0.png Graphic file (type png)
- <use a_star_0.png>
-Package pdftex.def Info: a_star_0.png used on input line 157.
+<optimization_comparison.png, id=15, 462.528pt x 346.896pt>
+File: optimization_comparison.png Graphic file (type png)
+
+<use optimization_comparison.png>
+Package pdftex.def Info: optimization_comparison.png used on input line 157.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (14.73468pt too wide) in paragraph at lines 165--197
-[][] 
- []
+<fit_comparison.png, id=16, 462.528pt x 346.896pt>
+File: fit_comparison.png Graphic file (type png)
+ <use fit_comparison.png>
+Package pdftex.def Info: fit_comparison.png used on input line 166.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
+[2 <./gradient_descent.png> <./hill_climbing.png> <./simulated_annealing.png> <
+./optimization_comparison.png> <./fit_comparison.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -968,28 +979,36 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2 <./8-conectado.png> <./dijkstra_0.png> <./greedy_0.png> <./a_star_0.png>]
-(./conference_041818.aux) ) 
+[3
+
+] (./conference_041818.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7384 strings out of 493029
- 99561 string characters out of 6136235
- 221649 words of memory out of 5000000
- 10781 multiletter control sequences out of 15000+600000
- 115482 words of font info for 127 fonts, out of 8000000 for 9000
+ 7392 strings out of 493029
+ 99956 string characters out of 6136235
+ 213649 words of memory out of 5000000
+ 10787 multiletter control sequences out of 15000+600000
+ 116589 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,40p,665b,1523s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/
-8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
-b>
-Output written on conference_041818.pdf (2 pages, 137644 bytes).
+ 38i,10n,40p,665b,1527s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on conference_041818.pdf (3 pages, 206142 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
