@@ -86,7 +86,8 @@ def hill_climbing(J, theta):
 			if J(neighbor) < J(best):
 				best = neighbor
 		if J(best) > J(theta):
-			return theta
+			best = theta
+			break
 		theta = best
 	return theta
 \end{lstlisting}
@@ -97,7 +98,7 @@ def simulated_annealing(J, theta):
 	while not check_stopping_condition():
 		T = temperature_schedule(i)
 		if T < 0.0:
-			return theta
+			break
 		neighbor = random_neighbor(theta)
 		deltaE = J(neighbor) - J(theta)
 		if deltaE < 0:
@@ -110,23 +111,21 @@ def simulated_annealing(J, theta):
 \end{lstlisting}
 
 \section{Implementação dos algoritmos}
-Na parte relativa a implementação dos algoritmos de busca, era necessário preencher os códigos das funções \textit{dijkstra}, \textit{greedy} e \textit{a\underline{\space}star} da classe \textit{PathPlanner} do código base fornecido \cite{b1}.
+Na parte relativa a implementação dos algoritmos de otimização, era necessário preencher os códigos das funções \textit{gradient\underline{\space}descent()}, \textit{hill\underline{\space}climbing()} e \textit{simulated\underline{\space}annealing()} do código base fornecido \cite{b1}.  Além disso, era necessário completar também os códigos das funções \textit{neighbors()} (para o método Hill Climbing), \textit{random\underline{\space}neighbor()} e \textit{schedule()} (para o método Simulated Annealing). 
 
 A análise de vários pontos dos algoritmos descritos acima terão uma breve descrição em alto nível da sua implementação a seguir. 
 
-Como os algoritmos foram implementados em Python, as filas de prioridade foram importadas da biblioteca \textit{heapq}, sendo utilizado as funções \textit{heappush} e \textit{heappop} para adicionar e retirar um elemento da fila, respectivamente.
+Primeiramente, foi criada uma função \textit{check\underline{\space}stopping\underline{\space}condition()}, que, a partir do valor da função de custo naquele determinado teste, de um limite mínimo aceitável para essa função de custo, além dos números de iterações máximos aceitáveis e qual o atual número de iteração, decidia se era situação de parar o algoritmo ou não.
 
-Já as funções heurísticas dos algoritmos Greedy e A* foram calculadas a partir da função \textit{distance\underline{\space}to}, que calcula a distância euclidiana entre um nó específico e o nó objetivo. Essa função já foi fornecida pelo código básico.
+As funções \textit{J} apresentadas nos pseudo códigos acima se referiam a própria função de custo para cada um dos métodos e a função \textit{dJ} ao gradiente dessa função (esse já fornecido pelo código base).
 
-Na etapa de percorrer os sucessores de um determinado nó para se calcular os custos relativos aquele caminho analisado, utilizou-se a função \textit{get\underline{\space}successors} para se obter esses sucessores. Para cada nó analisado, então, seu nó sucessor foi adicionado à fila de prioridade, sendo o custo dependente se o movimento se deu pela diagonal ou pela lateral do nó do \textit{grid}. Dessa forma, passos laterais tiveram custos menores que passos diagonais, na proporção de 1:$\sqrt{2}$. Uma representação de um nó específico do grafo e seus 8 vizinhos foi apresentado na Figura \ref{8-conectado}.
+Já a função \textit{neighbors()} retornava um \textit{array} de parâmetros vizinhos ao parâmetro analisado nessa determinada iteração, e esses vizinhos eram calculados conforme descrito no roteiro do laboratório \cite{b1}, utilizando as projeções no eixo X e Y (calculadas em Python a partir de \textit{numpy.cos()} e \textit{numpy.sin()}) para encontrar as coordenadas de cada vizinho.
 
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[scale=0.4]{8-conectado.png}}
-%\caption{Representação de 8-conectado. Cada nó apresenta 8 vizinhos, sendo 4 laterais e 8 %diagonais.}
-%\label{8-conectado}
-%\end{figure}
+A função \textit{random\underline{\space}neighbor()} foi implementada de forma análoga. A grande diferença foi, ao invés de retornar um \textit{array} de vizinhos, retornava apenas um, e o ângulo para as projeções foi obtido aleatoriamente de forma uniforme a partir da função de Python \textit{random.uniform(-numpy.pi, numpy.pi)}.
 
-Quando um determinado nó era, por fim, retirado da fila de prioridade, o custo mínimo do início do trajeto até aquele ponto já estaria definido. Nesse instante, então, o atributo \textit{closed} daquele nó foi setado como \textit{True}. Ao nó com custo definido de caminho do início até ele for o nó objetivo, a busca encerrou-se. No algoritmo Greedy, excepcionalmente, o custo já estava definido desde a primeira vez que o nó em específico era visitado.
+A função \textit{schedule()} seguiu a ideia fornecida pelo roteiro \cite{b1}. Assim, essa função retornava em Python \textit{temperature0/(1 + beta * (i ** 2))}.
+
+Por fim, as funções \textit{gradient\underline{\space}descent()}, \textit{hill\underline{\space}climbing()} e \textit{simulated\underline{\space}annealing()} foram implementadas conforme apresentado nos pseudo códigos da seção Introdução, com alguns detalhes como armazenar toda a trajetória dos métodos adicionando os parâmetros \textit{theta} testados a cada iteração na lista \textit{history}. Além disso, para o caso do Hill Climbing, foram adicionadas condições específicas relativas ao caso no qual a variável \textit{best} ainda fosse \textit{None}. 
 
 \section{Resultados e Conclusões}
 Os resultados das trajetórias de otimização obtidos após a execução das implementações dos algoritmos descritos acima foram apresentados nas Figuras \ref{gradient_descent}, \ref{hill_climbing} e \ref{simulated_annealing} para Descida do Gradiente, Hill Climbing e Simulated Annealing, respectivamente, e a sobreposição dessas trajetórias foi apresentada na Figura \ref{optimization_comparison} para melhor comparação visual.
@@ -161,16 +160,14 @@ Os resultados das trajetórias de otimização obtidos após a execução das im
 
 Aplicando os valores encontrados para os parâmetros $v_0$ e $f$, o gráfico de velocidade da bola por tempo foi apresentado na Figura \ref{fit_comparison}. Esses valores numéricos de $v_0$ e $f$ podem ser vistos na Tabela \ref{tabelaX} para cada método estudado nesse laboratório, além do resultado fornecido inicialmente para o método de Mínimos Quadrados.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \centerline{\includegraphics[scale=0.4]{fit_comparison.png}}
 \caption{Comparação das regressões lineares das otimizações usando Descida do Gradiente, Hill Climbing e Simulated Annealing.}
 \label{fit_comparison}
 \end{figure}
 
-Para os três casos, os algoritmos foram parados pelo critério de quantidade de iterações. Foram executadas, então, 1000 iterações para Descida do Gradiente e Hill Climbing, e 5000 para Simulated Annealing.
-
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Comparação das soluções encontradas para os parâmetros físicos da bola para os algoritmos implementados no laboratório.}
 \label{tabelaX}

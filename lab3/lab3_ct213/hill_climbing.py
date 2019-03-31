@@ -32,7 +32,7 @@ def hill_climbing(cost_function, neighbors, theta0, epsilon, max_iterations):
                 best = neighbor
 
         if cost_function(best) > cost_function(theta):
-            best = theta
+            break
 
         theta = best
         history.append(theta)
