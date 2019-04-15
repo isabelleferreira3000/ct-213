@@ -17,11 +17,15 @@ class Particle:
         :type upper_bound: numpy array.
         """
         # Todo: implement
-        self.position = np.array([])
         quantity_of_dimensions = len(lower_bound)
+
+        self.position = np.array([])
         for i in range(quantity_of_dimensions):
             random_position = random.uniform(lower_bound[i], upper_bound[i])
             self.position = np.append(self.position, [random_position])
+
+        self.velocity = 0
+        self.my_best_position = self.position
 
 
 class ParticleSwarmOptimization:
@@ -41,8 +45,15 @@ class ParticleSwarmOptimization:
     """
     def __init__(self, hyperparams, lower_bound, upper_bound):
         # Todo: implement
+        self.hyperparams = hyperparams
         self.lower_bound = lower_bound
         self.upper_bound = upper_bound
+
+        self.particles = []
+        for i in range(self.hyperparams.num_particles):
+            self.particles.append(Particle(self.lower_bound, self.upper_bound))
+
+        self.global_best_position = self.particles[0].position
 
     def get_best_position(self):
         """
@@ -79,7 +90,17 @@ class ParticleSwarmOptimization:
         Advances the generation of particles.
         """
         # Todo: implement
-        pass  # Remove this line
+        for particle in self.particles:
+            r_p = random.uniform(0, 1)
+            r_g = random.uniform(0, 1)
+
+            particle.velocity = self.hyperparams.inertia_weight * particle.velocity + \
+                                self.hyperparams.cognitive_parameter * r_p * \
+                                (particle.my_best_position - particle.position) - \
+                                self.hyperparams.social_parameter * r_g * \
+                                (self.global_best_position - particle.position)
+
+            particle.position = particle.position + particle.velocity
 
     def notify_evaluation(self, value):
         """
