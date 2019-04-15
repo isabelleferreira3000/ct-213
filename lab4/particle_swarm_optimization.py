@@ -17,7 +17,11 @@ class Particle:
         :type upper_bound: numpy array.
         """
         # Todo: implement
-        pass  # Remove this line
+        self.position = np.array([])
+        quantity_of_dimensions = len(lower_bound)
+        for i in range(quantity_of_dimensions):
+            random_position = random.uniform(lower_bound[i], upper_bound[i])
+            self.position = np.append(self.position, [random_position])
 
 
 class ParticleSwarmOptimization:
