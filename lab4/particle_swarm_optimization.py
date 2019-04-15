@@ -103,31 +103,31 @@ class ParticleSwarmOptimization:
         Advances the generation of particles.
         """
         # Todo: implement
-        print("\nAdvance generation")
+        # print("\nAdvance generation")
         i = 0
         for particle in self.particles:
-            print("\nparticula " + str(i))
+            # print("\nparticula " + str(i))
             r_p = random.uniform(0, 1)
             r_g = random.uniform(0, 1)
 
-            print("velocity antiga: " + str(particle.velocity))
+            # print("velocity antiga: " + str(particle.velocity))
             particle.velocity = self.inertia_weight * particle.velocity + \
                                 self.cognitive_parameter * r_p * (particle.my_best_position - particle.position) + \
                                 self.social_parameter * r_g * (self.global_best_position - particle.position)
-            print("primeiro calculo de velocity: " + str(particle.velocity))
+            # print("primeiro calculo de velocity: " + str(particle.velocity))
 
             for i in range(self.quantity_of_dimensions):
                 particle.velocity[i] = min(max(particle.velocity[i], -(self.upper_bound[i] - self.lower_bound[i])),
                                            self.upper_bound[i] - self.lower_bound[i])
-            print("velocity corrigido: " + str(particle.velocity))
+            # print("velocity corrigido: " + str(particle.velocity))
 
-            print("position antiga: " + str(particle.position))
+            # print("position antiga: " + str(particle.position))
             particle.position = particle.position + particle.velocity
-            print("primeiro calculo de position: " + str(particle.position))
+            # print("primeiro calculo de position: " + str(particle.position))
 
             for i in range(self.quantity_of_dimensions):
                 particle.position[i] = min(max(particle.position[i], self.lower_bound[i]), self.upper_bound[i])
-            print("position corrigido: " + str(particle.position))
+            # print("position corrigido: " + str(particle.position))
 
     def notify_evaluation(self, value):
         """
@@ -138,21 +138,21 @@ class ParticleSwarmOptimization:
         """
         # Todo: implement
         current_particle_evaluated = self.particles[self.count_particle_to_evaluate]
-        print("\nParticula " + str(self.count_particle_to_evaluate))
-        print("current position: " + str(current_particle_evaluated.position))
-        print("current velocity: " + str(current_particle_evaluated.velocity))
-        print("current value: " + str(value))
-        print("global best value: " + str(self.global_best_value))
-        print("my best value: " + str(current_particle_evaluated.my_best_value))
-        print("my best position: " + str(current_particle_evaluated.my_best_position))
+        # print("\nParticula " + str(self.count_particle_to_evaluate))
+        # print("current position: " + str(current_particle_evaluated.position))
+        # print("current velocity: " + str(current_particle_evaluated.velocity))
+        # print("current value: " + str(value))
+        # print("global best value: " + str(self.global_best_value))
+        # print("my best value: " + str(current_particle_evaluated.my_best_value))
+        # print("my best position: " + str(current_particle_evaluated.my_best_position))
 
         if value > current_particle_evaluated.my_best_value:
-            print("* melhor que my best value")
+            # print("* melhor que my best value")
             current_particle_evaluated.my_best_value = float(value)
             current_particle_evaluated.my_best_position = np.array(current_particle_evaluated.position)
 
         if value > self.global_best_value:
-            print("** melhor que global best value")
+            # print("** melhor que global best value")
             self.global_best_value = float(value)
             self.global_best_position = np.array(current_particle_evaluated.position)
 
