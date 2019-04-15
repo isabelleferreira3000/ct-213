@@ -25,6 +25,7 @@ class Particle:
             self.position = np.append(self.position, [random_position])
 
         self.velocity = 0
+        self.my_best_value = -inf
         self.my_best_position = self.position
 
 
@@ -53,6 +54,7 @@ class ParticleSwarmOptimization:
         for i in range(self.hyperparams.num_particles):
             self.particles.append(Particle(self.lower_bound, self.upper_bound))
 
+        self.global_best_value = -inf
         self.global_best_position = self.particles[0].position
 
         self.count_particles_evaluated = 0
@@ -65,7 +67,7 @@ class ParticleSwarmOptimization:
         :rtype: numpy array.
         """
         # Todo: implement
-        return self.lower_bound  # Remove this line
+        return self.global_best_position
 
     def get_best_value(self):
         """
@@ -75,7 +77,7 @@ class ParticleSwarmOptimization:
         :rtype: float.
         """
         # Todo: implement
-        return 0.0  # Remove this line
+        return self.global_best_value
 
     def get_position_to_evaluate(self):
         """
@@ -86,10 +88,6 @@ class ParticleSwarmOptimization:
         """
         # Todo: implement
         position_to_evaluate = self.particles[self.count_particles_evaluated].position
-
-        self.count_particles_evaluated = self.count_particles_evaluated + 1
-        if self.count_particles_evaluated == self.hyperparams.num_particles:
-            self.count_particles_evaluated = 0
 
         return position_to_evaluate
 
@@ -118,5 +116,19 @@ class ParticleSwarmOptimization:
         :type value: float.
         """
         # Todo: implement
+        current_particle_evaluated = self.particles[self.count_particles_evaluated]
+
+        if value > current_particle_evaluated.my_best_value:
+            current_particle_evaluated.my_best_value = value
+            current_particle_evaluated.my_best_position = current_particle_evaluated.position
+
+        if value > self.global_best_value:
+            self.global_best_value = value
+            self.global_best_position = current_particle_evaluated.position
+
+        self.count_particles_evaluated = self.count_particles_evaluated + 1
+        if self.count_particles_evaluated == self.hyperparams.num_particles:
+            self.count_particles_evaluated = 0
+
         pass  # Remove this line
 
