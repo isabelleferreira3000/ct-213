@@ -140,7 +140,10 @@ class Simulation:
         robot_direction = Vector2(cos(self.line_follower.pose.rotation), sin(self.line_follower.pose.rotation))  # r_k
         dot_product = track_tangent.dot(robot_direction)  # dot(r_k, t_k)
         # Todo: implement
-        return 0.0  # Change this line
+        w = 0.5
+        if not detection:
+            error = 1
+        return linear * dot_product - w * fabs(error)
 
     def draw(self, window):
         """
