@@ -89,7 +89,6 @@ class ParticleSwarmOptimization:
         """
         # Todo: implement
         position_to_evaluate = self.particles[self.count_particles_evaluated].position
-        # print("\nAnalisando particula " + str(self.count_particles_evaluated) + ": posicao " + str(position_to_evaluate))
 
         return position_to_evaluate
 
@@ -112,17 +111,11 @@ class ParticleSwarmOptimization:
                 particle.velocity[i] = min(max(particle.velocity[i], -(self.upper_bound[i] - self.lower_bound[i])),
                                            self.upper_bound[i] - self.lower_bound[i])
 
-            # print("velocidade: " + str(particle.velocity))
-
-            # particle.velocity = min(max(particle.velocity, -(self.upper_bound - self.lower_bound)),
-            #                         self.upper_bound - self.lower_bound)
-
             particle.position = particle.position + particle.velocity
 
             for i in range(self.quantity_of_dimensions):
                 particle.position[i] = min(max(particle.position[i], -(self.upper_bound[i] - self.lower_bound[i])),
                                            self.upper_bound[i] - self.lower_bound[i])
-            # particle.position = min(max(particle.position, self.lower_bound), self.upper_bound)
 
     def notify_evaluation(self, value):
         """
@@ -132,20 +125,13 @@ class ParticleSwarmOptimization:
         :type value: float.
         """
         # Todo: implement
-        # print(self.global_best_position)
-        # print("valor para essa posicao: " + str(value))
-        # print("------------------------")
         current_particle_evaluated = self.particles[self.count_particles_evaluated]
-        # print("valor antigo: " + str(current_particle_evaluated.my_best_value))
-        # print("valor melhor de todos: " + str(self.global_best_value))
 
         if value > current_particle_evaluated.my_best_value:
-            # print("valor melhor que o antigo")
             current_particle_evaluated.my_best_value = value
             current_particle_evaluated.my_best_position = current_particle_evaluated.position
 
         if value > self.global_best_value:
-            # print("valor melhor que o melhor de todos")
             self.global_best_value = value
             self.global_best_position = current_particle_evaluated.position
 
@@ -153,4 +139,3 @@ class ParticleSwarmOptimization:
         if self.count_particles_evaluated == self.hyperparams.num_particles:
             self.count_particles_evaluated = 0
             self.advance_generation()
-            # print("\nNOVA GERACAO")
