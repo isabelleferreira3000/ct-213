@@ -55,6 +55,8 @@ class ParticleSwarmOptimization:
 
         self.global_best_position = self.particles[0].position
 
+        self.count_particles_evaluated = 0
+
     def get_best_position(self):
         """
         Obtains the best position so far found by the algorithm.
@@ -83,7 +85,13 @@ class ParticleSwarmOptimization:
         :rtype: numpy array.
         """
         # Todo: implement
-        return self.lower_bound  # Remove this line
+        position_to_evaluate = self.particles[self.count_particles_evaluated].position
+
+        self.count_particles_evaluated = self.count_particles_evaluated + 1
+        if self.count_particles_evaluated == self.hyperparams.num_particles:
+            self.count_particles_evaluated = 0
+
+        return position_to_evaluate
 
     def advance_generation(self):
         """
