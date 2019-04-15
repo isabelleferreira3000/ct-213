@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  15 APR 2019 03:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  15 APR 2019 20:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,22 +910,22 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count127
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 73.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 114.
+LaTeX Font Info:    Try loading font information for U+msa on input line 112.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 114.
+LaTeX Font Info:    Try loading font information for U+msb on input line 112.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 []\T1/ptm/m/n/10 Primeiramente, foi cri-ada uma fun-ção
  []
 
@@ -937,34 +937,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--119
 File: gradient_descent.png Graphic file (type png)
 
 <use gradient_descent.png>
-Package pdftex.def Info: gradient_descent.png used on input line 135.
+Package pdftex.def Info: gradient_descent.png used on input line 133.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
  <hill_climbing.png, id=13, 462.528pt x 346.896pt>
 File: hill_climbing.png Graphic file (type png)
 
 <use hill_climbing.png>
-Package pdftex.def Info: hill_climbing.png used on input line 142.
+Package pdftex.def Info: hill_climbing.png used on input line 140.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <simulated_annealing.png, id=14, 462.528pt x 346.896pt>
 File: simulated_annealing.png Graphic file (type png)
 
 <use simulated_annealing.png>
-Package pdftex.def Info: simulated_annealing.png used on input line 149.
+Package pdftex.def Info: simulated_annealing.png used on input line 147.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <optimization_comparison.png, id=15, 462.528pt x 346.896pt>
 File: optimization_comparison.png Graphic file (type png)
 
 <use optimization_comparison.png>
-Package pdftex.def Info: optimization_comparison.png used on input line 156.
+Package pdftex.def Info: optimization_comparison.png used on input line 154.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <fit_comparison.png, id=16, 462.528pt x 346.896pt>
 File: fit_comparison.png Graphic file (type png)
  <use fit_comparison.png>
-Package pdftex.def Info: fit_comparison.png used on input line 165.
+Package pdftex.def Info: fit_comparison.png used on input line 163.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Underfull \vbox (badness 6725) has occurred while \output is active []
+
 
 Overfull \vbox (29.75195pt too high) has occurred while \output is active []
 
@@ -984,7 +987,11 @@ Before submitting the final camera ready copy, remember to:
 
 [3
 
-] (./main.aux) ) 
+] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  7392 strings out of 493029
  99839 string characters out of 6136235
@@ -992,17 +999,17 @@ Here is how much of TeX's memory you used:
  10788 multiletter control sequences out of 15000+600000
  115482 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,40p,607b,1527s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 193387 bytes).
+ 38i,10n,40p,607b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (3 pages, 194097 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream

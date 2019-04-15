@@ -63,11 +63,9 @@ Algoritmos de Otimização, população, \textit{Particle Swarm Optimization} (P
 \section{Introdução}
 Otimização consiste em encontrar o mínimo (ou máximo) de uma função, ou seja, encontrar o conjunto de parâmetros que levem essa função ao seu mínimo (ou máximo). Também pode ser visto como encontrar a melhor solução dentre todas as soluções viáveis. Nesses problemas de otimização também é possível haver restrições acerca dos parâmetros que serão analisados.
 
-Quando não se é possível encontrar essa solução de forma analítica, podem ser utilizados métodos numéricos. Dentre esses, estão algoritmos da classe de Metaheurísticas, que testam um número alto de soluções, conduzindo seus testes de forma a convergirem em alguma solução otimizada. 
+Dentre os mais diversos tipos de algoritmos de otimização, existem os métodos baseado em população. Esses métodos mantêm uma população de possíveis soluções, a fim de tentar encontrar diferentes mínimos locais da função a ser analisada, melhorando assim as chances de se obter uma solução promissora. Um exemplo famoso de algoritmo de otimização baseado em população é o \textit{Particle Swarm Optimization} (PSO).
 
-Um exemplo famoso de solução analítica é o Método dos Mínimos Quadrados (MMQ). Já exemplos de algoritmos da classe de Metaheurísticas são o Descida do Gradiente, o Hill Climbing e o Simulated Annealing. 
-
-Os pseudo-códigos desses algoritmos de Metaheurísticas podem ser vistos nas subseções a seguir. Em seguida, será apresentado como esses algoritmos foram implementados no contexto do laboratório.
+O pseudo-código desse algoritmo pode ser visto na subseção a seguir. Em seguida, será apresentado como esse algoritmo foi implementado no contexto do laboratório.
 
 \subsection{Descida do Gradiente}
 \begin{lstlisting}
