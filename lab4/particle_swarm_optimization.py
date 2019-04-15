@@ -27,7 +27,7 @@ class Particle:
             self.velocity[i] = random_velocity
 
         self.my_best_value = -inf
-        self.my_best_position = self.position
+        self.my_best_position = np.array(self.position)
 
 
 class ParticleSwarmOptimization:
@@ -62,7 +62,7 @@ class ParticleSwarmOptimization:
             self.particles.append(particle)
 
         self.global_best_value = -inf
-        self.global_best_position = self.particles[0].position
+        self.global_best_position = np.array(self.particles[0].position)
 
         self.count_particle_to_evaluate = 0
 
@@ -112,7 +112,7 @@ class ParticleSwarmOptimization:
 
             print("velocity antiga: " + str(particle.velocity))
             particle.velocity = self.inertia_weight * particle.velocity + \
-                                self.cognitive_parameter * r_p * (particle.my_best_position - particle.position) - \
+                                self.cognitive_parameter * r_p * (particle.my_best_position - particle.position) + \
                                 self.social_parameter * r_g * (self.global_best_position - particle.position)
             print("primeiro calculo de velocity: " + str(particle.velocity))
 
