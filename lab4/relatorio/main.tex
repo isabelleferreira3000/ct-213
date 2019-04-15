@@ -67,45 +67,52 @@ Dentre os mais diversos tipos de algoritmos de otimização, existem os métodos
 
 O pseudo-código desse algoritmo pode ser visto na subseção a seguir. Em seguida, será apresentado como esse algoritmo foi implementado no contexto do laboratório.
 
-\subsection{Descida do Gradiente}
+\subsection{Particle Swarm Optimization (PSO)}
+Será considerado uma classe \textit{ParticleSwarmOptimization}, representando o algoritmo PSO. Além disso, o pseudocódigo do uso do algoritmo a partir dessa classe é o mostrado a seguir. Nesse pseudocódigo, \textit{pso} é o objeto da classe \textit{ParticleSwarmOptimization}.
+
 \begin{lstlisting}
-def gradient_descent(dJ, theta, alpha):
-	while not check_stopping_condition():
-		theta = theta - alpha * dJ(theta)
-	return theta
+for i in range(num_evaluations):
+	position = pso.get_position_to_evaluate()
+	value = quality_function(position)
+	pso.notify_evaluation(value)
 \end{lstlisting}
 
-\subsection{Hill Climbing}
+No pseudocódigo acima, \textit{quality\underline{\space}function()} é a função a ser maximizada. Assim, iterativamente por tantas vezes até se atingir uma convergência satisfatória ao(à) programador(a), o algoritmo calculará o valor da função para cada partícula na população de candidatas à solução. Para cada partícula, então, após esse cálculo, a função \textit{notify\underline{\space}evaluation()} compara o resultado obtido aos obtidos anteriormente a fim de encontrar o valor maximizado. Uma ideia de implementação em pseudocódigo da função \textit{notify\underline{\space}evaluation()} foi apresentada a seguir.
+
 \begin{lstlisting}
-def hill_climbing(J, theta):
-	while not check_stopping_condition():
-		best = None # J(None) = inf
-		for neighbor in neighbors(theta):
-			if J(neighbor) < J(best):
-				best = neighbor
-		if J(best) > J(theta):
-			best = theta
-			break
-		theta = best
-	return theta
+def notify_evaluation(value):
+	current_particle = get_current_particle_to_evaluate()
+
+	if value > current_particle.my_best_value:
+		current_particle.my_best_value = value
+		current_particle.my_best_position = current_particle.position
+
+	if value > global_best_value:
+		global_best_value = value
+		global_best_position = current_particle.position
+
+	num_particle_evaluated = num_particle_evaluated + 1
+	if num_particle_evaluated == num_particles:
+		num_particle_evaluated = 0
+		advance_generation()
 \end{lstlisting}
 
-\subsection{Simulated Annealing}
 \begin{lstlisting}
-def simulated_annealing(J, theta):
-	while not check_stopping_condition():
-		T = temperature_schedule(i)
-		if T < 0.0:
-			break
-		neighbor = random_neighbor(theta)
-		deltaE = J(neighbor) - J(theta)
-		if deltaE < 0:
-			theta = neighbor
-		else:
-			r = random_uniform(0.0, 1.0) # Draws random number w/ uniform dist.
-			if r <= exp(-deltaE / T):
-			theta = neighbor
-	return theta
+def advance_generation():
+	for particle in particles:
+		r_p = random.uniform(0, 1)
+		r_g = random.uniform(0, 1)
+
+		particle.velocity = inertia_weight * particle.velocity + cognitive_parameter * r_p * (particle.my_best_position - particle.position) + social_parameter * r_g * (global_best_position - particle.position)
+
+		for i in range(quantity_of_dimensions):
+			delta = upper_bound[i] - lower_bound[i]
+    		particle.velocity[i] = min(max(particle.velocity[i], -delta), delta)
+		
+		particle.position = particle.position + particle.velocity
+
+		for i in range(quantity_of_dimensions):
+    		particle.position[i] = min(max(particle.position[i], lower_bound[i]), upper_bound[i])
 \end{lstlisting}
 
 \section{Implementação dos algoritmos}
