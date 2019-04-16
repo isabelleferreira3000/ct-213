@@ -123,100 +123,83 @@ def advance_generation():
     		particle.position[i] = min(max(particle.position[i], lower_bound[i]), upper_bound[i])
 \end{lstlisting}
 
-\section{Implementação dos algoritmos}
-Na parte relativa a implementação dos algoritmos de otimização, era necessário preencher os códigos das funções \textit{gradient\underline{\space}descent()}, \textit{hill\underline{\space}climbing()} e \textit{simulated\underline{\space}annealing()} do código base fornecido \cite{b1}.  Além disso, era necessário completar também os códigos das funções \textit{neighbors()} (para o método Hill Climbing), \textit{random\underline{\space}neighbor()} e \textit{schedule()} (para o método Simulated Annealing). 
+\section{Implementação do algoritmo}
+Na parte relativa a implementação do algoritmo PSO, era necessário preencher os construtores das classes \textit{Particle} e \textit{ParticleSwarmOptimization}, além dos códigos das funções \textit{get\underline{\space}best\underline{\space}position()}, \textit{get\underline{\space}best\underline{\space}value()}, \textit{get\underline{\space}position\underline{\space}to\underline{\space}evaluate()}, \textit{advance\underline{\space}generation()} e \textit{notify\underline{\space}evaluation()} da classe \textit{ParticleSwarmOptimization}. Esses códigos a se completar estavam todos no código base fornecido \cite{b1}.  Além disso, era necessário completar também o código da função \textit{evaluate()} da classe \textit{Simulation}, função essa a ser otimizada para o problema do robô seguidor de linha. 
 
 A análise de vários pontos dos algoritmos descritos acima terão uma breve descrição em alto nível da sua implementação a seguir. 
 
-Primeiramente, foi criada uma função \textit{check\underline{\space}stopping\underline{\space}condition()}, que, a partir do valor da função de custo naquele determinado teste, de um limite mínimo aceitável para essa função de custo, além dos números de iterações máximos aceitáveis e qual o atual número de iteração, decidia se era situação de parar o algoritmo ou não.
+Primeiramente, foi criada uma lista de particulas para a classe principal \textit{ParticleSwarmOptimization}, um contador referente a qual partícula dessa lista o código estará se referindo em uma determinada iteração, além de variáveis para guardar o melhor valor (referente a função qualidade a ser otimizada) encontrado até aquela iteração dentre todas as partículas e qual a posição desse melhor valor.
 
-As funções \textit{J} apresentadas nos pseudo códigos acima se referiam a própria função de custo para cada um dos métodos e a função \textit{dJ} ao gradiente dessa função (esse já fornecido pelo código base).
+Essa lista de partículas é formada por objetos da classe \textit{Particle}, e cada partícula contém sua posição, sua velocidade, além da melhor posição referente ao valor calculado da função de qualidade e qual esse melhor valor alcançado pela partícula. A posição e a velocidade inicial de cada partícula é escolhida uniformemente aleatória, respeitando os limites estabelecidos por quem chama o construtor dessa classe. 
 
-Já a função \textit{neighbors()} retornava um \textit{array} de parâmetros vizinhos ao parâmetro analisado nessa determinada iteração, e esses vizinhos eram calculados conforme descrito no roteiro do laboratório \cite{b1}, utilizando as projeções no eixo X e Y (calculadas em Python a partir de \textit{numpy.cos()} e \textit{numpy.sin()}) para encontrar as coordenadas de cada vizinho.
+As funções \textit{get\underline{\space}best\underline{\space}position()} e \textit{get\underline{\space}best\underline{\space}value()} retornam, respectivamente, a posição referente ao melhor valor encontrado na função qualidade e qual esse melhor valor dentre todas as partidas e todas as iterações. Já a função \textit{get\underline{\space}position\underline{\space}to\underline{\space}evaluate()} se utiliza do contador citado anteriormente para retornar o elemento correto na lista de partículas, ou seja, a próxima partícula a ser analisada.
 
-A função \textit{random\underline{\space}neighbor()} foi implementada de forma análoga. A grande diferença foi, ao invés de retornar um \textit{array} de vizinhos, retornava apenas um, e o ângulo para as projeções foi obtido aleatoriamente de forma uniforme a partir da função de Python \textit{random.uniform(-numpy.pi, numpy.pi)}.
-
-A função \textit{schedule()} seguiu a ideia fornecida pelo roteiro \cite{b1}. Assim, essa função retornava em Python \textit{temperature0/(1 + beta * (i ** 2))}.
-
-Por fim, as funções \textit{gradient\underline{\space}descent()}, \textit{hill\underline{\space}climbing()} e \textit{simulated\underline{\space}annealing()} foram implementadas conforme apresentado nos pseudo códigos da seção Introdução, com alguns detalhes como armazenar toda a trajetória dos métodos adicionando os parâmetros \textit{theta} testados a cada iteração na lista \textit{history}. Além disso, para o caso do Hill Climbing, foram adicionadas condições específicas relativas ao caso no qual a variável \textit{best} ainda fosse \textit{None}. 
+Por fim, as funções \textit{advance\underline{\space}generation()} e \textit{notify\underline{\space}evaluation()} foram implementadas conforme apresentado nos pseudo códigos da seção Introdução, com alguns detalhes como utilizar o contador referente a qual partícula da lista de partículas o código está se referindo na iteração em questão em \textit{notify\underline{\space}evaluation()}. Além disso, para o caso do robô seguidor de linha, a função \textit{evaluate()} da classe \textit{Simulation} foi implementada conforme o apresentado na Seção 2 do roteiro do laboratório \cite{b1}, com $e_k = 1$ para o caso de não detecção de linha (booleana \textit{detection} sendo \textit{False}) e $\omega = 0.5$. 
 
 \section{Resultados e Conclusões}
-Os resultados das trajetórias de otimização obtidos após a execução das implementações dos algoritmos descritos acima foram apresentados nas Figuras \ref{gradient_descent}, \ref{hill_climbing} e \ref{simulated_annealing} para Descida do Gradiente, Hill Climbing e Simulated Annealing, respectivamente, e a sobreposição dessas trajetórias foi apresentada na Figura \ref{optimization_comparison} para melhor comparação visual.
+A otimização foi executada para duas funções de qualidade: uma função matemática $f\left ( x \right ) = - \left ( x\left ( 0 \right ) - 1 \right )^{2} + \left ( x\left ( 1 \right ) - 2 \right )^{2} + \left ( x\left ( 2 \right ) - 3 \right )^{2}$ e a função \textit{evaluate()} do robô seguidor de linha. Os resultados das otimizações obtidas após a execução da implementação do algoritmo descrito acima foram apresentados nas Figuras de \ref{test_parameters_converge} a \ref{test_best_convergence} para a função matemática, e de \ref{line_parameters_convergence} a \ref{line_follower_solution} para o robô seguidor de linha.
+
+\subsection{Função Matemática}
+
+A partir da Figura \ref{test_parameters_converge}, foi possível notar o correto funcionamento da implementação do algoritmo PSO, uma vez que os parâmetros $x(0)$, $x(1)$ e $x(2)$ convergiram corretamente para os valores 1, 2 e 3, como era esperado. Além disso, as Figuras \ref{test_quality_converge} e \ref{test_best_convergence} comprovaram a convergência da função para $0$, valor máximo também já esperado.
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{gradient_descent.png}}
-\caption{Trajetória de otimização usando Descida do Gradiente.}
-\label{gradient_descent}
+\centerline{\includegraphics[scale=0.4]{test_parameters_converge.png}}
+\caption{Valores convergidos dos parâmetros para maximização da função para o caso da função matemática.}
+\label{test_parameters_converge}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{hill_climbing.png}}
-\caption{Trajetória de otimização usando Hill Climbing.}
-\label{hill_climbing}
+\centerline{\includegraphics[scale=0.4]{test_quality_converge.png}}
+\caption{Convergência do valor da função qualidade com o passar das iterações para o caso da função matemática.}
+\label{test_quality_converge}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{simulated_annealing.png}}
-\caption{Trajetória de otimização usando Simulated Annealing.}
-\label{simulated_annealing}
+\centerline{\includegraphics[scale=0.4]{test_best_convergence.png}}
+\caption{Convergência do melhor valor da função qualidade encontrado com o passar das iterações para o caso da função matemática.}
+\label{test_best_convergence}
+\end{figure}
+
+\subsection{Robô seguidor de linha}
+
+Tendo em vista o correto funcionamento do algoritmo PSO dado o apresentado na subseção anterior e o comportamento coerente realizado pelo robô apresentado na Figura \ref{line_follower_solution}, pode-se concluir que os resultados apresentados na Figura \ref{line_parameters_convergence} são parâmetros satisfatórios do problema, chegando a convergência maximizada da Figura \ref{line_best_convergence}. Esses valores de parâmetros foram encontrados após cerca de 3000 iterações, levando a um valor de função qualidade máximo de 572.33; parâmetros esses: a velocidade linear do robô (0.72) e os ganhos proporcional, integrativo e derivativo (131.73, 624.82, 15.37, respectivamente).
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.4]{line_parameters_convergence.png}}
+\caption{Valores convergidos dos parâmetros para maximização da função para o caso do robô seguidor de linha.}
+\label{line_parameters_convergence}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{optimization_comparison.png}}
-\caption{Comparação de trajetórias de otimização usando Descida do Gradiente, Hill Climbing e Simulated Annealing.}
-\label{optimization_comparison}
+\centerline{\includegraphics[scale=0.4]{line_quality_convergence.png}}
+\caption{Convergência do valor da função qualidade com o passar das iterações para o caso do robô seguidor de linha.}
+\label{line_quality_convergence}
 \end{figure}
 
-Aplicando os valores encontrados para os parâmetros $v_0$ e $f$, o gráfico de velocidade da bola por tempo foi apresentado na Figura \ref{fit_comparison}. Esses valores numéricos de $v_0$ e $f$ podem ser vistos na Tabela \ref{tabelaX} para cada método estudado nesse laboratório, além do resultado fornecido inicialmente para o método de Mínimos Quadrados.
-
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{fit_comparison.png}}
-\caption{Comparação das regressões lineares das otimizações usando Descida do Gradiente, Hill Climbing e Simulated Annealing.}
-\label{fit_comparison}
+\centerline{\includegraphics[scale=0.4]{line_best_convergence.png}}
+\caption{Convergência do melhor valor da função qualidade encontrado com o passar das iterações para o caso do robô seguidor de linha.}
+\label{line_best_convergence}
 \end{figure}
 
-\begin{table}[H]
+\begin{figure}[htbp]
 \centering
-\caption{Comparação das soluções encontradas para os parâmetros físicos da bola para os algoritmos implementados no laboratório.}
-\label{tabelaX}
-\begin{tabular}{cc|c|c|c|c|l}
-\cline{1-3}
-\multicolumn{1}{ |c  }{\multirow{2}{*}{\textbf{Algoritmo}}} & 
-\multicolumn{2}{ |c| }{\textbf{Solução}}
-\\ \cline{2-3}
-\multicolumn{1}{ |c  }{} & 
-\multicolumn{1}{ |c  }{\textbf{$v_0$}} & 
-\multicolumn{1}{ |c| }{\textbf{$f$}}
-\\ \cline{1-3} 
-\multicolumn{1}{ |c  }{Mínimos Quadrados} &
-\multicolumn{1}{ |c  }{0.43337277} &
-\multicolumn{1}{ |c| }{-0.10102096}
-\\ \cline{1-3}
-\multicolumn{1}{ |c  }{Descida do Gradiente} &
-\multicolumn{1}{ |c  }{0.4333707} &
-\multicolumn{1}{ |c| }{-0.10101849}
-\\ \cline{1-3}
-\multicolumn{1}{ |c  }{Hill Climbing} &
-\multicolumn{1}{ |c  }{0.43274935} &
-\multicolumn{1}{ |c| }{-0.10099495}
-\\ \cline{1-3}
-\multicolumn{1}{ |c  }{Simulated Annealing} &
-\multicolumn{1}{ |c  }{0.43397656} &
-\multicolumn{1}{ |c| }{-0.10134529}
-\\ \cline{1-3}
+\centerline{\includegraphics[scale=0.3]{line_follower_solution.jpeg}}
+\caption{Simulação do robô seguidor de linha realizando o percurso com os valores de parâmetros encontrados a partir da otimização por PSO.}
+\label{line_follower_solution}
+\end{figure}
 
-\end{tabular}
-\end{table}
-
-Tendo em vista o que foi apresentado, pode-se notar, por fim, que esses algoritmos realmente se demonstraram eficazes em encontrar parâmetros otimizados para uma determinada função de custo e um ponto inicial de partida.
+Tendo em vista o que foi apresentado, pode-se notar, por fim, que esse algoritmo realmente se demonstrou eficaz em encontrar parâmetros otimizados para uma determinada função de custo e um conjunto de possíveis soluções iniciais.
 
 \begin{thebibliography}{00}
-\bibitem{b1} M. Maximo, ``Roteiro: Laboratório 3 - Otimização com Métodos de Busca Local''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+\bibitem{b1} M. Maximo, ``Roteiro: Laboratório 4 - Otimização com Métodos Baseados em População''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 \end{thebibliography}
 
 \end{document}
