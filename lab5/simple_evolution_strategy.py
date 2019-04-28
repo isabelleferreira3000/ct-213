@@ -23,9 +23,6 @@ class SimpleEvolutionStrategy:
         self.C = C0
         self.mu = mu
         self.population_size = population_size
-        print("m0: \n" + str(self.m))
-        print("C0: \n" + str(self.C))
-        print("mu: \n" + str(self.mu))
         self.samples = np.random.multivariate_normal(self.m, self.C, self.population_size)
 
     def ask(self):
@@ -47,21 +44,13 @@ class SimpleEvolutionStrategy:
         :type fitnesses: numpy array of floats.
         """
         # Todo: implement this method
-        # print("fitness: \n" + str(fitnesses) + "\n")
-        # print("samples: \n" + str(self.samples) + "\n")
-
         fitnesses_aux = fitnesses.argsort()
         sorted_samples = self.samples[fitnesses_aux[::1]]
 
-        # print("sorted_samples: \n" + str(sorted_samples) + "\n")
-
         parents = sorted_samples[0:self.mu]
-        # print("parents: \n" + str(parents))
 
         matrix_aux = np.matrix(parents - self.m)
         self.C = (matrix_aux.transpose() * matrix_aux)/self.mu
         self.m = np.array([np.mean(parents[:, 0]), np.mean(parents[:, 1])])
-        print("m: \n" + str(self.m))
-        print("C: \n" + str(self.C))
 
         self.samples = np.random.multivariate_normal(self.m, self.C, self.population_size)
