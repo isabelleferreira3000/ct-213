@@ -139,7 +139,7 @@ Por fim, as funções \textit{advance\underline{\space}generation()} e \textit{n
 \section{Resultados e Conclusões}
 A otimização foi executada para duas funções de qualidade: uma função matemática $f\left ( x \right ) = - \left ( x\left ( 0 \right ) - 1 \right )^{2} + \left ( x\left ( 1 \right ) - 2 \right )^{2} + \left ( x\left ( 2 \right ) - 3 \right )^{2}$ e a função \textit{evaluate()} do robô seguidor de linha. Os resultados das otimizações obtidas após a execução da implementação do algoritmo descrito acima foram apresentados nas Figuras de \ref{translated_sphere/ses} a \ref{ackley/cmaes} para a função matemática, e de \ref{line_parameters_convergence} a \ref{line_follower_solution} para o robô seguidor de linha.
 
-\subsection{Esfera Transladada}
+\subsection{Função Esfera Transladada}
 
 A partir da Figura \ref{translated_sphere/cmaes}, foi possível notar o correto funcionamento da implementação do algoritmo PSO, uma vez que os parâmetros $x(0)$, $x(1)$ e $x(2)$ convergiram corretamente para os valores 1, 2 e 3, como era esperado. Além disso, as Figuras \ref{ackley/ses} e \ref{ackley/cmaes} comprovaram a convergência da função para $0$, valor máximo também já esperado.
 
@@ -171,7 +171,9 @@ A partir da Figura \ref{translated_sphere/cmaes}, foi possível notar o correto 
 \label{ackley/cmaes}
 \end{figure}
 
-\subsection{Robô seguidor de linha}
+\subsection{Função Ackley}
+\subsection{Função Schaffer Nº 2}
+\subsection{Função Rastrigin (2D)}
 
 Tendo em vista o correto funcionamento do algoritmo PSO dado o apresentado na subseção anterior e o comportamento coerente realizado pelo robô apresentado na Figura \ref{line_follower_solution}, pode-se concluir que os resultados apresentados na Figura \ref{line_parameters_convergence} são parâmetros satisfatórios do problema, chegando a convergência maximizada da Figura \ref{line_best_convergence}. Esses valores de parâmetros foram encontrados após cerca de 3000 iterações, levando a um valor de função qualidade máximo de 572.33; parâmetros esses: a velocidade linear do robô (0.72) e os ganhos proporcional, integrativo e derivativo (131.73, 624.82, 15.37, respectivamente).
 
