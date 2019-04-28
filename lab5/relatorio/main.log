@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  28 APR 2019 20:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  28 APR 2019 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,12 +915,12 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 70.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 93.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 93.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -928,36 +928,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-[]\T1/ptm/m/n/10 Por fim, as fun-ções \T1/ptm/m/it/10 advance$[]$generation() \
-T1/ptm/m/n/10 e
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-\T1/ptm/m/it/10 notify$[]$evaluation() \T1/ptm/m/n/10 fo-ram im-ple-men-ta-das 
-con-forme
- []
-
-
-Underfull \hbox (badness 4673) in paragraph at lines 95--96
-\T1/ptm/m/n/10 apre-sen-tado nos pseudo có-di-gos da se-ção In-tro-du-ção,
- []
-
 
 LaTeX Warning: Reference `line_parameters_convergence' on page 2 undefined on i
-nput line 98.
+nput line 102.
 
 
 LaTeX Warning: Reference `line_follower_solution' on page 2 undefined on input 
-line 98.
+line 102.
 
 <imagens/translated_sphere/ses.png, id=11, 462.528pt x 346.896pt>
 File: imagens/translated_sphere/ses.png Graphic file (type png)
 
 <use imagens/translated_sphere/ses.png>
 Package pdftex.def Info: imagens/translated_sphere/ses.png used on input line 1
-06.
+10.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/translated_sphere/cmaes.png, id=13, 462.528pt x 346.896pt>
@@ -965,7 +949,7 @@ File: imagens/translated_sphere/cmaes.png Graphic file (type png)
 
 <use imagens/translated_sphere/cmaes.png>
 Package pdftex.def Info: imagens/translated_sphere/cmaes.png used on input line
- 113.
+ 117.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/translated_sphere/mean_fitness.png, id=14, 462.528pt x 346.896pt>
@@ -973,7 +957,7 @@ File: imagens/translated_sphere/mean_fitness.png Graphic file (type png)
 
 <use imagens/translated_sphere/mean_fitness.png>
 Package pdftex.def Info: imagens/translated_sphere/mean_fitness.png used on inp
-ut line 120.
+ut line 124.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/translated_sphere/best_fitness.png, id=15, 462.528pt x 346.896pt>
@@ -981,28 +965,28 @@ File: imagens/translated_sphere/best_fitness.png Graphic file (type png)
 
 <use imagens/translated_sphere/best_fitness.png>
 Package pdftex.def Info: imagens/translated_sphere/best_fitness.png used on inp
-ut line 127.
+ut line 131.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/ackley/ses.png, id=16, 462.528pt x 346.896pt>
 File: imagens/ackley/ses.png Graphic file (type png)
 
 <use imagens/ackley/ses.png>
-Package pdftex.def Info: imagens/ackley/ses.png used on input line 136.
+Package pdftex.def Info: imagens/ackley/ses.png used on input line 140.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/ackley/cmaes.png, id=17, 462.528pt x 346.896pt>
 File: imagens/ackley/cmaes.png Graphic file (type png)
 
 <use imagens/ackley/cmaes.png>
-Package pdftex.def Info: imagens/ackley/cmaes.png used on input line 143.
+Package pdftex.def Info: imagens/ackley/cmaes.png used on input line 147.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/ackley/mean_fitness.png, id=18, 462.528pt x 346.896pt>
 File: imagens/ackley/mean_fitness.png Graphic file (type png)
 
 <use imagens/ackley/mean_fitness.png>
-Package pdftex.def Info: imagens/ackley/mean_fitness.png used on input line 150
+Package pdftex.def Info: imagens/ackley/mean_fitness.png used on input line 154
 .
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
@@ -1010,10 +994,10 @@ Package pdftex.def Info: imagens/ackley/mean_fitness.png used on input line 150
 File: imagens/ackley/best_fitness.png Graphic file (type png)
 
 <use imagens/ackley/best_fitness.png>
-Package pdftex.def Info: imagens/ackley/best_fitness.png used on input line 157
+Package pdftex.def Info: imagens/ackley/best_fitness.png used on input line 161
 .
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 162.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 166.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -1023,14 +1007,14 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 File: imagens/schaffer2d/ses.png Graphic file (type png)
 
 <use imagens/schaffer2d/ses.png>
-Package pdftex.def Info: imagens/schaffer2d/ses.png used on input line 166.
+Package pdftex.def Info: imagens/schaffer2d/ses.png used on input line 170.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/schaffer2d/cmaes.png, id=21, 462.528pt x 346.896pt>
 File: imagens/schaffer2d/cmaes.png Graphic file (type png)
 
 <use imagens/schaffer2d/cmaes.png>
-Package pdftex.def Info: imagens/schaffer2d/cmaes.png used on input line 173.
+Package pdftex.def Info: imagens/schaffer2d/cmaes.png used on input line 177.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/schaffer2d/mean_fitness.png, id=22, 462.528pt x 346.896pt>
@@ -1038,7 +1022,7 @@ File: imagens/schaffer2d/mean_fitness.png Graphic file (type png)
 
 <use imagens/schaffer2d/mean_fitness.png>
 Package pdftex.def Info: imagens/schaffer2d/mean_fitness.png used on input line
- 180.
+ 184.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/schaffer2d/best_fitness.png, id=23, 462.528pt x 346.896pt>
@@ -1046,21 +1030,21 @@ File: imagens/schaffer2d/best_fitness.png Graphic file (type png)
 
 <use imagens/schaffer2d/best_fitness.png>
 Package pdftex.def Info: imagens/schaffer2d/best_fitness.png used on input line
- 187.
+ 191.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/rastrigin/ses.png, id=24, 462.528pt x 346.896pt>
 File: imagens/rastrigin/ses.png Graphic file (type png)
 
 <use imagens/rastrigin/ses.png>
-Package pdftex.def Info: imagens/rastrigin/ses.png used on input line 196.
+Package pdftex.def Info: imagens/rastrigin/ses.png used on input line 200.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/rastrigin/cmaes.png, id=25, 462.528pt x 346.896pt>
 File: imagens/rastrigin/cmaes.png Graphic file (type png)
 
 <use imagens/rastrigin/cmaes.png>
-Package pdftex.def Info: imagens/rastrigin/cmaes.png used on input line 203.
+Package pdftex.def Info: imagens/rastrigin/cmaes.png used on input line 207.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/rastrigin/mean_fitness.png, id=26, 462.528pt x 346.896pt>
@@ -1068,7 +1052,7 @@ File: imagens/rastrigin/mean_fitness.png Graphic file (type png)
 
 <use imagens/rastrigin/mean_fitness.png>
 Package pdftex.def Info: imagens/rastrigin/mean_fitness.png used on input line 
-210.
+214.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 <imagens/rastrigin/best_fitness.png, id=27, 462.528pt x 346.896pt>
@@ -1076,24 +1060,24 @@ File: imagens/rastrigin/best_fitness.png Graphic file (type png)
 
 <use imagens/rastrigin/best_fitness.png>
 Package pdftex.def Info: imagens/rastrigin/best_fitness.png used on input line 
-217.
+221.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 
 LaTeX Warning: Reference `line_follower_solution' on page 2 undefined on input 
-line 222.
+line 226.
 
 
 LaTeX Warning: Reference `line_parameters_convergence' on page 2 undefined on i
-nput line 222.
+nput line 226.
 
 
 LaTeX Warning: Reference `line_best_convergence' on page 2 undefined on input l
-ine 222.
+ine 226.
 
 [2 <./imagens/translated_sphere/ses.png> <./imagens/translated_sphere/cmaes.png
 > <./imagens/translated_sphere/mean_fitness.png> <./imagens/translated_sphere/b
-est_fitness.png>]
+est_fitness.png> <./imagens/ackley/ses.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1105,14 +1089,17 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3 <./imagens/ackley/ses.png> <./imagens/ackley/cmaes.png> <./imagens/ackley/me
-an_fitness.png> <./imagens/ackley/best_fitness.png> <./imagens/schaffer2d/ses.p
-ng> <./imagens/schaffer2d/cmaes.png>] [4 <./imagens/schaffer2d/mean_fitness.png
-> <./imagens/schaffer2d/best_fitness.png> <./imagens/rastrigin/ses.png> <./imag
-ens/rastrigin/cmaes.png> <./imagens/rastrigin/mean_fitness.png> <./imagens/rast
-rigin/best_fitness.png>] (./main.aux)
+[3 <./imagens/ackley/cmaes.png> <./imagens/ackley/mean_fitness.png> <./imagens/
+ackley/best_fitness.png> <./imagens/schaffer2d/ses.png> <./imagens/schaffer2d/c
+maes.png> <./imagens/schaffer2d/mean_fitness.png>] [4 <./imagens/schaffer2d/bes
+t_fitness.png> <./imagens/rastrigin/ses.png> <./imagens/rastrigin/cmaes.png> <.
+/imagens/rastrigin/mean_fitness.png> <./imagens/rastrigin/best_fitness.png>]
+(./main.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
@@ -1122,21 +1109,20 @@ Here is how much of TeX's memory you used:
  10850 multiletter control sequences out of 15000+600000
  107499 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,40p,879b,1196s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,40p,843b,1196s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/couri
-er/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 458340 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (4 pages, 449114 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
