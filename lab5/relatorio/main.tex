@@ -63,65 +63,24 @@ Estratégias evolutivas, CMA-ES, \textit{benchmark}, Ackley, Schaffer 2, Rastrig
 \section{Introdução}
 Otimização consiste em encontrar o mínimo (ou máximo) de uma função, ou seja, encontrar o conjunto de parâmetros que levem essa função ao seu mínimo (ou máximo). Também pode ser visto como encontrar a melhor solução dentre todas as soluções viáveis. Nesses problemas de otimização também é possível haver restrições acerca dos parâmetros que serão analisados.
 
-Dentre os mais diversos tipos de algoritmos de otimização, existem os métodos baseado em população. Esses métodos mantêm uma população de possíveis soluções, a fim de tentar encontrar diferentes mínimos locais da função a ser analisada, melhorando assim as chances de se obter uma solução promissora. Um exemplo famoso de algoritmo de otimização baseado em população é o \textit{Particle Swarm Optimization} (PSO).
+Dentre os mais diversos tipos de algoritmos de otimização, existem os métodos baseado em estratégias evolutivas, métodos esses inspirados na evolução natural das espécies. Esses métodos seguem a ideia de: dada uma população de possíveis soluções, aplica-se uma função para medir a qualidade dessas soluções candidatas. Essa qualidade quantitativa é chamade de \textit{fitness}. Com base no \textit{fitness}, é possível escolher as melhores soluções e, a partir delas, gerar mutações para se criar uma nova população. Esse processo é repetido até que a convergência chegue a um resultado satisfatório de otimização.
 
-O pseudo-código desse algoritmo para maximização pode ser visto na subseção a seguir. Em seguida, será apresentado como esse algoritmo foi implementado no contexto do laboratório.
-
-\subsection{Particle Swarm Optimization (PSO)}
-Será considerado uma classe \textit{ParticleSwarmOptimization}, representando o algoritmo PSO. Além disso, o pseudocódigo do uso do algoritmo a partir dessa classe é o mostrado a seguir. Nesse pseudocódigo, \textit{pso} é o objeto da classe \textit{ParticleSwarmOptimization}.
+O pseudo-código geral de algortimos utilizando estratégias evolutivas pode ser visto a seguir. Em seguida, será apresentado como esse algoritmo foi implementado no contexto do laboratório.
 
 \begin{lstlisting}
-for i in range(num_evaluations):
-	position = pso.get_position_to_evaluate()
-	value = quality_function(position)
-	pso.notify_evaluation(value)
+def evolution_strategy(J, m0, C0, hyperparams):
+	mu, lambda = unwrap_hyperparams(hyperparams)
+	m, C = m0, C0
+	while not check_stopping_condition():
+		population = multivariate_normal(m, C, lambda)
+		population = sort_ascending(population, J)
+		parents = population[0:mu]
+		m = mean(parents)
+	return population[0]
 \end{lstlisting}
 
-No pseudocódigo acima, \textit{quality\underline{\space}function()} é a função a ser maximizada. Assim, iterativamente por tantas vezes até se atingir uma convergência satisfatória ao(à) programador(a), o algoritmo calculará o valor da função para cada partícula na população de candidatas à solução. Para cada partícula, então, após esse cálculo, a função \textit{notify\underline{\space}evaluation()} compara o resultado obtido aos obtidos anteriormente a fim de encontrar o valor maximizado. Uma ideia de implementação em pseudocódigo da função \textit{notify\underline{\space}evaluation()} foi apresentada a seguir.
+No pseudocódigo acima, \textit{J} é a função para medir a qualidade das soluções candidatas; \textit{m0} e \textit{C0} são a média e a matriz de covariância iniciais da população que será gerada, respectivamente; \textit{m} e \textit{C} são, de forma análoga, a média e a matriz de covariância atuais da população que será gerada, respectivamente; e \textit{mu} é o tamanho da população considerada como "melhores soluções até então".
 
-\begin{lstlisting}
-def notify_evaluation(value):
-	current_particle = get_current_particle_to_evaluate()
-
-	if value > current_particle.my_best_value:
-		current_particle.my_best_value = value
-		current_particle.my_best_position = current_particle.position
-
-	if value > global_best_value:
-		global_best_value = value
-		global_best_position = current_particle.position
-
-	num_particle_evaluated = num_particle_evaluated + 1
-	if num_particle_evaluated == num_particles:
-		num_particle_evaluated = 0
-		advance_generation()
-\end{lstlisting}
-
-A função \textit{advance\underline{\space}generation()} é a responsável por atualizar os valores de cada partícula a cada geração de população. As posições de cada particula são acrescidas de uma velocidade para gerar as posições a serem analisadas na geração seguinte, e o intuito dessa velocidade é conduzir as partículas a posições cada vez mais próximas da solução otimizada.
-
-Essa velocidade foi calculada a partir da equação fornecida a seguir, na qual $\omega$ é relativo a inércia dessa mudança, $\varphi_p$ e $\varphi_g$ são, respectivamente, os parâmetros cognitivo e social, e $b$ e $b_g$ são, respectivamente, as melhores posições a nível dessa partícula em específica e a nível global (entre todas as partículas). Além disso, existem os parâmetros $r_p$ e $r_g$, que conferem aleatoriedade ao sistema.
-
-$v = \omega \cdot v + \varphi_p \cdot r_p \cdot \left ( b - x \right ) + \varphi_g \cdot r_g \cdot \left ( b_g - x \right )$
-
-Abaixo, por fim, está apresentado o pseudocódigo para a ideia acima.
-
-\begin{lstlisting}
-def advance_generation():
-	for particle in particles:
-		r_p = random.uniform(0, 1)
-		r_g = random.uniform(0, 1)
-
-		particle.velocity = inertia_weight * particle.velocity + cognitive_parameter * r_p * (particle.my_best_position - particle.position) + social_parameter * r_g * (global_best_position - particle.position)
-
-		for i in range(quantity_of_dimensions):
-			delta = upper_bound[i] - lower_bound[i]
-    		particle.velocity[i] = min(max(particle.velocity[i], -delta), delta)
-		
-		particle.position = particle.position + particle.velocity
-
-		for i in range(quantity_of_dimensions):
-    		particle.position[i] = min(max(particle.position[i], lower_bound[i]), upper_bound[i])
-\end{lstlisting}
 
 \section{Implementação do algoritmo}
 Na parte relativa a implementação do algoritmo PSO, era necessário preencher os construtores das classes \textit{Particle} e \textit{ParticleSwarmOptimization}, além dos códigos das funções \textit{get\underline{\space}best\underline{\space}position()}, \textit{get\underline{\space}best\underline{\space}value()}, \textit{get\underline{\space}position\underline{\space}to\underline{\space}evaluate()}, \textit{advance\underline{\space}generation()} e \textit{notify\underline{\space}evaluation()} da classe \textit{ParticleSwarmOptimization}. Esses códigos a se completar estavam todos no código base fornecido \cite{b1}.  Além disso, era necessário completar também o código da função \textit{evaluate()} da classe \textit{Simulation}, função essa a ser otimizada para o problema do robô seguidor de linha. 

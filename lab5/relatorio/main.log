@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  28 APR 2019 15:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  28 APR 2019 20:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,222 +910,228 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count127
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 73.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 70.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+LaTeX Font Info:    Try loading font information for U+msa on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+LaTeX Font Info:    Try loading font information for U+msb on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+)
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 []\T1/ptm/m/n/10 Na parte re-la-tiva a im-ple-men-ta-ção do al-go-ritmo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 \T1/ptm/m/n/10 PSO, era ne-ces-sá-rio pre-en-cher os cons-tru-to-res das
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 127--128
+Underfull \hbox (badness 3118) in paragraph at lines 86--87
 \T1/ptm/m/n/10 clas-ses \T1/ptm/m/it/10 Par-ti-cle \T1/ptm/m/n/10 e \T1/ptm/m/i
 t/10 Par-ti-cleSwar-mOp-ti-mi-za-tion\T1/ptm/m/n/10 , além dos
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 127--128
+Underfull \hbox (badness 3579) in paragraph at lines 86--87
 \T1/ptm/m/n/10 có-di-gos das fun-ções \T1/ptm/m/it/10 get$[]$best$[]$position()
 \T1/ptm/m/n/10 , \T1/ptm/m/it/10 get$[]$best$[]$value()\T1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 \T1/ptm/m/it/10 get$[]$position$[]$to$[]$evaluate()\T1/ptm/m/n/10 , \T1/ptm/m/i
 t/10 advance$[]$generation() \T1/ptm/m/n/10 e
  []
 
 
-Underfull \hbox (badness 7814) in paragraph at lines 127--128
+Underfull \hbox (badness 7814) in paragraph at lines 86--87
 \T1/ptm/m/it/10 notify$[]$evaluation() \T1/ptm/m/n/10 da classe \T1/ptm/m/it/10
  Par-ti-cleSwar-mOp-ti-mi-za-tion\T1/ptm/m/n/10 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 []\T1/ptm/m/n/10 Por fim, as fun-ções \T1/ptm/m/it/10 advance$[]$generation() \
 T1/ptm/m/n/10 e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 \T1/ptm/m/it/10 notify$[]$evaluation() \T1/ptm/m/n/10 fo-ram im-ple-men-ta-das 
 con-forme
  []
 
 
-Underfull \hbox (badness 4673) in paragraph at lines 137--138
+Underfull \hbox (badness 4673) in paragraph at lines 96--97
 \T1/ptm/m/n/10 apre-sen-tado nos pseudo có-di-gos da se-ção In-tro-du-ção,
  []
 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
 
 LaTeX Warning: Reference `line_parameters_convergence' on page 2 undefined on i
-nput line 140.
+nput line 99.
 
 
 LaTeX Warning: Reference `line_follower_solution' on page 2 undefined on input 
-line 140.
+line 99.
 
-<imagens/translated_sphere/ses.png, id=15, 462.528pt x 346.896pt>
+<imagens/translated_sphere/ses.png, id=11, 462.528pt x 346.896pt>
 File: imagens/translated_sphere/ses.png Graphic file (type png)
 
 <use imagens/translated_sphere/ses.png>
 Package pdftex.def Info: imagens/translated_sphere/ses.png used on input line 1
-48.
+07.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/translated_sphere/cmaes.png, id=17, 462.528pt x 346.896pt>
+<imagens/translated_sphere/cmaes.png, id=13, 462.528pt x 346.896pt>
 File: imagens/translated_sphere/cmaes.png Graphic file (type png)
 
 <use imagens/translated_sphere/cmaes.png>
 Package pdftex.def Info: imagens/translated_sphere/cmaes.png used on input line
- 155.
+ 114.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/translated_sphere/mean_fitness.png, id=18, 462.528pt x 346.896pt>
+<imagens/translated_sphere/mean_fitness.png, id=14, 462.528pt x 346.896pt>
 File: imagens/translated_sphere/mean_fitness.png Graphic file (type png)
 
 <use imagens/translated_sphere/mean_fitness.png>
 Package pdftex.def Info: imagens/translated_sphere/mean_fitness.png used on inp
-ut line 162.
+ut line 121.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/translated_sphere/best_fitness.png, id=19, 462.528pt x 346.896pt>
+<imagens/translated_sphere/best_fitness.png, id=15, 462.528pt x 346.896pt>
 File: imagens/translated_sphere/best_fitness.png Graphic file (type png)
 
 <use imagens/translated_sphere/best_fitness.png>
 Package pdftex.def Info: imagens/translated_sphere/best_fitness.png used on inp
-ut line 169.
+ut line 128.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/ackley/ses.png, id=20, 462.528pt x 346.896pt>
+<imagens/ackley/ses.png, id=16, 462.528pt x 346.896pt>
 File: imagens/ackley/ses.png Graphic file (type png)
 
 <use imagens/ackley/ses.png>
-Package pdftex.def Info: imagens/ackley/ses.png used on input line 178.
+Package pdftex.def Info: imagens/ackley/ses.png used on input line 137.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/ackley/cmaes.png, id=21, 462.528pt x 346.896pt>
+<imagens/ackley/cmaes.png, id=17, 462.528pt x 346.896pt>
 File: imagens/ackley/cmaes.png Graphic file (type png)
 
 <use imagens/ackley/cmaes.png>
-Package pdftex.def Info: imagens/ackley/cmaes.png used on input line 185.
+Package pdftex.def Info: imagens/ackley/cmaes.png used on input line 144.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/ackley/mean_fitness.png, id=22, 462.528pt x 346.896pt>
+<imagens/ackley/mean_fitness.png, id=18, 462.528pt x 346.896pt>
 File: imagens/ackley/mean_fitness.png Graphic file (type png)
 
 <use imagens/ackley/mean_fitness.png>
-Package pdftex.def Info: imagens/ackley/mean_fitness.png used on input line 192
+Package pdftex.def Info: imagens/ackley/mean_fitness.png used on input line 151
 .
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/ackley/best_fitness.png, id=23, 462.528pt x 346.896pt>
+<imagens/ackley/best_fitness.png, id=19, 462.528pt x 346.896pt>
 File: imagens/ackley/best_fitness.png Graphic file (type png)
 
 <use imagens/ackley/best_fitness.png>
-Package pdftex.def Info: imagens/ackley/best_fitness.png used on input line 199
+Package pdftex.def Info: imagens/ackley/best_fitness.png used on input line 158
 .
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 204.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 163.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<imagens/schaffer2d/ses.png, id=24, 462.528pt x 346.896pt>
+<imagens/schaffer2d/ses.png, id=20, 462.528pt x 346.896pt>
 File: imagens/schaffer2d/ses.png Graphic file (type png)
 
 <use imagens/schaffer2d/ses.png>
-Package pdftex.def Info: imagens/schaffer2d/ses.png used on input line 208.
+Package pdftex.def Info: imagens/schaffer2d/ses.png used on input line 167.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/schaffer2d/cmaes.png, id=25, 462.528pt x 346.896pt>
+<imagens/schaffer2d/cmaes.png, id=21, 462.528pt x 346.896pt>
 File: imagens/schaffer2d/cmaes.png Graphic file (type png)
 
 <use imagens/schaffer2d/cmaes.png>
-Package pdftex.def Info: imagens/schaffer2d/cmaes.png used on input line 215.
+Package pdftex.def Info: imagens/schaffer2d/cmaes.png used on input line 174.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/schaffer2d/mean_fitness.png, id=26, 462.528pt x 346.896pt>
+<imagens/schaffer2d/mean_fitness.png, id=22, 462.528pt x 346.896pt>
 File: imagens/schaffer2d/mean_fitness.png Graphic file (type png)
 
 <use imagens/schaffer2d/mean_fitness.png>
 Package pdftex.def Info: imagens/schaffer2d/mean_fitness.png used on input line
- 222.
+ 181.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/schaffer2d/best_fitness.png, id=27, 462.528pt x 346.896pt>
+<imagens/schaffer2d/best_fitness.png, id=23, 462.528pt x 346.896pt>
 File: imagens/schaffer2d/best_fitness.png Graphic file (type png)
 
 <use imagens/schaffer2d/best_fitness.png>
 Package pdftex.def Info: imagens/schaffer2d/best_fitness.png used on input line
- 229.
+ 188.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/rastrigin/ses.png, id=28, 462.528pt x 346.896pt>
+<imagens/rastrigin/ses.png, id=24, 462.528pt x 346.896pt>
 File: imagens/rastrigin/ses.png Graphic file (type png)
 
 <use imagens/rastrigin/ses.png>
-Package pdftex.def Info: imagens/rastrigin/ses.png used on input line 238.
+Package pdftex.def Info: imagens/rastrigin/ses.png used on input line 197.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/rastrigin/cmaes.png, id=29, 462.528pt x 346.896pt>
+<imagens/rastrigin/cmaes.png, id=25, 462.528pt x 346.896pt>
 File: imagens/rastrigin/cmaes.png Graphic file (type png)
 
 <use imagens/rastrigin/cmaes.png>
-Package pdftex.def Info: imagens/rastrigin/cmaes.png used on input line 245.
+Package pdftex.def Info: imagens/rastrigin/cmaes.png used on input line 204.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/rastrigin/mean_fitness.png, id=30, 462.528pt x 346.896pt>
+<imagens/rastrigin/mean_fitness.png, id=26, 462.528pt x 346.896pt>
 File: imagens/rastrigin/mean_fitness.png Graphic file (type png)
 
 <use imagens/rastrigin/mean_fitness.png>
 Package pdftex.def Info: imagens/rastrigin/mean_fitness.png used on input line 
-252.
+211.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/rastrigin/best_fitness.png, id=31, 462.528pt x 346.896pt>
+<imagens/rastrigin/best_fitness.png, id=27, 462.528pt x 346.896pt>
 File: imagens/rastrigin/best_fitness.png Graphic file (type png)
 
 <use imagens/rastrigin/best_fitness.png>
 Package pdftex.def Info: imagens/rastrigin/best_fitness.png used on input line 
-259.
+218.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 
 LaTeX Warning: Reference `line_follower_solution' on page 2 undefined on input 
-line 264.
+line 223.
 
 
 LaTeX Warning: Reference `line_parameters_convergence' on page 2 undefined on i
-nput line 264.
+nput line 223.
 
 
 LaTeX Warning: Reference `line_best_convergence' on page 2 undefined on input l
-ine 264.
+ine 223.
 
-[2 <./imagens/translated_sphere/ses.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./imagens/translated_sphere/ses.png> <./imagens/translated_sphere/cmaes.pn
+g> <./imagens/translated_sphere/mean_fitness.png> <./imagens/translated_sphere/
+best_fitness.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1137,15 +1143,12 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3 <./imagens/translated_sphere/cmaes.png> <./imagens/translated_sphere/mean_fi
-tness.png> <./imagens/translated_sphere/best_fitness.png> <./imagens/ackley/ses
-.png> <./imagens/ackley/cmaes.png> <./imagens/ackley/mean_fitness.png>]
-[4 <./imagens/ackley/best_fitness.png> <./imagens/schaffer2d/ses.png> <./imagen
-s/schaffer2d/cmaes.png> <./imagens/schaffer2d/mean_fitness.png> <./imagens/scha
-ffer2d/best_fitness.png> <./imagens/rastrigin/ses.png>] [5
-
- <./imagens/rastrigin/cmaes.png> <./imagens/rastrigin/mean_fitness.png> <./imag
-ens/rastrigin/best_fitness.png>] (./main.aux)
+[3 <./imagens/ackley/ses.png> <./imagens/ackley/cmaes.png> <./imagens/ackley/me
+an_fitness.png> <./imagens/ackley/best_fitness.png> <./imagens/schaffer2d/ses.p
+ng> <./imagens/schaffer2d/cmaes.png>] [4 <./imagens/schaffer2d/mean_fitness.png
+> <./imagens/schaffer2d/best_fitness.png> <./imagens/rastrigin/ses.png> <./imag
+ens/rastrigin/cmaes.png> <./imagens/rastrigin/mean_fitness.png> <./imagens/rast
+rigin/best_fitness.png>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1154,13 +1157,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 7462 strings out of 493029
- 102417 string characters out of 6136235
- 217649 words of memory out of 5000000
- 10859 multiletter control sequences out of 15000+600000
+ 7453 strings out of 493029
+ 102169 string characters out of 6136235
+ 203649 words of memory out of 5000000
+ 10850 multiletter control sequences out of 15000+600000
  107499 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,40p,852b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,40p,908b,1196s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
@@ -1171,10 +1174,10 @@ er/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 461735 bytes).
+Output written on main.pdf (4 pages, 458005 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
