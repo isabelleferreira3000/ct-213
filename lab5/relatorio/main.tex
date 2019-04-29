@@ -108,56 +108,56 @@ Vale reparar que os resultados de ambas implementações foram bastante equivale
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/translated_sphere/ses.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/ses.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
 \label{translated_sphere/ses}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/translated_sphere/cmaes.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/cmaes.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
 \label{translated_sphere/cmaes}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/ackley/ses.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/ackley/ses.png}}
 \caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
 \label{ackley/ses}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/ackley/cmaes.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/ackley/cmaes.png}}
 \caption{Otimização da função de Ackley usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
 \label{ackley/cmaes}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/schaffer2d/ses.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/ses.png}}
 \caption{Otimização da função de Schaffer Nº 2 usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
 \label{schaffer2d/ses}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/schaffer2d/cmaes.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/cmaes.png}}
 \caption{Otimização da função de Schaffer Nº 2 usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
 \label{schaffer2d/cmaes}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/rastrigin/ses.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/ses.png}}
 \caption{Otimização da função Rastrigin (2D) usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
 \label{rastrigin/ses}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/rastrigin/cmaes.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/cmaes.png}}
 \caption{Otimização da função Rastrigin (2D) usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
 \label{rastrigin/cmaes}
 \end{figure}
@@ -166,61 +166,62 @@ Vale reparar que os resultados de ambas implementações foram bastante equivale
 
 A otimização para realizar o \textit{benchmark} do desempenho de cada um dos métodos evolutivos estudados (SES e CMA-ES) para diferentes funções e parâmetros foi executada para as quatro funções evolutivas já citadas. Os resultados dessas execuções demonstraram comportamentos coerentes e foram apresentados nas Figuras de \ref{translated_sphere/ses} a \ref{rastrigin/cmaes}.
 
-É possível salientar que, embora sempre tenha havido convergências após um número significativo de iterações, nem todas as convergências chegam a mínimos locais, como por exemplo para a função da Esfera Transaladada, que só possui um mínimo local (que também é global), mas cada situação testada chegou a valores diferentes de \textit{fitness} os resultados de ambas implementações foram bastante equivalentes, com exceção do caso da função Rastrigin, no qual cada algoritmo convergiu em míminos locais diferentes.
+É possível salientar que, embora sempre tenha havido convergências após um número significativo de iterações, nem todas as convergências chegaram a mínimos locais, como por exemplo para a função da Esfera Transaladada, que só possui um mínimo local (que também é global), mas cada situação testada chegou a valores diferentes de \textit{fitness}.
 
+Além disso, notou-se que, para estratégias evolutivas mais simples, é necessário um número cada vez maior de elementos na população para que os resultados se tornem cada vez mais otimizados. Já para o algoritmo CMA-ES precisou de cerca de 1/4 de população para alcançar resultados similares aos do SES. Isso aconteceu para todos os casos com exceção à função Schaffer Nº 2, que estratégias mais simples e com menores populações se saíram melhor em desempenho do que CMA-ES.
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{imagens/translated_sphere/mean_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/mean_fitness.png}}
 \caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Esfera Transladada.}
 \label{translated_sphere/mean_fitness}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{imagens/translated_sphere/best_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/best_fitness.png}}
 \caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Esfera Transladada.}
 \label{translated_sphere/best_fitness}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{imagens/ackley/mean_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/ackley/mean_fitness.png}}
 \caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Ackley.}
 \label{ackley/mean_fitness}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.4]{imagens/ackley/best_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/ackley/best_fitness.png}}
 \caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Ackley.}
 \label{ackley/best_fitness}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/schaffer2d/mean_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/mean_fitness.png}}
 \caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Schaffer Nº 2.}
 \label{schaffer2d/mean_fitness}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/schaffer2d/best_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/best_fitness.png}}
 \caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Schaffer Nº 2.}
 \label{schaffer2d/best_fitness}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/rastrigin/mean_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/mean_fitness.png}}
 \caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Rastrigin (2D).}
 \label{rastrigin/mean_fitness}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.6]{imagens/rastrigin/best_fitness.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/best_fitness.png}}
 \caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Rastrigin (2D).}
 \label{rastrigin/best_fitness}
 \end{figure}
@@ -228,7 +229,7 @@ A otimização para realizar o \textit{benchmark} do desempenho de cada um dos m
 Tendo em vista o que foi apresentado, pode-se notar, por fim, que esses algoritmos realmente se demonstraram eficazes em encontrar parâmetros otimizados para uma determinada função.
 
 \begin{thebibliography}{00}
-\bibitem{b1} M. Maximo, ``Roteiro: Laboratório 4 - Otimização com Métodos Baseados em População''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+\bibitem{b1} M. Maximo, ``Roteiro: Laboratório 5 - Estratégias Evolutivas''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 \end{thebibliography}
 
 \end{document}
