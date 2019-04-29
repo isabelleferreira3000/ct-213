@@ -94,14 +94,17 @@ Após isso, as \textit{mu} melhores amostras dessa população foram separadas p
 
 Dessa forma, tendo em posse a nova matriz de covariância e a nova média das melhores amostras da população anterior, é possível gerar uma nova população, evoluindo para a próxima geração de possíveis candidatas a solução.
 
-Por fim, 
+Para testar o funcionamento dessa implementação, foram alterados os valores das variáveis \textit{algorithm} (entre "ses" e "cmaes") e \textit{function} (entre as funções \textit{translated\underline{\space}sphere}, \textit{ackley}, \textit{schaffer2d}, \textit{rastrigin}) no arquivo \textit{test\underline{\space}evolution\underline{\space}strategy.py} do código base, gerando imagens dos resultados da otimização de cada uma dessas funções usando a estratégia evolutiva escolhida. Esses resultados foram apresentados nas Figuras \ref{translated_sphere/ses}, \ref{translated_sphere/cmaes}, \ref{ackley/ses}, \ref{ackley/cmaes}, \ref{schaffer2d/ses}, \ref{schaffer2d/cmaes}, \ref{rastrigin/ses} e \ref{rastrigin/cmaes}.
 
-a fim de realizar o \textit{benchmark} através de simulações de Monte Carlo para comparar os desempenhos dessa estratégia evolutiva simples e do CMA-ES, foi alterado novamente os valores das variáveis \textit{algorithm} e \textit{function}, dessa vez no arquivo \textit{benchmark\underline{\space}evolution\underline{\space}strategy.py} do código base, gerando dessa vez os gráficos comparativos de rendimento para diferentes situações de SES e CMA-ES. Esses gráficos foram apresentados nas Figuras \ref{translated_sphere/mean_fitness}, \ref{translated_sphere/best_fitness}, \ref{ackley/mean_fitness}, \ref{ackley/best_fitness}, \ref{schaffer2d/mean_fitness}, \ref{schaffer2d/best_fitness}, \ref{rastrigin/mean_fitness} e \ref{rastrigin/best_fitness}.
+Por fim, a fim de realizar o \textit{benchmark} através de simulações de Monte Carlo para comparar os desempenhos dessa estratégia evolutiva simples e do CMA-ES, foram alterados novamente os valores das variáveis \textit{algorithm} e \textit{function}, dessa vez no arquivo \textit{benchmark\underline{\space}evolution\underline{\space}strategy.py} do código base, gerando dessa vez os gráficos comparativos de rendimento para diferentes situações de SES e CMA-ES. Esses gráficos foram apresentados nas Figuras \ref{translated_sphere/mean_fitness}, \ref{translated_sphere/best_fitness}, \ref{ackley/mean_fitness}, \ref{ackley/best_fitness}, \ref{schaffer2d/mean_fitness}, \ref{schaffer2d/best_fitness}, \ref{rastrigin/mean_fitness} e \ref{rastrigin/best_fitness}.
 
 \section{Resultados e Conclusões}
+
+\subsection{Teste das Estratégias Evolutivas}
+
 A otimização foi executada para duas funções de qualidade: uma função matemática $f\left ( x \right ) = - \left ( x\left ( 0 \right ) - 1 \right )^{2} + \left ( x\left ( 1 \right ) - 2 \right )^{2} + \left ( x\left ( 2 \right ) - 3 \right )^{2}$ e a função \textit{evaluate()} do robô seguidor de linha. Os resultados das otimizações obtidas após a execução da implementação do algoritmo descrito acima foram apresentados nas Figuras de \ref{translated_sphere/ses} a \ref{ackley/cmaes} para a função matemática, e de \ref{line_parameters_convergence} a \ref{line_follower_solution} para o robô seguidor de linha.
 
-\subsection{Função Esfera Transladada}
+\subsubsection{Função Esfera Transladada}
 
 A partir da Figura \ref{translated_sphere/cmaes}, foi possível notar o correto funcionamento da implementação do algoritmo PSO, uma vez que os parâmetros $x(0)$, $x(1)$ e $x(2)$ convergiram corretamente para os valores 1, 2 e 3, como era esperado. Além disso, as Figuras \ref{ackley/ses} e \ref{ackley/cmaes} comprovaram a convergência da função para $0$, valor máximo também já esperado.
 
@@ -133,7 +136,7 @@ A partir da Figura \ref{translated_sphere/cmaes}, foi possível notar o correto 
 \label{translated_sphere/best_fitness}
 \end{figure}
 
-\subsection{Função Ackley}
+\subsubsection{Função Ackley}
 
 \begin{figure}[htbp]
 \centering
@@ -163,7 +166,7 @@ A partir da Figura \ref{translated_sphere/cmaes}, foi possível notar o correto 
 \label{ackley/best_fitness}
 \end{figure}
 
-\subsection{Função Schaffer Nº 2}
+\subsubsection{Função Schaffer Nº 2}
 
 \begin{figure}[htbp]
 \centering
@@ -193,7 +196,7 @@ A partir da Figura \ref{translated_sphere/cmaes}, foi possível notar o correto 
 \label{schaffer2d/best_fitness}
 \end{figure}
 
-\subsection{Função Rastrigin (2D)}
+\subsubsection{Função Rastrigin (2D)}
 
 \begin{figure}[htbp]
 \centering
@@ -224,6 +227,8 @@ A partir da Figura \ref{translated_sphere/cmaes}, foi possível notar o correto 
 \end{figure}
 
 Tendo em vista o correto funcionamento do algoritmo PSO dado o apresentado na subseção anterior e o comportamento coerente realizado pelo robô apresentado na Figura \ref{line_follower_solution}, pode-se concluir que os resultados apresentados na Figura \ref{line_parameters_convergence} são parâmetros satisfatórios do problema, chegando a convergência maximizada da Figura \ref{line_best_convergence}. Esses valores de parâmetros foram encontrados após cerca de 3000 iterações, levando a um valor de função qualidade máximo de 572.33; parâmetros esses: a velocidade linear do robô (0.72) e os ganhos proporcional, integrativo e derivativo (131.73, 624.82, 15.37, respectivamente).
+
+\subsection{Benchmark das Estratégias Evolutivas}
 
 Tendo em vista o que foi apresentado, pode-se notar, por fim, que esse algoritmo realmente se demonstrou eficaz em encontrar parâmetros otimizados para uma determinada função de custo e um conjunto de possíveis soluções iniciais.
 
