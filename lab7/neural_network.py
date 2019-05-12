@@ -105,6 +105,42 @@ class NeuralNetwork:
         biases_gradient[1] = np.zeros((self.num_hiddens, 1))
         biases_gradient[2] = np.zeros((self.num_outputs, 1))
         # Add logic to compute the gradients
+        dz = [None] * 3
+        for i in range(len(inputs)):
+            z, a = self.forward_propagation(inputs[i])
+
+            # dz[2] = a[2] - y
+            # dW[2] = dz[2] * a[1].T
+            # db[2] = dz[2]
+            # dz[1] = W[2].T * dz[2] * g[1]'(z[1])
+            # dW[1] = dz[1] * x.T
+            # db[1] = dz[1]
+
+            dz[2] = np.matrix(np.asscalar(a[2]) - np.asscalar(expected_outputs[i]))
+            print("shape of weights_gradient[2]: " + str(weights_gradient[2].shape))  # (1, 10)
+            print("shape of biases_gradient[2]: " + str(biases_gradient[2].shape))  # (1, 1)
+            print("shape of dz[2]: " + str(dz[2].shape))  # (1, 1)
+            print("shape of a[1].T: " + str(a[1].T.shape))  # (1, 10)
+
+            weights_gradient[2] += dz[2] * a[1].T
+
+            biases_gradient[2] += dz[2]
+            print("shape of self.weights[2].T: " + str(self.weights[2].T.shape))  # (10, 1)
+            print("shape of sigmoid_derivative(z[1]): " + str(sigmoid_derivative(z[1]).shape))  # (10, 1)
+
+            print("shape of weights_gradient[1]: " + str(weights_gradient[1].shape))  # (10, 2)
+            print("shape of biases_gradient[1]: " + str(biases_gradient[1].shape))  # (10, 1)
+            print("shape of inputs[1].T: " + str(inputs[1].T.shape))  # (1, 2)
+
+            dz[1] = np.matrix(self.weights[2].T * dz[2] * sigmoid_derivative(z[1]))
+
+            print("shape of dz[1]: " + str(dz[1].shape))  # must to be (10, 1)
+
+            weights_gradient[1] += dz[1] * inputs[1].T
+
+            biases_gradient[1] += dz[1]
+            1/0
+
         return weights_gradient, biases_gradient
 
     def back_propagation(self, inputs, expected_outputs):
