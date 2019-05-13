@@ -115,7 +115,7 @@ class NeuralNetwork:
             # dW[1] = dz[1] * x.T
             # db[1] = dz[1]
 
-            dz2 = np.matrix(np.asscalar(a[2]) - np.asscalar(expected_outputs[i]))
+            dz2 = np.matrix(a[2] - expected_outputs[i])
             # print("shape of weights_gradient[2]: " + str(weights_gradient[2].shape))  # (1, 10)
             # print("shape of biases_gradient[2]: " + str(biases_gradient[2].shape))  # (1, 1)
             # print("shape of dz[2]: " + str(dz[2].shape))  # (1, 1)
