@@ -109,7 +109,7 @@ def compute_gradient_back_propagation(inputs, expected_outputs):
 		weights_gradient[2] += dz[2] a[1].T
 		biases_gradient[2] += dz[2]
 
-		dz[1] = weights[2].T dz[2] * g[1]'(z[1])
+		dz[1] = weights[2].T dz[2] * derivate(g[1](z[1]))
 		weights_gradient[1] += dz[1] input.T
 		biases_gradient[1] += dz[1]
 
@@ -134,21 +134,13 @@ Para a implementação da rede neural, era necessário preencher a função \tex
 
 Recebendo os valores de \textit{input}, a função \textit{forward\underline{\space}propagation()} foi implementada conforme apresentado no pseudo-código da Introdução, com o detalhe que a função de ativação $g$ de todos os neurônios utilizada foi a \textit{sigmoid}. Além disso, tanto a função \textit{sigmoid} quanto sua derivada já eram fornecidos pelo código base. 
 
-Já na implementação de \textit{back\underline{\space}propagation()}, também foi implementado conforme o sugerido no pseudo-código da Introdução, ou seja, atualizando os valores de pesos e \textit{biases} subtraindo de seu valor um fator de aprendizado \textit{alpha} vezes os gradientes de pesos e \textit{biases}, respectivamente. Esses valores de gradientes são aqueles calculados em \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()}, supondo que já foi corretamente implementado. Foi utilizado para \textit{alpha} o mesmo que o sugerido pelo código base. 
+Já na implementação de \textit{back\underline{\space}propagation()}, também foi implementado conforme o sugerido no pseudo-código da Introdução, ou seja, atualizando os valores de pesos e \textit{biases} subtraindo de seu valor um fator de aprendizado \textit{alpha} vezes os gradientes de pesos e \textit{biases}, respectivamente. Esses valores de gradientes são aqueles calculados em \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()}, supondo que essa função já foi corretamente implementado. Foi utilizado para \textit{alpha} o mesmo que o sugerido pelo código base. 
 
-Além disso, era necessário comparar os desempenhos desse algoritmo SES com o algoritmo CMA-ES, já fornecido no código base, aplicando-os na otimização de quatro funções, a se saber: esfera transladada, e as fuções de Ackley, Schaffer 2 e Rastrigin 2D.
+Finalmente, para implementar a função \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()}, também foi feito de forma bastante semelhante ao apresentado na Introdução, com o detalhe de usar \textit{numpy.multiply} para multiplicar termo a termo os vetores referentes aos pesos e a derivada da função de ativação.
 
-A análise de vários pontos do algoritmo descrito acima terá uma breve descrição em alto nível da sua implementação a seguir. 
+Para testar o funcionamento dessas implementações, foi inicialmente alterado o valor da variável \textit{classification\underline{\space}function} (entre "sum\underline{\space}gt\underline{\space}zero" no arquivo \textit{test\underline{\space}neural\underline{\space}network.py} do código base, gerando imagens dos resultados da classificação de cada \textit{dataset} para cada uma dessas funções (função "soma maior que zero" e função "xor") usando rede neural.
 
-Primeiramente, foi necessário ordenar a população atual tendo em vista os valores de \textit{fitness} associados a ela recebido por parâmetro. Isso foi feito utilizando a função \textit{argsort()} da biblioteca \textit{Numpy}, conforme sugerido pelo roteiro do labotarório.
-
-Após isso, as \textit{mu} melhores amostras dessa população foram separadas para ajudar no cálculo de sua matriz de covariância e, posteriormente, realizar o cálculo da nova média das melhores amostras dessa geração em questão. Essa matriz de covariância foi feita a partir da multiplicação de uma determinada matriz auxiliar pela sua transposta, sendo essa matriz auxiliar a diferença entre essas melhores amostras e a média encontrada na população anterior.
-
-Dessa forma, tendo em posse a nova matriz de covariância e a nova média das melhores amostras da população anterior, é possível gerar uma nova população, evoluindo para a próxima geração de possíveis candidatas a solução.
-
-Para testar o funcionamento dessa implementação, foram alterados os valores das variáveis \textit{algorithm} (entre "ses" e "cmaes") e \textit{function} (entre as funções \textit{translated\underline{\space}sphere}, \textit{ackley}, \textit{schaffer2d}, \textit{rastrigin}) no arquivo \textit{test\underline{\space}evolution\underline{\space}strategy.py} do código base, gerando imagens dos resultados da otimização de cada uma dessas funções usando a estratégia evolutiva escolhida.
-
-Por fim, a fim de realizar o \textit{benchmark} através de simulações de Monte Carlo para comparar os desempenhos dessa estratégia evolutiva simples e do CMA-ES, foram alterados novamente os valores das variáveis \textit{algorithm} e \textit{function}, dessa vez no arquivo \textit{benchmark\underline{\space}evolution\underline{\space}strategy.py} do código base, gerando dessa vez os gráficos comparativos de rendimento para diferentes situações de SES e CMA-ES. Esses gráficos foram apresentados nas Figuras \ref{translated_sphere/mean_fitness} a \ref{rastrigin/best_fitness}.
+Já tendo ciência da correta implementação dos algoritmos de aprendizado, foi feito por fim um teste da segmentação de cores, executando o código do arquivo \textit{test\underline{\space}color\underline{\space}segmentation.py}, conforme indicado no roteiro \cite{roteiro}. Os gráficos de resultados tanto dessa segmentação de cores, quanto das funções anteriores, foram apresentados nas Figuras \ref{sum_gt_zero/cost_function_convergence} a \ref{color_segmentation/segmented_image}.
 
 \section{Resultados e Conclusões}
 
@@ -162,63 +154,63 @@ Vale reparar que os resultados de ambas implementações foram bastante equivale
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/cost_function_convergence.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{translated_sphere/ses}
+\label{sum_gt_zero/cost_function_convergence}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/dataset.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
-\label{translated_sphere/cmaes}
+\label{sum_gt_zero/dataset}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/neural_net_classification.png}}
 \caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{ackley/ses}
+\label{sum_gt_zero/neural_net_classification}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/xor/cost_function_convergence.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{translated_sphere/ses}
+\label{xor/cost_function_convergence}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/xor/dataset.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
-\label{translated_sphere/cmaes}
+\label{xor/dataset}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/xor/neural_net_classification.png}}
 \caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{ackley/ses}
+\label{xor/neural_net_classification}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/cost_function_convergence_segmentation.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{translated_sphere/ses}
+\label{color_segmentation/cost_function_convergence_segmentation}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/original_image.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
-\label{translated_sphere/cmaes}
+\label{color_segmentation/original_image}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/segmented_image.png}}
 \caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{ackley/ses}
+\label{color_segmentation/segmented_image}
 \end{figure} 
 
 \subsection{Benchmark das Estratégias Evolutivas}
