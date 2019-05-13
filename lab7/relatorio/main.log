@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  13 MAY 2019 15:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  13 MAY 2019 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1129,125 +1129,98 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 147.
 
-LaTeX Warning: Citation `b1' on page 2 undefined on input line 149.
-
-
-LaTeX Warning: Reference `translated_sphere/ses' on page 2 undefined on input l
-ine 149.
-
-
-LaTeX Warning: Reference `rastrigin/cmaes' on page 2 undefined on input line 14
-9.
-
-
-<imagens/sum_gt_zero/cost_function_convergence.png, id=71, 462.528pt x 346.896p
+<imagens/sum_gt_zero/cost_function_convergence.png, id=80, 462.528pt x 346.896p
 t>
 File: imagens/sum_gt_zero/cost_function_convergence.png Graphic file (type png)
 
  <use imagens/sum_gt_zero/cost_function_convergence.png>
 Package pdftex.def Info: imagens/sum_gt_zero/cost_function_convergence.png used
- on input line 155.
+ on input line 157.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sum_gt_zero/dataset.png, id=73, 462.528pt x 346.896pt>
+<imagens/sum_gt_zero/dataset.png, id=82, 462.528pt x 346.896pt>
 File: imagens/sum_gt_zero/dataset.png Graphic file (type png)
 
 <use imagens/sum_gt_zero/dataset.png>
-Package pdftex.def Info: imagens/sum_gt_zero/dataset.png used on input line 162
+Package pdftex.def Info: imagens/sum_gt_zero/dataset.png used on input line 164
 .
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sum_gt_zero/neural_net_classification.png, id=74, 462.528pt x 346.896p
+<imagens/sum_gt_zero/neural_net_classification.png, id=83, 462.528pt x 346.896p
 t>
 File: imagens/sum_gt_zero/neural_net_classification.png Graphic file (type png)
 
  <use imagens/sum_gt_zero/neural_net_classification.png>
 Package pdftex.def Info: imagens/sum_gt_zero/neural_net_classification.png used
- on input line 169.
+ on input line 171.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/cost_function_convergence.png, id=75, 462.528pt x 346.896pt>
+<imagens/xor/cost_function_convergence.png, id=84, 462.528pt x 346.896pt>
 File: imagens/xor/cost_function_convergence.png Graphic file (type png)
 
 <use imagens/xor/cost_function_convergence.png>
 Package pdftex.def Info: imagens/xor/cost_function_convergence.png used on inpu
-t line 176.
+t line 178.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/dataset.png, id=76, 462.528pt x 346.896pt>
+<imagens/xor/dataset.png, id=85, 462.528pt x 346.896pt>
 File: imagens/xor/dataset.png Graphic file (type png)
 
 <use imagens/xor/dataset.png>
-Package pdftex.def Info: imagens/xor/dataset.png used on input line 183.
+Package pdftex.def Info: imagens/xor/dataset.png used on input line 185.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/neural_net_classification.png, id=77, 462.528pt x 346.896pt>
+<imagens/xor/neural_net_classification.png, id=86, 462.528pt x 346.896pt>
 File: imagens/xor/neural_net_classification.png Graphic file (type png)
 
 <use imagens/xor/neural_net_classification.png>
 Package pdftex.def Info: imagens/xor/neural_net_classification.png used on inpu
-t line 190.
+t line 192.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 197.
 
-<imagens/color_segmentation/cost_function_convergence_segmentation.png, id=78, 
+<imagens/color_segmentation/cost_function_convergence_segmentation.png, id=90, 
 462.528pt x 346.896pt>
 File: imagens/color_segmentation/cost_function_convergence_segmentation.png Gra
 phic file (type png)
 
 <use imagens/color_segmentation/cost_function_convergence_segmentation.png>
 Package pdftex.def Info: imagens/color_segmentation/cost_function_convergence_s
-egmentation.png used on input line 197.
+egmentation.png used on input line 203.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/color_segmentation/original_image.png, id=79, 462.528pt x 346.896pt>
+<imagens/color_segmentation/original_image.png, id=91, 462.528pt x 346.896pt>
 File: imagens/color_segmentation/original_image.png Graphic file (type png)
 
 <use imagens/color_segmentation/original_image.png>
 Package pdftex.def Info: imagens/color_segmentation/original_image.png used on 
-input line 204.
+input line 210.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/color_segmentation/segmented_image.png, id=80, 462.528pt x 346.896pt>
+<imagens/color_segmentation/segmented_image.png, id=92, 462.528pt x 346.896pt>
 File: imagens/color_segmentation/segmented_image.png Graphic file (type png)
 
 <use imagens/color_segmentation/segmented_image.png>
 Package pdftex.def Info: imagens/color_segmentation/segmented_image.png used on
- input line 211.
+ input line 217.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 216.
-
-
-LaTeX Warning: Reference `translated_sphere/ses' on page 2 undefined on input l
-ine 218.
-
-
-LaTeX Warning: Reference `rastrigin/cmaes' on page 2 undefined on input line 21
-8.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 219.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 219.
-[2 <./imagens/sum_gt_zero/cost_function_convergence.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 219.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 219.
- [3 <./imagens/sum_gt_zero/dataset.png> <./imagens/sum_gt_zero/neural_net_class
-ification.png> <./imagens/xor/cost_function_convergence.png> <./imagens/xor/dat
-aset.png> <./imagens/xor/neural_net_classification.png> <./imagens/color_segmen
-tation/cost_function_convergence_segmentation.png>]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 222.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
+(babel)             in language  on input line 224.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 226.
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 226.
+ [2]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 226.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 226.
+ [3 <./imagens/sum_gt_zero/cost_function_convergence.png> <./imagens/sum_gt_zer
+o/dataset.png> <./imagens/sum_gt_zero/neural_net_classification.png> <./imagens
+/xor/cost_function_convergence.png> <./imagens/xor/dataset.png> <./imagens/xor/
+neural_net_classification.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 \T1/ptm/m/n/8 https://towardsdatascience.com/neural-net-from-scratch-using-nump
 y-
  []
@@ -1263,33 +1236,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 233.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 235.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 235.
-[4 <./imagens/color_segmentation/original_image.png> <./imagens/color_segmentat
-ion/segmented_image.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
+(babel)             in language  on input line 233.
+[4 <./imagens/color_segmentation/cost_function_convergence_segmentation.png> <.
+/imagens/color_segmentation/original_image.png> <./imagens/color_segmentation/s
+egmented_image.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 233.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 233.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 233.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FD0D8BA383389A1BF4E13A6C8E87D9B4;401.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
+(rerunfilecheck)             Checksum: 04418690190228E6971F777224138348;400.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 233.
  ) 
 Here is how much of TeX's memory you used:
- 10957 strings out of 493029
- 155647 string characters out of 6136235
+ 10930 strings out of 493029
+ 155254 string characters out of 6136235
  312579 words of memory out of 5000000
- 14259 multiletter control sequences out of 15000+600000
- 110580 words of font info for 126 fonts, out of 8000000 for 9000
+ 14237 multiletter control sequences out of 15000+600000
+ 109159 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,8n,40p,653b,1860s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,8n,40p,756b,1860s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1299,10 +1269,10 @@ rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 591333 bytes).
+Output written on main.pdf (4 pages, 588639 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
+ 194 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
  60 named destinations out of 1000 (max. 500000)
  104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

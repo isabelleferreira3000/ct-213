@@ -138,17 +138,19 @@ Já na implementação de \textit{back\underline{\space}propagation()}, também 
 
 Finalmente, para implementar a função \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()}, também foi feito de forma bastante semelhante ao apresentado na Introdução, com o detalhe de usar \textit{numpy.multiply} para multiplicar termo a termo os vetores referentes aos pesos e a derivada da função de ativação.
 
-Para testar o funcionamento dessas implementações, foi inicialmente alterado o valor da variável \textit{classification\underline{\space}function} (entre "sum\underline{\space}gt\underline{\space}zero" no arquivo \textit{test\underline{\space}neural\underline{\space}network.py} do código base, gerando imagens dos resultados da classificação de cada \textit{dataset} para cada uma dessas funções (função "soma maior que zero" e função "xor") usando rede neural.
+Para testar o funcionamento dessas implementações, foi inicialmente alterado o valor da variável \textit{classification\underline{\space}function} (entre "sum\underline{\space}gt\underline{\space}zero" no arquivo \textit{test\underline{\space}neural\underline{\space}network.py} do código base, gerando imagens dos resultados da classificação de cada \textit{dataset} para cada uma dessas funções (função "soma $>$ 0" e função "xor") usando rede neural.
 
 Já tendo ciência da correta implementação dos algoritmos de aprendizado, foi feito por fim um teste da segmentação de cores, executando o código do arquivo \textit{test\underline{\space}color\underline{\space}segmentation.py}, conforme indicado no roteiro \cite{roteiro}. Os gráficos de resultados tanto dessa segmentação de cores, quanto das funções anteriores, foram apresentados nas Figuras \ref{sum_gt_zero/cost_function_convergence} a \ref{color_segmentation/segmented_image}.
 
 \section{Resultados e Conclusões}
 
-\subsection{Teste das Estratégias Evolutivas}
+\subsection{Teste das Funções soma > 0 e xor}
 
-A otimização para testar a implementação foi executada para as quatro funções evolutivas já citadas na seção anterior, cuja equação matemática se encontra no roteiro do laboratório \cite{b1}. Os resultados dessas execuções foram satisfatórios e saíram conforme o esperado, comprovando o correto funcionamento da implementação e a validade da utilização das estratégias evolutivos na otimização de funções. Esses resultados foram apresentados nas Figuras de \ref{translated_sphere/ses} a \ref{rastrigin/cmaes}.
+O aprendizado com a rede neural foi executado para as duas funções já citadas na seção anterior. Os resultados dessas execuções foram satisfatórios e saíram conforme o esperado, comprovando o correto funcionamento da implementação e a validade da utilização de rede neural com aprendizado supervisionado no aprendizado dessas funções. Esses resultados foram apresentados nas Figuras de \ref{sum_gt_zero/cost_function_convergence} a \ref{xor/neural_net_classification}.
 
-Vale reparar que os resultados de ambas implementações foram bastante equivalentes, com exceção do caso da função Rastrigin, no qual cada algoritmo convergiu em míminos locais diferentes.
+Vale reparar que, nas Figuras \ref{sum_gt_zero/cost_function_convergence} e \ref{xor/cost_function_convergence}, os custos não são sempre decrescentes com o passar das iterações. Isso, entretanto, não configura erro, uma vez que os ruídos nos \textit{dataset} acabam interferindo durante o aprendizado. O resultado continua correto uma vez que a tendência geral é a diminuição desse custo, até a convergência. O mesmo vale, inclusive, para o gráfico da Figura \ref{color_segmentation/cost_function_convergence_segmentation}, que será melhor discutido na subseção seguinte.
+
+A comparação entre as Figuras \ref{sum_gt_zero/dataset} e \ref{sum_gt_zero/neural_net_classification} e entre as Figuras \ref{xor/dataset} e \ref{xor/neural_net_classification} demonstra que a classificação do \textit{dataset} aconteceu de maneira satisfatória.
 
 \begin{figure}[htbp]
 \centering
@@ -192,6 +194,10 @@ Vale reparar que os resultados de ambas implementações foram bastante equivale
 \label{xor/neural_net_classification}
 \end{figure} 
 
+\subsection{Teste da segmentação de cores}
+
+O custo na Figura \ref{color_segmentation/cost_function_convergence_segmentation} segue a tendência geral de diminuição e convergência com o passar das iterações, apesar de alguns picos já explicados na subseção anterior. Esse resultado é satisfatório e pode ser melhor observado na comparação entre as Figuras \ref{color_segmentation/original_image} e \ref{color_segmentation/segmented_image}, que demonstra que a rede neural realmente conseguiu aprender a classificar as cores verdes e branco com considerável acerto. Vale notar também as cores não identificadas, como a bola laranja, que foi deixada como preta (cor representativa de impossibilidade de identificar).
+
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/cost_function_convergence_segmentation.png}}
@@ -213,15 +219,7 @@ Vale reparar que os resultados de ambas implementações foram bastante equivale
 \label{color_segmentation/segmented_image}
 \end{figure} 
 
-\subsection{Benchmark das Estratégias Evolutivas}
-
-A otimização para realizar o \textit{benchmark} do desempenho de cada um dos métodos evolutivos estudados (SES e CMA-ES) para diferentes funções e parâmetros foi executada para as quatro funções evolutivas já citadas. Os resultados dessas execuções demonstraram comportamentos coerentes e foram apresentados nas Figuras de \ref{translated_sphere/ses} a \ref{rastrigin/cmaes}.
-
-É possível salientar que, embora sempre tenha havido convergências após um número significativo de iterações, nem todas as convergências chegaram a mínimos locais, como por exemplo para a função da Esfera Transaladada, que só possui um mínimo local (que também é global), mas cada situação testada chegou a valores diferentes de \textit{fitness}.
-
-Além disso, notou-se que, para estratégias evolutivas mais simples, é necessário um número cada vez maior de elementos na população para que os resultados se tornem cada vez mais otimizados. Já para o algoritmo CMA-ES precisou de cerca de 1/4 de população para alcançar resultados similares aos do SES. Isso aconteceu para todos os casos com exceção à função Schaffer Nº 2, que estratégias mais simples e com menores populações se saíram melhor em desempenho do que CMA-ES.
-
-Tendo em vista o que foi apresentado, pode-se notar, por fim, que esses algoritmos realmente se demonstraram eficazes em encontrar parâmetros otimizados para uma determinada função.
+Tendo em vista o que foi apresentado, pode-se notar, por fim, que esses algoritmos realmente se demonstraram eficazes em encontrar os pesos e \textit{biases} dessa rede neural, além de demonstrar a capacidade de aprendizado de uma rede neural para esses problemas de classificação.
 
 \begin{thebibliography}{00}
 \bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 5 - Estratégias Evolutivas''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
