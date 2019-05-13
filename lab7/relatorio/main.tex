@@ -14,6 +14,7 @@
 \usepackage{color}
 \usepackage{float}
 \usepackage{multirow}
+\usepackage{hyperref}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -61,29 +62,69 @@ Redes neurais, segmentação de cores, \textit{Forward Propagation}, \textit{Bac
 \end{IEEEkeywords}
 
 \section{Introdução}
-Redes neurais são sistemas de computação que podem reconhecer padrões escondidos, agrupar dados e classificá-los, além de, com o tempo, aprender e melhorar continuamente.
+Redes neurais são sistemas de computação que podem reconhecer padrões escondidos, agrupar dados e classificá-los, além de, com o tempo, aprender e melhorar continuamente \cite{sas}.
+
+Uma rede neural é formada por camadas de neurônios artificiais (baseado no sistema nervoso humano e neurônios naturais), e eles são os responsáveis por realizar as contas que levam de uma entrada a uma saída esperada (para o caso de aprendizado supervisionado). A Figura \ref{rede_neural} apresenta um exemplo de rede neural com duas camadas (a camada de entrada geralmente não é considerada nesse tipo de contagem). É possível notar no exemplo que a camada 1 tem 3 neurônios e a camada 2 tem 1 neurônio. 
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.4]{imagens/rede_neural.png}}
-\caption{Exemplo de rede neural, com duas camadas (1 camada de entrada, 1 camada escondida e 1 camada de saída), como a trabalhada nesse laboratório. Essa imagem de exemplo foi apresentada no site \cite{b1}}.
-\label{translated_sphere/ses}
+\caption{Exemplo de rede neural, com duas camadas (1 camada de entrada, 1 camada escondida e 1 camada de saída), como a trabalhada nesse laboratório. Essa imagem de exemplo foi apresentada no site \cite{neural-net-np}}.
+\label{rede_neural}
 \end{figure}
 
-Dentre os mais diversos tipos de algoritmos de otimização, existem os métodos baseado em estratégias evolutivas, métodos esses inspirados na evolução natural das espécies. Esses métodos seguem a ideia de: dada uma população de possíveis soluções, aplica-se uma função para medir a qualidade dessas soluções candidatas. Essa qualidade quantitativa é chamade de \textit{fitness}. Com base no \textit{fitness}, é possível escolher as melhores soluções e, a partir delas, gerar mutações para se criar uma nova população. Esse processo é repetido até que a convergência chegue a um resultado satisfatório de otimização.
+Agora analizando um neurônio em particular, como o apresentado na Figura \ref{neuronio}, a conta realizada para o aprendizado é que se encontra no interior do círculo, ou seja: $g\left ( \sum w_j x_j + b \right ) = y$, no qual $w$ são os pesos; $b$, os bias; $x$, as entradas; e $g$, a função de ativação. O objetivo do treinamento é ajustar $w$ e $b$ para aproximar alguma função y(x) de acordo com os valores fornecidos como \textit{outputs} esperados.
 
-O pseudo-código geral de algortimos utilizando estratégias evolutivas pode ser visto a seguir. Em seguida, será apresentado como esse algoritmo foi implementado no contexto do laboratório.
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.4]{imagens/neuronio.png}}
+\caption{Exemplo de neurônio. Essa imagem de exemplo foi apresentada no roteiro \cite{roteiro}}.
+\label{neuronio}
+\end{figure}
+
+O processo de inferência é realizado por meio do cálculo da equação apresentada no círculo do neurônio da Figura \ref{neuronio}, em um algoritmo chamado \textit{Forward Propagation}. Já o processo de aprendizado é realizado pelo algoritmo de \textit{Back Propagation}, que calcula os pesos e \textit{biases} a partir das saídas esperadas e das decidas de gradientes calculados para esses pesos e \textit{bias}. Já esses gradientes são calculados por meio das saídas esperadas, as entradas iniciais e os resultados intermediários calculados por meio do \textit{Forward Propagation}. 
+
+Os pseudo-códigos geral dos algortimos \textit{Forward Propagation}, \textit{Back Propagation} e o cálculo das decidas de gradientes para pesos e \textit{biases} podem ser visto a seguir. Em seguida, será apresentado como esses algoritmos foram implementados no contexto do laboratório.
 
 \begin{lstlisting}
-def evolution_strategy(J, m0, C0, hyperparams):
-	mu, lambda = unwrap_hyperparams(hyperparams)
-	m, C = m0, C0
-	while not check_stopping_condition():
-		population = multivariate_normal(m, C, lambda)
-		population = sort_ascending(population, J)
-		parents = population[0:mu]
-		m = mean(parents)
-	return population[0]
+# Forward Propagation
+def forward_propagation(input):
+	z[1] = weights[1]input + biases[1]
+	a[1] = g[1](z[1])
+	z[2] = weights[2]a[1] + biases[2]
+	a[2] = g[2](z[2])
+	return z, a
+\end{lstlisting}
+
+\begin{lstlisting}
+# Gradients' Computation
+def compute_gradient_back_propagation(inputs, expected_outputs):
+	for i in range(len(inputs)):
+		input = inputs[i]
+		expected_output = expected_outputs[i]
+		
+		z, a = forward_propagation(input)
+
+		dz[2] = a[2] - expected_output
+		weights_gradient[2] += dz[2] a[1].T
+		biases_gradient[2] += dz[2]
+
+		dz[1] = weights[2].T dz[2] * sigmoid_derivative(z[1])
+		weights_gradient[1] += dz[1] input.T
+		biases_gradient[1] += dz[1]
+
+	return weights_gradient, biases_gradient
+\end{lstlisting}
+
+\begin{lstlisting}
+# Back Propagation
+def back_propagation(inputs, expected_outputs):
+	weights_gradient, biases_gradient = compute_gradient_back_propagation(inputs, expected_outputs)
+
+	weights[1] -= alpha * weights_gradient[1]
+	biases[1] -= alpha * biases_gradient[1]
+	weights[2] -= alpha * weights_gradient[2]
+	biases[2] -= alpha * biases_gradient[2]
 \end{lstlisting}
 
 No pseudocódigo acima, \textit{J} é a função para medir a qualidade das soluções candidatas; \textit{m0} e \textit{C0} são a média e a matriz de covariância iniciais da população que será gerada, respectivamente; \textit{m} e \textit{C} são, de forma análoga, a média e a matriz de covariância atuais da população que será gerada, respectivamente; e \textit{mu} é o tamanho da população considerada como "melhores soluções até então".
@@ -115,59 +156,66 @@ Vale reparar que os resultados de ambas implementações foram bastante equivale
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/ses.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/cost_function_convergence.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
 \label{translated_sphere/ses}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/cmaes.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/dataset.png}}
 \caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
 \label{translated_sphere/cmaes}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/ackley/ses.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/neural_net_classification.png}}
 \caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
 \label{ackley/ses}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/ackley/cmaes.png}}
-\caption{Otimização da função de Ackley usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
-\label{ackley/cmaes}
+\centerline{\includegraphics[scale=0.5]{imagens/xor/cost_function_convergence.png}}
+\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\label{translated_sphere/ses}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/ses.png}}
-\caption{Otimização da função de Schaffer Nº 2 usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{schaffer2d/ses}
+\centerline{\includegraphics[scale=0.5]{imagens/xor/dataset.png}}
+\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
+\label{translated_sphere/cmaes}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/xor/neural_net_classification.png}}
+\caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\label{ackley/ses}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/cmaes.png}}
-\caption{Otimização da função de Schaffer Nº 2 usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
-\label{schaffer2d/cmaes}
+\centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/cost_function_convergence_segmentation.png}}
+\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\label{translated_sphere/ses}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/ses.png}}
-\caption{Otimização da função Rastrigin (2D) usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
-\label{rastrigin/ses}
+\centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/original_image.png}}
+\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
+\label{translated_sphere/cmaes}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/segmented_image.png}}
+\caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\label{ackley/ses}
 \end{figure} 
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/cmaes.png}}
-\caption{Otimização da função Rastrigin (2D) usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
-\label{rastrigin/cmaes}
-\end{figure}
 
 \subsection{Benchmark das Estratégias Evolutivas}
 
@@ -177,66 +225,15 @@ A otimização para realizar o \textit{benchmark} do desempenho de cada um dos m
 
 Além disso, notou-se que, para estratégias evolutivas mais simples, é necessário um número cada vez maior de elementos na população para que os resultados se tornem cada vez mais otimizados. Já para o algoritmo CMA-ES precisou de cerca de 1/4 de população para alcançar resultados similares aos do SES. Isso aconteceu para todos os casos com exceção à função Schaffer Nº 2, que estratégias mais simples e com menores populações se saíram melhor em desempenho do que CMA-ES.
 
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/mean_fitness.png}}
-\caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Esfera Transladada.}
-\label{translated_sphere/mean_fitness}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/translated_sphere/best_fitness.png}}
-\caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Esfera Transladada.}
-\label{translated_sphere/best_fitness}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/ackley/mean_fitness.png}}
-\caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Ackley.}
-\label{ackley/mean_fitness}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/ackley/best_fitness.png}}
-\caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Ackley.}
-\label{ackley/best_fitness}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/mean_fitness.png}}
-\caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Schaffer Nº 2.}
-\label{schaffer2d/mean_fitness}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/schaffer2d/best_fitness.png}}
-\caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Schaffer Nº 2.}
-\label{schaffer2d/best_fitness}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/mean_fitness.png}}
-\caption{Evolução (e convergência) dos valores médios de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Rastrigin (2D).}
-\label{rastrigin/mean_fitness}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/rastrigin/best_fitness.png}}
-\caption{Evolução (e convergência) dos melhores valores de fitness das populações em cada iteração para diferentes métodos evolutivos e parâmetros para a função Rastrigin (2D).}
-\label{rastrigin/best_fitness}
-\end{figure}
-
 Tendo em vista o que foi apresentado, pode-se notar, por fim, que esses algoritmos realmente se demonstraram eficazes em encontrar parâmetros otimizados para uma determinada função.
 
 \begin{thebibliography}{00}
-\bibitem{b1} M. Maximo, ``Roteiro: Laboratório 5 - Estratégias Evolutivas''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+\bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 5 - Estratégias Evolutivas''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+
+\bibitem{neural-net-np} Towards Data Science, "Neural Net from scratch". Acessado em https://towardsdatascience.com/neural-net-from-scratch-using-numpy-71a31f6e3675.
+
+\bibitem{sas} SAS, "Redes Neurais: O que são e qual a sua importância?". Acessado em https://www.sas.com/pt\underline{\space}br/insights/analytics/neural-networks.html.
+
 \end{thebibliography}
 
 \end{document}
