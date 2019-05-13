@@ -148,74 +148,74 @@ Já tendo ciência da correta implementação dos algoritmos de aprendizado, foi
 
 O aprendizado com a rede neural foi executado para as duas funções já citadas na seção anterior. Os resultados dessas execuções foram satisfatórios e saíram conforme o esperado, comprovando o correto funcionamento da implementação e a validade da utilização de rede neural com aprendizado supervisionado no aprendizado dessas funções. Esses resultados foram apresentados nas Figuras de \ref{sum_gt_zero/cost_function_convergence} a \ref{xor/neural_net_classification}.
 
-Vale reparar que, nas Figuras \ref{sum_gt_zero/cost_function_convergence} e \ref{xor/cost_function_convergence}, os custos não são sempre decrescentes com o passar das iterações. Isso, entretanto, não configura erro, uma vez que os ruídos nos \textit{dataset} acabam interferindo durante o aprendizado. O resultado continua correto uma vez que a tendência geral é a diminuição desse custo, até a convergência. O mesmo vale, inclusive, para o gráfico da Figura \ref{color_segmentation/cost_function_convergence_segmentation}, que será melhor discutido na subseção seguinte.
+Vale reparar que, nas Figuras \ref{sum_gt_zero/cost_function_convergence} e \ref{xor/cost_function_convergence}, os custos não são sempre decrescentes com o passar das épocas. Isso, entretanto, não configura erro, uma vez que os ruídos nos \textit{dataset} acabam interferindo durante o aprendizado. O resultado continua correto uma vez que a tendência geral é a diminuição desse custo, até a convergência. O mesmo vale, inclusive, para o gráfico da Figura \ref{color_segmentation/cost_function_convergence_segmentation}, que será melhor discutido na subseção seguinte.
 
 A comparação entre as Figuras \ref{sum_gt_zero/dataset} e \ref{sum_gt_zero/neural_net_classification} e entre as Figuras \ref{xor/dataset} e \ref{xor/neural_net_classification} demonstra que a classificação do \textit{dataset} aconteceu de maneira satisfatória.
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/cost_function_convergence.png}}
-\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\caption{Convergência da função de custo para a função \textit{soma > 0}.}
 \label{sum_gt_zero/cost_function_convergence}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/dataset.png}}
-\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
+\caption{\textit{Dataset} utilizado para o aprendizado da função \textit{soma > 0}.}
 \label{sum_gt_zero/dataset}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/neural_net_classification.png}}
-\caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\caption{Resultado da classificação por rede neural para a função \textit{soma > 0}.}
 \label{sum_gt_zero/neural_net_classification}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/xor/cost_function_convergence.png}}
-\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\caption{Convergência da função de custo para a função \textit{xor}.}
 \label{xor/cost_function_convergence}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/xor/dataset.png}}
-\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
+\caption{\textit{Dataset} utilizado para o aprendizado da função \textit{xor}.}
 \label{xor/dataset}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/xor/neural_net_classification.png}}
-\caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\caption{Resultado da classificação por rede neural para a função \textit{xor}.}
 \label{xor/neural_net_classification}
 \end{figure} 
 
 \subsection{Teste da segmentação de cores}
 
-O custo na Figura \ref{color_segmentation/cost_function_convergence_segmentation} segue a tendência geral de diminuição e convergência com o passar das iterações, apesar de alguns picos já explicados na subseção anterior. Esse resultado é satisfatório e pode ser melhor observado na comparação entre as Figuras \ref{color_segmentation/original_image} e \ref{color_segmentation/segmented_image}, que demonstra que a rede neural realmente conseguiu aprender a classificar as cores verdes e branco com considerável acerto. Vale notar também as cores não identificadas, como a bola laranja, que foi deixada como preta (cor representativa de impossibilidade de identificar).
+O custo na Figura \ref{color_segmentation/cost_function_convergence_segmentation} segue a tendência geral de diminuição e convergência com o passar das épocas, apesar de alguns picos já explicados na subseção anterior. Esse resultado é satisfatório e pode ser melhor observado na comparação entre as Figuras \ref{color_segmentation/original_image} e \ref{color_segmentation/segmented_image}, que demonstra que a rede neural realmente conseguiu aprender a classificar as cores verdes e branco com considerável acerto. Vale notar também as cores não identificadas, como a bola laranja, que foi deixada como preta (cor representativa de impossibilidade de identificar).
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/cost_function_convergence_segmentation.png}}
-\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\caption{Convergência da função de custo para a segmentação de cores.}
 \label{color_segmentation/cost_function_convergence_segmentation}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/original_image.png}}
-\caption{Otimização da função de Esfera Transladada usando a estratégia evolutiva CMA-ES. O resultado encontrado é o ponto vermelho.}
+\caption{Imagem original a ter cores segmentadas pela rede neural.}
 \label{color_segmentation/original_image}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/color_segmentation/segmented_image.png}}
-\caption{Otimização da função de Ackley usando a estratégia evolutiva SES. O resultado encontrado é o ponto vermelho.}
+\caption{Imagem já com as cores segmentadas pela rede neural.}
 \label{color_segmentation/segmented_image}
 \end{figure} 
 
