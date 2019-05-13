@@ -48,16 +48,18 @@ class NeuralNetwork:
         a = [None] * 3
         z[0] = input
         a[0] = input
+
         # Add logic for neural network inference
-        # z[1] = W[1]*x + b[1]
-        z[1] = self.weights[1]*input + self.biases[1]
+        # z[1] = W[1] x + b[1]
         # a[1] = g[1](z[1])
-        a[1] = sigmoid(z[1])
-        # z[2] = W[2] * a[1] + b[2]
-        z[2] = self.weights[2] * a[1] + self.biases[2]
+        # z[2] = W[2] a[1] + b[2]
         # y = a[2] = g[2](z[2])
+
+        z[1] = self.weights[1] * input + self.biases[1]
+        a[1] = sigmoid(z[1])
+        z[2] = self.weights[2] * a[1] + self.biases[2]
         a[2] = sigmoid(z[2])
-        # a[2] = 0.001 * np.ones((self.num_outputs, 1))  # Change this line
+
         return z, a
 
     def compute_cost(self, inputs, expected_outputs):
@@ -104,39 +106,24 @@ class NeuralNetwork:
         weights_gradient[2] = np.zeros((self.num_outputs, self.num_hiddens))
         biases_gradient[1] = np.zeros((self.num_hiddens, 1))
         biases_gradient[2] = np.zeros((self.num_outputs, 1))
+
         # Add logic to compute the gradients
         for i in range(len(inputs)):
             z, a = self.forward_propagation(inputs[i])
 
             # dz[2] = a[2] - y
-            # dW[2] = dz[2] * a[1].T
+            # dW[2] = dz[2] a[1].T
             # db[2] = dz[2]
-            # dz[1] = W[2].T * dz[2] * g[1]'(z[1])
-            # dW[1] = dz[1] * x.T
+            # dz[1] = W[2].T dz[2] * g[1]'(z[1])
+            # dW[1] = dz[1] x.T
             # db[1] = dz[1]
 
             dz2 = np.matrix(a[2] - expected_outputs[i])
-            # print("shape of weights_gradient[2]: " + str(weights_gradient[2].shape))  # (1, 10)
-            # print("shape of biases_gradient[2]: " + str(biases_gradient[2].shape))  # (1, 1)
-            # print("shape of dz[2]: " + str(dz[2].shape))  # (1, 1)
-            # print("shape of a[1].T: " + str(a[1].T.shape))  # (1, 10)
-
             weights_gradient[2] += dz2 * a[1].T
-
             biases_gradient[2] += dz2
-            # print("shape of self.weights[2].T: " + str(self.weights[2].T.shape))  # (10, 1)
-            # print("shape of sigmoid_derivative(z[1]): " + str(sigmoid_derivative(z[1]).shape))  # (10, 1)
-            #
-            # print("shape of weights_gradient[1]: " + str(weights_gradient[1].shape))  # (10, 2)
-            # print("shape of biases_gradient[1]: " + str(biases_gradient[1].shape))  # (10, 1)
-            # print("shape of inputs[1].T: " + str(inputs[1].T.shape))  # (1, 2)
 
             dz1 = np.matrix(np.multiply(self.weights[2].T * dz2, sigmoid_derivative(z[1])))
-
-            # print("shape of dz[1]: " + str(dz[1].shape))  # must to be (10, 1)
-
             weights_gradient[1] += dz1 * inputs[i].T
-
             biases_gradient[1] += dz1
 
         return weights_gradient, biases_gradient
@@ -150,8 +137,9 @@ class NeuralNetwork:
         :param expected_outputs: expected outputs of the network.
         :type expected_outputs: list of numpy matrices.
         """
-        weights_gradient, biases_gradient = self.compute_gradient_back_propagation(inputs, expected_outputs)
         # Add logic to update the weights and biases
+        weights_gradient, biases_gradient = self.compute_gradient_back_propagation(inputs, expected_outputs)
+
         # W1 = W1 - learning_rate * dW1
         # b1 = b1 - learning_rate * db1
         # W2 = W2 - learning_rate * dW2
