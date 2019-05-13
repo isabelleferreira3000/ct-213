@@ -109,7 +109,7 @@ def compute_gradient_back_propagation(inputs, expected_outputs):
 		weights_gradient[2] += dz[2] a[1].T
 		biases_gradient[2] += dz[2]
 
-		dz[1] = weights[2].T dz[2] * sigmoid_derivative(z[1])
+		dz[1] = weights[2].T dz[2] * g[1]'(z[1])
 		weights_gradient[1] += dz[1] input.T
 		biases_gradient[1] += dz[1]
 
@@ -130,7 +130,11 @@ def back_propagation(inputs, expected_outputs):
 No pseudocódigo acima, \textit{J} é a função para medir a qualidade das soluções candidatas; \textit{m0} e \textit{C0} são a média e a matriz de covariância iniciais da população que será gerada, respectivamente; \textit{m} e \textit{C} são, de forma análoga, a média e a matriz de covariância atuais da população que será gerada, respectivamente; e \textit{mu} é o tamanho da população considerada como "melhores soluções até então".
 
 \section{Implementação do algoritmo}
-Na parte relativa a implementação do algoritmo utilizando uma simples estratégia evolutiva (SES, do inglês \textit{Simple Evolution Strategy}), era necessário preencher a função \textit{tell()} da classe \textit{SimpleEvolutionStrategy}. Recebendo os valores de \textit{fitness} encontrados na população anterior, essa função era a responsável por atualizar a média e a matriz de covariância utilizando os melhores avaliados na antiga população e também evoluir a própria população a cada iteração. Essa função a se completar estava no código base fornecido \cite{b1}.  
+Para a implementação da rede neural, era necessário preencher a função \textit{forward\underline{\space}propagation()}, \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()} e \textit{back\underline{\space}propagation()} da classe \textit{NeuralNetwork}. Essas funções a se completar estavam no código base fornecido \cite{roteiro}.  
+
+Recebendo os valores de \textit{input}, a função \textit{forward\underline{\space}propagation()} foi implementada conforme apresentado no pseudo-código da Introdução, com o detalhe que a função de ativação $g$ de todos os neurônios utilizada foi a \textit{sigmoid}. Além disso, tanto a função \textit{sigmoid} quanto sua derivada já eram fornecidos pelo código base. 
+
+Já na implementação de \textit{back\underline{\space}propagation()}, também foi implementado conforme o sugerido no pseudo-código da Introdução, ou seja, atualizando os valores de pesos e \textit{biases} subtraindo de seu valor um fator de aprendizado \textit{alpha} vezes os gradientes de pesos e \textit{biases}, respectivamente. Esses valores de gradientes são aqueles calculados em \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()}, supondo que já foi corretamente implementado. Foi utilizado para \textit{alpha} o mesmo que o sugerido pelo código base. 
 
 Além disso, era necessário comparar os desempenhos desse algoritmo SES com o algoritmo CMA-ES, já fornecido no código base, aplicando-os na otimização de quatro funções, a se saber: esfera transladada, e as fuções de Ackley, Schaffer 2 e Rastrigin 2D.
 
