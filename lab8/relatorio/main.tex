@@ -142,12 +142,6 @@ Analisando os resultados, é possível notar que em todas as situações (com e 
 
 A questão da convergência da função de custo também pode ser comparada. Para os casos com regularização, a convergência se deu bem antes em número de épocas. Isso pode ser observado nas Figuras \ref{sum_gt_zero/lambda_zero/convergence_sgz} e \ref{sum_gt_zero/convergence_sgz}, para "soma maior que zero" e nas Figuras \ref{xor/lambda_zero/convergence_xor} e \ref{xor/convergence_xor} para "xor". 
 
-O aprendizado com a rede neural foi executado para as duas funções já citadas na seção anterior. Os resultados dessas execuções foram satisfatórios e saíram conforme o esperado, comprovando o correto funcionamento da implementação e a validade da utilização de rede neural com aprendizado supervisionado no aprendizado dessas funções. Esses resultados foram apresentados nas Figuras de \ref{sum_gt_zero/cost_function_convergence} a \ref{xor/neural_net_classification}.
-
-Vale reparar que, nas Figuras \ref{sum_gt_zero/cost_function_convergence} e \ref{xor/cost_function_convergence}, os custos não são sempre decrescentes com o passar das épocas. Isso, entretanto, não configura erro, uma vez que os ruídos nos \textit{dataset} acabam interferindo durante o aprendizado. O resultado continua correto uma vez que a tendência geral é a diminuição desse custo, até a convergência. O mesmo vale, inclusive, para o gráfico da Figura \ref{color_segmentation/cost_function_convergence_segmentation}, que será melhor discutido na subseção seguinte.
-
-A comparação entre as Figuras \ref{sum_gt_zero/dataset} e \ref{sum_gt_zero/neural_net_classification} e entre as Figuras \ref{xor/dataset} e \ref{xor/neural_net_classification} demonstra que a classificação do \textit{dataset} aconteceu de maneira satisfatória.
-
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/lambda_zero/dataset_sgz.png}}
@@ -218,19 +212,48 @@ A comparação entre as Figuras \ref{sum_gt_zero/dataset} e \ref{sum_gt_zero/neu
 \label{xor/nn_classification_xor}
 \end{figure}
 
-\subsection{Teste da segmentação de cores}
+\subsection{Imitation Learning}
+Após a implementação da rede neural com Keras conforme o explicado na seção Implementação, os resultados obtidos estão apresentados nas Figuras de \ref{imitation_learning/rightAnklePitch} a \ref{imitation_learning/rightKneePitch}. A comparação entre os gráficos de azul (curva original) e laranja (função aprendida por rede neural) dessas figuras demonstra que a implementação aconteceu de maneira satisfatória, uma vez que as funções ficaram bastante semelhantes.
 
-O custo na Figura \ref{color_segmentation/cost_function_convergence_segmentation} segue a tendência geral de diminuição e convergência com o passar das épocas, apesar de alguns picos já explicados na subseção anterior. Esse resultado é satisfatório e pode ser melhor observado na comparação entre as Figuras \ref{color_segmentation/original_image} e \ref{color_segmentation/segmented_image}, que demonstra que a rede neural realmente conseguiu aprender a classificar as cores verdes e branco com considerável acerto. Vale notar também as cores não identificadas, como a bola laranja, que foi deixada como preta (cor representativa de impossibilidade de identificar).
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightAnklePitch.png}}
+\caption{Resultado da classificação por rede neural para a função \textit{soma > 0}.}
+\label{imitation_learning/rightAnklePitch}
+\end{figure} 
 
-Tendo em vista o que foi apresentado, pode-se notar, por fim, que esses algoritmos realmente se demonstraram eficazes em encontrar os pesos e \textit{biases} dessa rede neural, além de demonstrar a capacidade de aprendizado de uma rede neural para esses problemas de classificação.
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightAnkleRoll.png}}
+\caption{\textit{Dataset} utilizado para o aprendizado da função \textit{soma > 0}.}
+\label{imitation_learning/rightAnkleRoll}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightHipPitch.png}}
+\caption{Convergência da função de custo para a função \textit{xor}.}
+\label{imitation_learning/rightHipPitch}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightHipRoll.png}}
+\caption{Imagem original a ter cores segmentadas pela rede neural.}
+\label{imitation_learning/rightHipRoll}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightKneePitch.png}}
+\caption{Imagem já com as cores segmentadas pela rede neural.}
+\label{imitation_learning/rightKneePitch}
+\end{figure}
+
+Tendo em vista o que foi apresentado, pode-se notar, por fim, que algoritmos de \textit{Deep leaning} e o \textit{framework} Keras realmente se demonstraram eficazes em realizar aprendizado por imitação.
 
 \begin{thebibliography}{00}
-\bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 5 - Estratégias Evolutivas''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
-
-\bibitem{neural-net-np} Towards Data Science, "Neural Net from scratch". Acessado em https://towardsdatascience.com/neural-net-from-scratch-using-numpy-71a31f6e3675.
-
-\bibitem{sas} SAS, "Redes Neurais: O que são e qual a sua importância?". Acessado em https://www.sas.com/pt\underline{\space}br/insights/analytics/neural-networks.html.
-
+\bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 8 - Imitation Learning com Keras''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 \end{thebibliography}
 
 \end{document}
