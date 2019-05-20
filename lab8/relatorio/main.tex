@@ -130,7 +130,17 @@ Por fim, para treinar, o tamanho do \textit{batch} foi o tamanho total de entrad
 
 \section{Resultados e Conclusões}
 
-\subsection{Teste das Funções soma > 0 e xor}
+\subsection{Estudo de implementação de Rede Neural com Keras}
+O código do arquivo \textit{test\underline{\space}keras.py} foi estudado para se entender a utilização do \textit{framework} Keras na implementação de redes neurais. O que foi aprendido resultou no texto escrito na Introdução.
+
+\subsection{Análise do efeito de Regularização}
+Esse arquivo \textit{test\underline{\space}keras.py} continha a implentação do aprendizado das funções "soma maior que zero" e "xor" para diferentes valores de regularização.
+
+Após a execução desse arquivo, obteve-se os resultados apresentados nas Figuras de \ref{sum_gt_zero/lambda_zero/dataset_sgz} a \ref{xor/nn_classification_xor}, sendo as Figuras \ref{sum_gt_zero/lambda_zero/dataset_sgz} e \ref{xor/lambda_zero/dataset_xor} os \textit{dataset} utilizados para as funções "soma maior que zero" e "xor", respectivamente.
+
+Analisando os resultados, é possível notar que em todas as situações (com e sem regularização, e para as duas funções) a rede obtive uma classificação satisfatória. A classificação com regularização, entretando, apresentou-se muito mais acertiva, conforme se pode observar pelas comparação das Figuras \ref{sum_gt_zero/lambda_zero/nn_classification_sgz} e \ref{sum_gt_zero/nn_classification_sgz} para "soma maior que zero" e \ref{xor/lambda_zero/nn_classification_xor} e \ref{xor/nn_classification_xor} para "xor". 
+
+A questão da convergência da função de custo também pode ser comparada. Para os casos com regularização, a convergência se deu bem antes em número de épocas. Isso pode ser observado nas Figuras \ref{sum_gt_zero/lambda_zero/convergence_sgz} e \ref{sum_gt_zero/convergence_sgz}, para "soma maior que zero" e nas Figuras \ref{xor/lambda_zero/convergence_xor} e \ref{xor/convergence_xor} para "xor". 
 
 O aprendizado com a rede neural foi executado para as duas funções já citadas na seção anterior. Os resultados dessas execuções foram satisfatórios e saíram conforme o esperado, comprovando o correto funcionamento da implementação e a validade da utilização de rede neural com aprendizado supervisionado no aprendizado dessas funções. Esses resultados foram apresentados nas Figuras de \ref{sum_gt_zero/cost_function_convergence} a \ref{xor/neural_net_classification}.
 
