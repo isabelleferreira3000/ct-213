@@ -62,15 +62,11 @@ Esse relatório documenta a cópia de um movimento de caminhada de um robô huma
 \end{IEEEkeywords}
 
 \section{Introdução}
-Redes neurais são sistemas de computação que podem reconhecer padrões escondidos, agrupar dados e classificá-los, além de, com o tempo, aprender e melhorar continuamente \cite{sas}.
+\textit{Deep learning} é um tipo de aprendizado de máquina que treina para aprender através do reconhecimento de padrões em várias camadas de processamento. Entre as tarefas possíveis realizáveis estão o reconhecimento de fala, identificação de imagem e previsões, entre outras tarefas realizadas por seres humanos. 
 
-Uma rede neural é formada por camadas de neurônios artificiais (baseado no sistema nervoso humano e neurônios naturais), e eles são os responsáveis por realizar as contas que levam de uma entrada a uma saída esperada (para o caso de aprendizado supervisionado). A Figura \ref{rede_neural} apresenta um exemplo de rede neural com duas camadas (a camada de entrada geralmente não é considerada nesse tipo de contagem). É possível notar no exemplo que a camada 1 tem 3 neurônios e a camada 2 tem 1 neurônio. 
+Esse tipo de estratégia possibilita, também, aprender por imitação. Assim, o comportamento desejado (uma política de controle, por exemplo) é copiado usando aprendizado supervisionado.
 
-Agora analizando um neurônio em particular, como o apresentado na Figura \ref{neuronio}, a conta realizada para o aprendizado é que se encontra no interior do círculo, ou seja: $g\left ( \sum w_j x_j + b \right ) = y$, no qual $w$ são os pesos; $b$, os bias; $x$, as entradas; e $g$, a função de ativação. O objetivo do treinamento é ajustar $w$ e $b$ para aproximar alguma função y(x) de acordo com os valores fornecidos como \textit{outputs} esperados.
-
-O processo de inferência é realizado por meio do cálculo da equação apresentada no círculo do neurônio da Figura \ref{neuronio}, em um algoritmo chamado \textit{Forward Propagation}. Já o processo de aprendizado é realizado pelo algoritmo de \textit{Back Propagation}, que calcula os pesos e \textit{biases} a partir das saídas esperadas e das decidas de gradientes calculados para esses pesos e \textit{bias}. Já esses gradientes são calculados por meio das saídas esperadas, as entradas iniciais e os resultados intermediários calculados por meio do \textit{Forward Propagation}. 
-
-Os pseudo-códigos geral dos algortimos \textit{Forward Propagation}, \textit{Back Propagation} e o cálculo das decidas de gradientes para pesos e \textit{biases} podem ser visto a seguir. Em seguida, será apresentado como esses algoritmos foram implementados no contexto do laboratório.
+O \textit{framework} Keras facilita o uso do \textit{framework} Tensorflow para problemas de \textit{Deep learning}, transformando a implementação, treino e resultado da rede neural em chamadas de API. Os pseudo-códigos dessas chamadas podem ser vistos a seguir. Em seguida, será apresentado como isso foi implementado no contexto do laboratório.
 
 \begin{lstlisting}
 # Forward Propagation
