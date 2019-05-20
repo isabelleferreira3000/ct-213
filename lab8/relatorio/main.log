@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  20 MAY 2019 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  20 MAY 2019 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1043,241 +1043,231 @@ Underfull \hbox (badness 1783) in paragraph at lines 95--96
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 115.
+<imagens/arquitetura_rede_neural.png, id=31, 855.195pt x 192.72pt>
+File: imagens/arquitetura_rede_neural.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-[]\T1/ptm/m/n/10 Para a im-ple-men-ta-ção da rede neu-ral, era
- []
+<use imagens/arquitetura_rede_neural.png>
+Package pdftex.def Info: imagens/arquitetura_rede_neural.png used on input line
+ 126.
+(pdftex.def)             Requested size: 256.56049pt x 57.81644pt.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-\T1/ptm/m/n/10 ne-ces-sá-rio pre-en-cher a fun-ção \T1/ptm/m/it/10 forward$[]$p
-ropagation()\T1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 4229) in paragraph at lines 116--117
-\T1/ptm/m/it/10 compute$[]$gradient$[]$back$[]$propagation() \T1/ptm/m/n/10 e \
-T1/ptm/m/it/10 back$[]$propagation()
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
 []\T1/ptm/m/n/10 Recebendo os va-lo-res de \T1/ptm/m/it/10 in-put\T1/ptm/m/n/10
  , a fun-ção
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
 \T1/ptm/m/it/10 forward$[]$propagation() \T1/ptm/m/n/10 foi im-ple-men-tada con
 -forme
  []
 
 
-Underfull \hbox (badness 6876) in paragraph at lines 118--119
+Underfull \hbox (badness 6876) in paragraph at lines 131--132
 \T1/ptm/m/n/10 apre-sen-tado no pseudo-código da In-tro-du-ção, com o
  []
 
-
-Underfull \hbox (badness 1622) in paragraph at lines 120--121
-\T1/ptm/m/n/10 In-tro-du-ção, ou seja, atu-a-li-zando os va-lo-res de pe-sos e
- []
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 132.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 132.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 1622) in paragraph at lines 133--134
+\T1/ptm/m/n/10 In-tro-du-ção, ou seja, atu-a-li-zando os va-lo-res de pe-sos e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 []\T1/ptm/m/n/10 Finalmente, para im-ple-men-tar a fun-ção
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 \T1/ptm/m/it/10 compute$[]$gradient$[]$back$[]$propagation()\T1/ptm/m/n/10 , ta
 m-bém foi feito
  []
 
 
 LaTeX Warning: Reference `sum_gt_zero/cost_function_convergence' on page 2 unde
-fined on input line 126.
+fined on input line 139.
 
 
 LaTeX Warning: Reference `color_segmentation/segmented_image' on page 2 undefin
-ed on input line 126.
+ed on input line 139.
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 126--127
+Underfull \hbox (badness 1496) in paragraph at lines 139--140
 []\T1/ptm/m/n/10 Já tendo ci-ên-cia da cor-reta im-ple-men-ta-ção dos al-go-
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 126--127
+Underfull \hbox (badness 2134) in paragraph at lines 139--140
 \T1/ptm/m/n/10 rit-mos de apren-di-zado, foi feito por fim um teste da
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 126--127
+Underfull \hbox (badness 1412) in paragraph at lines 139--140
 \T1/ptm/m/n/10 seg-men-ta-ção de co-res, exe-cu-tando o có-digo do ar-quivo
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 143.
 
 LaTeX Warning: Reference `sum_gt_zero/cost_function_convergence' on page 2 unde
-fined on input line 132.
+fined on input line 145.
 
 
 LaTeX Warning: Reference `xor/neural_net_classification' on page 2 undefined on
- input line 132.
+ input line 145.
 
 
 LaTeX Warning: Reference `sum_gt_zero/cost_function_convergence' on page 2 unde
-fined on input line 134.
+fined on input line 147.
 
 
 LaTeX Warning: Reference `xor/cost_function_convergence' on page 2 undefined on
- input line 134.
+ input line 147.
 
 
 LaTeX Warning: Reference `color_segmentation/cost_function_convergence_segmenta
-tion' on page 2 undefined on input line 134.
+tion' on page 2 undefined on input line 147.
 
 
 LaTeX Warning: Reference `sum_gt_zero/dataset' on page 2 undefined on input lin
-e 136.
+e 149.
 
 
 LaTeX Warning: Reference `sum_gt_zero/neural_net_classification' on page 2 unde
-fined on input line 136.
+fined on input line 149.
 
 
-LaTeX Warning: Reference `xor/dataset' on page 2 undefined on input line 136.
+LaTeX Warning: Reference `xor/dataset' on page 2 undefined on input line 149.
 
 
 LaTeX Warning: Reference `xor/neural_net_classification' on page 2 undefined on
- input line 136.
+ input line 149.
 
 
-<imagens/sum_gt_zero/lambda_zero/dataset_sgz.png, id=73, 462.528pt x 346.896pt>
+<imagens/sum_gt_zero/lambda_zero/dataset_sgz.png, id=78, 462.528pt x 346.896pt>
 File: imagens/sum_gt_zero/lambda_zero/dataset_sgz.png Graphic file (type png)
 <use imagens/sum_gt_zero/lambda_zero/dataset_sgz.png>
 Package pdftex.def Info: imagens/sum_gt_zero/lambda_zero/dataset_sgz.png used o
-n input line 140.
+n input line 153.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sum_gt_zero/lambda_zero/convergence_sgz.png, id=77, 462.528pt x 346.89
+<imagens/sum_gt_zero/lambda_zero/convergence_sgz.png, id=82, 462.528pt x 346.89
 6pt>
 File: imagens/sum_gt_zero/lambda_zero/convergence_sgz.png Graphic file (type pn
 g)
  <use imagens/sum_gt_zero/lambda_zero/convergence_sgz.png>
 Package pdftex.def Info: imagens/sum_gt_zero/lambda_zero/convergence_sgz.png us
-ed on input line 147.
+ed on input line 160.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sum_gt_zero/lambda_zero/nn_classification_sgz.png, id=80, 462.528pt x 
+<imagens/sum_gt_zero/lambda_zero/nn_classification_sgz.png, id=85, 462.528pt x 
 346.896pt>
 File: imagens/sum_gt_zero/lambda_zero/nn_classification_sgz.png Graphic file (t
 ype png)
  <use imagens/sum_gt_zero/lambda_zero/nn_classification_sgz.png>
 Package pdftex.def Info: imagens/sum_gt_zero/lambda_zero/nn_classification_sgz.
-png used on input line 154.
+png used on input line 167.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sum_gt_zero/convergence_sgz.png, id=81, 462.528pt x 346.896pt>
+<imagens/sum_gt_zero/convergence_sgz.png, id=86, 462.528pt x 346.896pt>
 File: imagens/sum_gt_zero/convergence_sgz.png Graphic file (type png)
 
 <use imagens/sum_gt_zero/convergence_sgz.png>
 Package pdftex.def Info: imagens/sum_gt_zero/convergence_sgz.png used on input 
-line 161.
+line 174.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sum_gt_zero/nn_classification_sgz.png, id=82, 462.528pt x 346.896pt>
+<imagens/sum_gt_zero/nn_classification_sgz.png, id=87, 462.528pt x 346.896pt>
 File: imagens/sum_gt_zero/nn_classification_sgz.png Graphic file (type png)
 
 <use imagens/sum_gt_zero/nn_classification_sgz.png>
 Package pdftex.def Info: imagens/sum_gt_zero/nn_classification_sgz.png used on 
-input line 168.
+input line 181.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/lambda_zero/dataset_xor.png, id=83, 462.528pt x 346.896pt>
+<imagens/xor/lambda_zero/dataset_xor.png, id=88, 462.528pt x 346.896pt>
 File: imagens/xor/lambda_zero/dataset_xor.png Graphic file (type png)
 
 <use imagens/xor/lambda_zero/dataset_xor.png>
 Package pdftex.def Info: imagens/xor/lambda_zero/dataset_xor.png used on input 
-line 175.
+line 188.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/lambda_zero/convergence_xor.png, id=84, 462.528pt x 346.896pt>
+<imagens/xor/lambda_zero/convergence_xor.png, id=89, 462.528pt x 346.896pt>
 File: imagens/xor/lambda_zero/convergence_xor.png Graphic file (type png)
 
 <use imagens/xor/lambda_zero/convergence_xor.png>
 Package pdftex.def Info: imagens/xor/lambda_zero/convergence_xor.png used on in
-put line 182.
+put line 195.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/lambda_zero/nn_classification_xor.png, id=85, 462.528pt x 346.896p
+<imagens/xor/lambda_zero/nn_classification_xor.png, id=90, 462.528pt x 346.896p
 t>
 File: imagens/xor/lambda_zero/nn_classification_xor.png Graphic file (type png)
 
  <use imagens/xor/lambda_zero/nn_classification_xor.png>
 Package pdftex.def Info: imagens/xor/lambda_zero/nn_classification_xor.png used
- on input line 189.
+ on input line 202.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/convergence_xor.png, id=86, 462.528pt x 346.896pt>
+<imagens/xor/convergence_xor.png, id=91, 462.528pt x 346.896pt>
 File: imagens/xor/convergence_xor.png Graphic file (type png)
 
 <use imagens/xor/convergence_xor.png>
-Package pdftex.def Info: imagens/xor/convergence_xor.png used on input line 196
+Package pdftex.def Info: imagens/xor/convergence_xor.png used on input line 209
 .
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/xor/nn_classification_xor.png, id=87, 462.528pt x 346.896pt>
+<imagens/xor/nn_classification_xor.png, id=92, 462.528pt x 346.896pt>
 File: imagens/xor/nn_classification_xor.png Graphic file (type png)
 
 <use imagens/xor/nn_classification_xor.png>
 Package pdftex.def Info: imagens/xor/nn_classification_xor.png used on input li
-ne 203.
+ne 216.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 208.
+(babel)             in language  on input line 221.
 
 
 LaTeX Warning: Reference `color_segmentation/cost_function_convergence_segmenta
-tion' on page 2 undefined on input line 210.
+tion' on page 2 undefined on input line 223.
 
 
 LaTeX Warning: Reference `color_segmentation/original_image' on page 2 undefine
-d on input line 210.
+d on input line 223.
 
 
 LaTeX Warning: Reference `color_segmentation/segmented_image' on page 2 undefin
-ed on input line 210.
+ed on input line 223.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
+(babel)             in language  on input line 225.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
-[2 <./imagens/sum_gt_zero/lambda_zero/dataset_sgz.png> <./imagens/sum_gt_zero/l
-ambda_zero/convergence_sgz.png> <./imagens/sum_gt_zero/lambda_zero/nn_classific
-ation_sgz.png>]
+(babel)             in language  on input line 225.
+[2 <./imagens/arquitetura_rede_neural.png> <./imagens/sum_gt_zero/lambda_zero/d
+ataset_sgz.png> <./imagens/sum_gt_zero/lambda_zero/convergence_sgz.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
+(babel)             in language  on input line 225.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
- [3 <./imagens/sum_gt_zero/convergence_sgz.png> <./imagens/sum_gt_zero/nn_class
-ification_sgz.png> <./imagens/xor/lambda_zero/dataset_xor.png> <./imagens/xor/l
-ambda_zero/convergence_xor.png> <./imagens/xor/lambda_zero/nn_classification_xo
-r.png> <./imagens/xor/convergence_xor.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 225.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+[3 <./imagens/sum_gt_zero/lambda_zero/nn_classification_sgz.png> <./imagens/sum
+_gt_zero/convergence_sgz.png> <./imagens/sum_gt_zero/nn_classification_sgz.png>
+ <./imagens/xor/lambda_zero/dataset_xor.png> <./imagens/xor/lambda_zero/converg
+ence_xor.png> <./imagens/xor/lambda_zero/nn_classification_xor.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 227.
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 \T1/ptm/m/n/8 https://towardsdatascience.com/neural-net-from-scratch-using-nump
 y-
  []
@@ -1293,31 +1283,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 236.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 223.
+(babel)             in language  on input line 236.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 223.
+(babel)             in language  on input line 236.
 [4
 
- <./imagens/xor/nn_classification_xor.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
+ <./imagens/xor/convergence_xor.png> <./imagens/xor/nn_classification_xor.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 236.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 236.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 236.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 04418690190228E6971F777224138348;400.
+(rerunfilecheck)             Checksum: A714AC7D62ED6BBE082B2C7DE1D70E21;387.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 236.
  ) 
 Here is how much of TeX's memory you used:
- 10947 strings out of 493029
- 155716 string characters out of 6136235
+ 10955 strings out of 493029
+ 155944 string characters out of 6136235
  292579 words of memory out of 5000000
- 14259 multiletter control sequences out of 15000+600000
+ 14264 multiletter control sequences out of 15000+600000
  111402 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,8n,40p,752b,1250s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1327,10 +1317,10 @@ f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 276698 bytes).
+Output written on main.pdf (4 pages, 291118 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
- 99 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

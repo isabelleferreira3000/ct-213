@@ -112,18 +112,21 @@ history = model.fit(inputs,
 
 Por fim, configura-se o modelo para o treino, escolhendo o otimizer, a função de custo e as métricas; e se treina o modelo para um determinado conjunto de entrada, tendo as saídas esperadas, o tamanho do batch e quantas épocas serão efetuadas.
 
-\section{Implementação do algoritmo}
-Para a implementação da rede neural, era necessário preencher a função \textit{forward\underline{\space}propagation()}, \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()} e \textit{back\underline{\space}propagation()} da classe \textit{NeuralNetwork}. Essas funções a se completar estavam no código base fornecido \cite{roteiro}.  
+\section{Implementação}
+Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro} e apresentada na tabela da Figura \ref{arquitetura_rede_neural}, era necessário utilizar do código de adição de camadas a uma rede, além de configuração e treino do modelo, apresentado na Introdução. 
 
-Recebendo os valores de \textit{input}, a função \textit{forward\underline{\space}propagation()} foi implementada conforme apresentado no pseudo-código da Introdução, com o detalhe que a função de ativação $g$ de todos os neurônios utilizada foi a \textit{sigmoid}. Além disso, tanto a função \textit{sigmoid} quanto sua derivada já eram fornecidos pelo código base. 
+Tendo em vista que em \textit{keras.activations} não há função de ativação Leaky ReLU, utilizou-se a recomendação sugerida pelo roteiro \cite{roteiro} para usar Leaky ReLU no Keras, ou seja, foi adicionado uma camada do tipo LeakyRelu após ter definido uma camada (usando função de ativação linear).
 
-Já na implementação de \textit{back\underline{\space}propagation()}, também foi implementado conforme o sugerido no pseudo-código da Introdução, ou seja, atualizando os valores de pesos e \textit{biases} subtraindo de seu valor um fator de aprendizado \textit{alpha} vezes os gradientes de pesos e \textit{biases}, respectivamente. Esses valores de gradientes são aqueles calculados em \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()}, supondo que essa função já foi corretamente implementado. Foi utilizado para \textit{alpha} o mesmo que o sugerido pelo código base. 
+Além disso, para configurar o modelo, setou-se o parâmetro \textit{loss} da função \textit{compile()} para \textit{losses.mean\underline{\space}squared\underline{\space}error}, uma vez que foi utilizado erro quadrático.
 
-Finalmente, para implementar a função \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()}, também foi feito de forma bastante semelhante ao apresentado na Introdução, com o detalhe de usar \textit{numpy.multiply} para multiplicar termo a termo os vetores referentes aos pesos e a derivada da função de ativação.
+Por fim, para treinar, o tamanho do \textit{batch} foi o tamanho total de entradas, para que seja usado todo o \textit{dataset} em cada iteração do treinamento.
 
-Para testar o funcionamento dessas implementações, foi inicialmente alterado o valor da variável \textit{classification\underline{\space}function} (entre "sum\underline{\space}gt\underline{\space}zero" no arquivo \textit{test\underline{\space}neural\underline{\space}network.py} do código base, gerando imagens dos resultados da classificação de cada \textit{dataset} para cada uma dessas funções (função "soma $>$ 0" e função "xor") usando rede neural.
-
-Já tendo ciência da correta implementação dos algoritmos de aprendizado, foi feito por fim um teste da segmentação de cores, executando o código do arquivo \textit{test\underline{\space}color\underline{\space}segmentation.py}, conforme indicado no roteiro \cite{roteiro}. Os gráficos de resultados tanto dessa segmentação de cores, quanto das funções anteriores, foram apresentados nas Figuras \ref{sum_gt_zero/cost_function_convergence} a \ref{color_segmentation/segmented_image}.
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.3]{imagens/arquitetura_rede_neural.png}}
+\caption{Exemplo de neurônio. Essa imagem de exemplo foi apresentada no roteiro \cite{roteiro}}.
+\label{arquitetura_rede_neural}
+\end{figure}
 
 \section{Resultados e Conclusões}
 
