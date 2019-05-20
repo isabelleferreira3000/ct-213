@@ -66,50 +66,51 @@ Esse relatório documenta a cópia de um movimento de caminhada de um robô huma
 
 Esse tipo de estratégia possibilita, também, aprender por imitação. Assim, o comportamento desejado (uma política de controle, por exemplo) é copiado usando aprendizado supervisionado.
 
-O \textit{framework} Keras facilita o uso do \textit{framework} Tensorflow para problemas de \textit{Deep learning}, transformando a implementação, treino e resultado da rede neural em chamadas de API. Os pseudo-códigos dessas chamadas podem ser vistos a seguir. Em seguida, será apresentado como isso foi implementado no contexto do laboratório.
+O \textit{framework} Keras facilita o uso do \textit{framework} Tensorflow para problemas de \textit{Deep learning}, transformando a implementação, treino e resultado da rede neural em chamadas de API. O funcionamento dessas chamadas pode ser visto a seguir. Em seguida, será apresentado como isso foi aplicado no contexto do laboratório.
 
 \begin{lstlisting}
-# Forward Propagation
-def forward_propagation(input):
-	z[1] = weights[1]input + biases[1]
-	a[1] = g[1](z[1])
-	z[2] = weights[2]a[1] + biases[2]
-	a[2] = g[2](z[2])
-	return z, a
+from keras import models
+
+# Creates the neural network model in Keras
+model = models.Sequential()
 \end{lstlisting}
+
+\textit{Sequential()} cria uma pilha linear de camadas.
 
 \begin{lstlisting}
-# Gradients' Computation
-def compute_gradient_back_propagation(inputs, expected_outputs):
-	for i in range(len(inputs)):
-		input = inputs[i]
-		expected_output = expected_outputs[i]
-		
-		z, a = forward_propagation(input)
+from keras import layers, activations, regularizers
 
-		dz[2] = a[2] - expected_output
-		weights_gradient[2] += dz[2] a[1].T
-		biases_gradient[2] += dz[2]
+# Adds the first layer
+model.add(layers.Dense(num_neurons,
+	activation=activations.some_function,
+	input_shape=(input_size,),
+	kernel_regularizer=regularizers.l2(lambda)))
 
-		dz[1] = weights[2].T dz[2] * derivate(g[1](z[1]))
-		weights_gradient[1] += dz[1] input.T
-		biases_gradient[1] += dz[1]
-
-	return weights_gradient, biases_gradient
+# Adds another layer (not first)
+model.add(layers.Dense(num_neurons,
+	activation=activations.some_function,
+	kernel_regularizer=regularizers.l2(lambda)))
 \end{lstlisting}
+
+Para a criação de uma camada na rede neural através do Keras, utiliza-se a função \textit{model.add(layers.Dense())}, sendo o primeiro argumento referente ao número de neurônios nessa camada; "activation" configura a função de ativação; "input\underline{\space}shape" representa o tamanho da entrada; e "kernel\underline{\space}regularizer" configura a regularização para essa camada.
 
 \begin{lstlisting}
-# Back Propagation
-def back_propagation(inputs, expected_outputs):
-	weights_gradient, biases_gradient = compute_gradient_back_propagation(inputs, expected_outputs)
+from keras import losses, optimizers, metrics
 
-	weights[1] -= alpha * weights_gradient[1]
-	biases[1] -= alpha * biases_gradient[1]
-	weights[2] -= alpha * weights_gradient[2]
-	biases[2] -= alpha * biases_gradient[2]
+# Configures the model for training
+model.compile(optimizer=optimizers.Adam(),
+	loss=losses.binary_crossentropy,
+	metrics=[metrics.binary_accuracy])
+
+# Trains the model for a given number of epochs
+history = model.fit(inputs,
+	expected_outputs,
+	batch_size=size_of_batch,
+	epochs=num_epochs)
+
 \end{lstlisting}
 
-No pseudocódigo acima, \textit{J} é a função para medir a qualidade das soluções candidatas; \textit{m0} e \textit{C0} são a média e a matriz de covariância iniciais da população que será gerada, respectivamente; \textit{m} e \textit{C} são, de forma análoga, a média e a matriz de covariância atuais da população que será gerada, respectivamente; e \textit{mu} é o tamanho da população considerada como "melhores soluções até então".
+Por fim, configura-se o modelo para o treino, escolhendo o otimizer, a função de custo e as métricas; e se treina o modelo para um determinado conjunto de entrada, tendo as saídas esperadas, o tamanho do batch e quantas épocas serão efetuadas.
 
 \section{Implementação do algoritmo}
 Para a implementação da rede neural, era necessário preencher a função \textit{forward\underline{\space}propagation()}, \textit{compute\underline{\space}gradient\underline{\space}back\underline{\space}propagation()} e \textit{back\underline{\space}propagation()} da classe \textit{NeuralNetwork}. Essas funções a se completar estavam no código base fornecido \cite{roteiro}.  
