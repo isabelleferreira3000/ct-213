@@ -46,10 +46,23 @@ input = np.matrix(0.008 * np.arange(0, expected_output.shape[0])).T
 np.random.seed(0)
 
 # Todo: Implement and train the neural network using Keras
+model = models.Sequential()
+
+alpha = 0.01
+model.add(layers.Dense(75, activation=activations.linear, input_shape=(1,)))
+model.add(layers.LeakyReLU(alpha))
+
+model.add(layers.Dense(50, activation=activations.linear))
+model.add(layers.LeakyReLU(alpha))
+
+model.add(layers.Dense(20, activation=activations.linear))
+
+model.compile(optimizer=optimizers.Adam(), loss=losses.mean_squared_error)
+
+history = model.fit(input, expected_output, batch_size=len(input), epochs=num_epochs)
 
 input_predict = np.matrix(np.arange(0, input[-1] + 0.001, 0.001)).T
-# output = model.predict(input_predict)  # add this line to predict the output from the Neural Network
-output = np.zeros((len(input_predict), np.size(expected_output, 1)))  # remove this line
+output = model.predict(input_predict)  # add this line to predict the output from the Neural Network
 
 # Comparing original and copied joint trajectories to evaluate the imitation learning
 for joint in right_leg_joints:
