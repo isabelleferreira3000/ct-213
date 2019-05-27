@@ -123,9 +123,9 @@ Por fim, para treinar, o tamanho do \textit{batch} foi o tamanho total de entrad
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.3]{imagens/arquitetura_rede_neural.png}}
+\centerline{\includegraphics[scale=0.3]{imagens/acc.png}}
 \caption{Arquitetura da rede neural usada para o imitation learning. Essa imagem foi apresentada no roteiro \cite{roteiro}}.
-\label{arquitetura_rede_neural}
+\label{acc}
 \end{figure}
 
 \section{Resultados e Conclusões}
@@ -144,72 +144,72 @@ A questão da convergência da função de custo também pode ser comparada. Par
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/lambda_zero/dataset_sgz.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/loss.png}}
 \caption{\textit{Dataset} utilizado para o aprendizado da função $soma > 0$}.
-\label{sum_gt_zero/lambda_zero/dataset_sgz}
+\label{loss}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/lambda_zero/convergence_sgz.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/val_acc.png}}
 \caption{Convergência da função de custo para a função $soma > 0$, sem regularização.}.
-\label{sum_gt_zero/lambda_zero/convergence_sgz}
+\label{val_acc}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/lambda_zero/nn_classification_sgz.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/val_loss.png}}
 \caption{Resultado da classificação por rede neural para a função $soma > 0$, sem regularização.}
-\label{sum_gt_zero/lambda_zero/nn_classification_sgz}
+\label{val_loss}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/convergence_sgz.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/test_image_3758.png}}
 \caption{Convergência da função de custo para a função $soma > 0$, com regularização.}
-\label{sum_gt_zero/convergence_sgz}
+\label{test_image_3758}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/sum_gt_zero/nn_classification_sgz.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/test_image_4449.png}}
 \caption{Resultado da classificação por rede neural para a função $soma > 0$, com regularização.}
-\label{sum_gt_zero/nn_classification_sgz}
+\label{test_image_4449}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/xor/lambda_zero/dataset_xor.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/test_image_1798.png}}
 \caption{\textit{Dataset} utilizado para o aprendizado da função $xor$.}
-\label{xor/lambda_zero/dataset_xor}
+\label{test_image_1798}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/xor/lambda_zero/convergence_xor.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/test_image_2082.png}}
 \caption{Convergência da função de custo para a função $xor$, sem regularização.}
-\label{xor/lambda_zero/convergence_xor}
+\label{test_image_2082}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/xor/lambda_zero/nn_classification_xor.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/test_image_2439.png}}
 \caption{Resultado da classificação por rede neural para a função $xor$, sem regularização.}
-\label{xor/lambda_zero/nn_classification_xor}
+\label{test_image_2439}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/xor/convergence_xor.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_8.png}}
 \caption{Convergência da função de custo para a função $xor$, com regularização.}
-\label{xor/convergence_xor}
+\label{misclassified_image_8}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/xor/nn_classification_xor.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_92.png}}
 \caption{Resultado da classificação por rede neural para a função $xor$, com regularização.}
-\label{xor/nn_classification_xor}
+\label{misclassified_image_92}
 \end{figure}
 
 \subsection{Imitation Learning}
@@ -217,37 +217,23 @@ Após a implementação da rede neural com Keras conforme o explicado na seção
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightAnklePitch.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_18.png}}
 \caption{Resultado da classificação por rede neural para a função \textit{soma > 0}.}
-\label{imitation_learning/rightAnklePitch}
+\label{misclassified_image_18}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightAnkleRoll.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_247.png}}
 \caption{Resultado do \textit{Imitation learning} para Right Ankle Roll.}
-\label{imitation_learning/rightAnkleRoll}
+\label{misclassified_image_247}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightHipPitch.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_321.png}}
 \caption{Resultado do \textit{Imitation learning} para Right Hip Pitch.}
-\label{imitation_learning/rightHipPitch}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightHipRoll.png}}
-\caption{Resultado do \textit{Imitation learning} para Right Hip Roll.}
-\label{imitation_learning/rightHipRoll}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imitation_learning/rightKneePitch.png}}
-\caption{Resultado do \textit{Imitation learning} para Right Knee Pitch.}
-\label{imitation_learning/rightKneePitch}
+\label{misclassified_image_321}
 \end{figure}
 
 Tendo em vista o que foi apresentado, pode-se notar, por fim, que algoritmos de \textit{Deep leaning} e o \textit{framework} Keras realmente se demonstraram eficazes em realizar aprendizado por imitação.
