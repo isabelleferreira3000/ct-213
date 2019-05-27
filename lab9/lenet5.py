@@ -14,7 +14,7 @@ def make_lenet5():
                             input_shape=(32, 32, 1)))
 
     # 2A CAMADA:
-    model.add(layers.AveragePooling2D(pool_size=(6, 6),
+    model.add(layers.AveragePooling2D(pool_size=(2, 2),
                                       strides=(2, 2)))
 
     # 3A CAMADA:
@@ -24,7 +24,7 @@ def make_lenet5():
                             activation=activations.tanh))
 
     # 4A CAMADA:
-    model.add(layers.AveragePooling2D(pool_size=(16, 16),
+    model.add(layers.AveragePooling2D(pool_size=(2, 2),
                                       strides=(2, 2)))
 
     # 5A CAMADA:
