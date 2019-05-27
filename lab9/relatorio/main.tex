@@ -41,7 +41,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Relatório do Laboratório 8: \\ Imitation Learning com Keras\\
+\title{Relatório do Laboratório 9: \\ Redes Neurais Convolucionais\\
 }
 
 \author{\IEEEauthorblockN{Isabelle Ferreira de Oliveira}
@@ -122,8 +122,8 @@ Além disso, para configurar o modelo, setou-se o parâmetro \textit{loss} da fu
 Por fim, para treinar, o tamanho do \textit{batch} foi o tamanho total de entradas, para que seja usado todo o \textit{dataset} em cada iteração do treinamento.
 
 \begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.3]{imagens/acc.png}}
+%\centering
+\centerline{\includegraphics[scale=0.25]{imagens/acc.png}}
 \caption{Arquitetura da rede neural usada para o imitation learning. Essa imagem foi apresentada no roteiro \cite{roteiro}}.
 \label{acc}
 \end{figure}
@@ -144,21 +144,21 @@ A questão da convergência da função de custo também pode ser comparada. Par
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/loss.png}}
+\centerline{\includegraphics[scale=0.25]{imagens/loss.png}}
 \caption{\textit{Dataset} utilizado para o aprendizado da função $soma > 0$}.
 \label{loss}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/val_acc.png}}
+\centerline{\includegraphics[scale=0.25]{imagens/val_acc.png}}
 \caption{Convergência da função de custo para a função $soma > 0$, sem regularização.}.
 \label{val_acc}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/val_loss.png}}
+\centerline{\includegraphics[scale=0.25]{imagens/val_loss.png}}
 \caption{Resultado da classificação por rede neural para a função $soma > 0$, sem regularização.}
 \label{val_loss}
 \end{figure}

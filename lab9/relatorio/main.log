@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  27 MAY 2019 16:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  27 MAY 2019 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1043,11 +1043,15 @@ Underfull \hbox (badness 1783) in paragraph at lines 95--96
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 115.
-<imagens/acc.png, id=35, 929.4725pt x 439.6425pt>
+
+LaTeX Warning: Reference `arquitetura_rede_neural' on page 1 undefined on input
+ line 116.
+
+<imagens/acc.png, id=34, 929.4725pt x 439.6425pt>
 File: imagens/acc.png Graphic file (type png)
  <use imagens/acc.png>
 Package pdftex.def Info: imagens/acc.png used on input line 126.
-(pdftex.def)             Requested size: 278.8439pt x 131.89375pt.
+(pdftex.def)             Requested size: 232.36755pt x 109.91035pt.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 131.
 Package babel Info: Redefining portuges shorthand "|
@@ -1064,61 +1068,109 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 136.
 
-<imagens/loss.png, id=93, 924.45375pt x 435.6275pt>
+
+LaTeX Warning: Reference `sum_gt_zero/lambda_zero/dataset_sgz' on page 2 undefi
+ned on input line 139.
+
+
+LaTeX Warning: Reference `xor/nn_classification_xor' on page 2 undefined on inp
+ut line 139.
+
+
+LaTeX Warning: Reference `sum_gt_zero/lambda_zero/dataset_sgz' on page 2 undefi
+ned on input line 139.
+
+
+LaTeX Warning: Reference `xor/lambda_zero/dataset_xor' on page 2 undefined on i
+nput line 139.
+
+
+LaTeX Warning: Reference `sum_gt_zero/lambda_zero/nn_classification_sgz' on pag
+e 2 undefined on input line 141.
+
+
+LaTeX Warning: Reference `sum_gt_zero/nn_classification_sgz' on page 2 undefine
+d on input line 141.
+
+
+LaTeX Warning: Reference `xor/lambda_zero/nn_classification_xor' on page 2 unde
+fined on input line 141.
+
+
+LaTeX Warning: Reference `xor/nn_classification_xor' on page 2 undefined on inp
+ut line 141.
+
+
+LaTeX Warning: Reference `sum_gt_zero/lambda_zero/convergence_sgz' on page 2 un
+defined on input line 143.
+
+
+LaTeX Warning: Reference `sum_gt_zero/convergence_sgz' on page 2 undefined on i
+nput line 143.
+
+
+LaTeX Warning: Reference `xor/lambda_zero/convergence_xor' on page 2 undefined 
+on input line 143.
+
+
+LaTeX Warning: Reference `xor/convergence_xor' on page 2 undefined on input lin
+e 143.
+
+<imagens/loss.png, id=79, 924.45375pt x 435.6275pt>
 File: imagens/loss.png Graphic file (type png)
  <use imagens/loss.png>
 Package pdftex.def Info: imagens/loss.png used on input line 147.
-(pdftex.def)             Requested size: 462.22574pt x 217.81322pt.
+(pdftex.def)             Requested size: 231.11287pt x 108.9066pt.
 
-<imagens/val_acc.png, id=94, 924.45375pt x 434.62375pt>
+<imagens/val_acc.png, id=80, 924.45375pt x 434.62375pt>
 File: imagens/val_acc.png Graphic file (type png)
 
 <use imagens/val_acc.png>
 Package pdftex.def Info: imagens/val_acc.png used on input line 154.
-(pdftex.def)             Requested size: 462.22574pt x 217.31134pt.
- <imagens/val_loss.png, id=95, 923.45pt x 431.6125pt>
+(pdftex.def)             Requested size: 231.11287pt x 108.65567pt.
+ <imagens/val_loss.png, id=81, 923.45pt x 431.6125pt>
 File: imagens/val_loss.png Graphic file (type png)
 
 <use imagens/val_loss.png>
 Package pdftex.def Info: imagens/val_loss.png used on input line 161.
-(pdftex.def)             Requested size: 461.72386pt x 215.80571pt.
+(pdftex.def)             Requested size: 230.86192pt x 107.90285pt.
 
-<imagens/test_image_3758.png, id=96, 462.528pt x 346.896pt>
+<imagens/test_image_3758.png, id=82, 462.528pt x 346.896pt>
 File: imagens/test_image_3758.png Graphic file (type png)
 
 <use imagens/test_image_3758.png>
 Package pdftex.def Info: imagens/test_image_3758.png used on input line 168.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/test_image_4449.png, id=98, 462.528pt x 346.896pt>
+<imagens/test_image_4449.png, id=84, 462.528pt x 346.896pt>
 File: imagens/test_image_4449.png Graphic file (type png)
 
 <use imagens/test_image_4449.png>
 Package pdftex.def Info: imagens/test_image_4449.png used on input line 175.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/test_image_1798.png, id=99, 462.528pt x 346.896pt>
+<imagens/test_image_1798.png, id=85, 462.528pt x 346.896pt>
 File: imagens/test_image_1798.png Graphic file (type png)
 
 <use imagens/test_image_1798.png>
 Package pdftex.def Info: imagens/test_image_1798.png used on input line 182.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/test_image_2082.png, id=100, 462.528pt x 346.896pt>
+<imagens/test_image_2082.png, id=86, 462.528pt x 346.896pt>
 File: imagens/test_image_2082.png Graphic file (type png)
 
 <use imagens/test_image_2082.png>
 Package pdftex.def Info: imagens/test_image_2082.png used on input line 189.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/test_image_2439.png, id=101, 462.528pt x 346.896pt>
+<imagens/test_image_2439.png, id=87, 462.528pt x 346.896pt>
 File: imagens/test_image_2439.png Graphic file (type png)
 
 <use imagens/test_image_2439.png>
 Package pdftex.def Info: imagens/test_image_2439.png used on input line 196.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/misclassified_image_8.png, id=102, 462.528pt x 346.896pt>
+<imagens/misclassified_image_8.png, id=88, 462.528pt x 346.896pt>
 File: imagens/misclassified_image_8.png Graphic file (type png)
 
 <use imagens/misclassified_image_8.png>
@@ -1126,7 +1178,7 @@ Package pdftex.def Info: imagens/misclassified_image_8.png used on input line 2
 03.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/misclassified_image_92.png, id=103, 462.528pt x 346.896pt>
+<imagens/misclassified_image_92.png, id=89, 462.528pt x 346.896pt>
 File: imagens/misclassified_image_92.png Graphic file (type png)
 
 <use imagens/misclassified_image_92.png>
@@ -1136,7 +1188,15 @@ Package pdftex.def Info: imagens/misclassified_image_92.png used on input line
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 215.
 
-<imagens/misclassified_image_18.png, id=106, 462.528pt x 346.896pt>
+
+LaTeX Warning: Reference `imitation_learning/rightAnklePitch' on page 2 undefin
+ed on input line 216.
+
+
+LaTeX Warning: Reference `imitation_learning/rightKneePitch' on page 2 undefine
+d on input line 216.
+
+<imagens/misclassified_image_18.png, id=90, 462.528pt x 346.896pt>
 File: imagens/misclassified_image_18.png Graphic file (type png)
 
 <use imagens/misclassified_image_18.png>
@@ -1144,7 +1204,7 @@ Package pdftex.def Info: imagens/misclassified_image_18.png used on input line
 220.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/misclassified_image_247.png, id=107, 462.528pt x 346.896pt>
+<imagens/misclassified_image_247.png, id=91, 462.528pt x 346.896pt>
 File: imagens/misclassified_image_247.png Graphic file (type png)
 
 <use imagens/misclassified_image_247.png>
@@ -1152,13 +1212,26 @@ Package pdftex.def Info: imagens/misclassified_image_247.png used on input line
  227.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/misclassified_image_321.png, id=108, 462.528pt x 346.896pt>
+<imagens/misclassified_image_321.png, id=92, 462.528pt x 346.896pt>
 File: imagens/misclassified_image_321.png Graphic file (type png)
 
 <use imagens/misclassified_image_321.png>
 Package pdftex.def Info: imagens/misclassified_image_321.png used on input line
  234.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 240.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 240.
+ [2 <./imagens/acc.png> <./imagens/loss.png> <./imagens/val_acc.png> <./imagens
+/val_loss.png> <./imagens/test_image_3758.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 240.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 240.
+ [3 <./imagens/test_image_4449.png> <./imagens/test_image_1798.png> <./imagens/
+test_image_2082.png> <./imagens/test_image_2439.png> <./imagens/misclassified_i
+mage_8.png> <./imagens/misclassified_image_92.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 241.
 
@@ -1178,20 +1251,8 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 245.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 245.
-[2 <./imagens/acc.png> <./imagens/loss.png> <./imagens/val_acc.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 245.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 245.
- [3 <./imagens/val_loss.png> <./imagens/test_image_3758.png> <./imagens/test_im
-age_4449.png> <./imagens/test_image_1798.png> <./imagens/test_image_2082.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 245.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 245.
- [4 <./imagens/test_image_2439.png> <./imagens/misclassified_image_8.png> <./im
-agens/misclassified_image_92.png> <./imagens/misclassified_image_18.png> <./ima
-gens/misclassified_image_247.png> <./imagens/misclassified_image_321.png>]
+[4 <./imagens/misclassified_image_18.png> <./imagens/misclassified_image_247.pn
+g> <./imagens/misclassified_image_321.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
@@ -1200,32 +1261,29 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F8F7DB672508D7964959495A99829703;478.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 245.
  ) 
 Here is how much of TeX's memory you used:
- 10979 strings out of 493029
- 155715 string characters out of 6136235
+ 10976 strings out of 493029
+ 155610 string characters out of 6136235
  292579 words of memory out of 5000000
- 14283 multiletter control sequences out of 15000+600000
- 110295 words of font info for 125 fonts, out of 8000000 for 9000
+ 14280 multiletter control sequences out of 15000+600000
+ 111402 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,8n,40p,590b,1250s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.16} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 314197 bytes).
+ 29i,8n,40p,590b,1250s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (4 pages, 314497 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
- 59 named destinations out of 1000 (max. 500000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 500000)
  127 words of extra memory for PDF output out of 10000 (max. 10000000)
 
