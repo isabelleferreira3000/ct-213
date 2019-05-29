@@ -62,25 +62,46 @@ Esse relatório documenta a implementação, treino e teste da rede neural LeNet
 \end{IEEEkeywords}
 
 \section{Implementação}
-Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro}, era necessário utilizar do código de adição de camadas a uma rede, apresentado na seção Dicas do roteiro do laboratório \cite{roteiro}. 
+Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro}, era necessário utilizar do código de adição de camadas a uma rede, fortemente inspirado das linhas de código apresentadas na seção Dicas do roteiro do laboratório \cite{roteiro}. Um detalhe importante a ser sitado foi que na criação das camadas de average pooling no Keras, os parâmetros \textit{px} e \textit{py} (no parâmetro \textit{pool\underline{\space}size}) são os tamanhos do Kernel apresentados nos requisitos para cada uma dessas camadas.
 
-Tendo em vista que em \textit{keras.activations} não há função de ativação Leaky ReLU, utilizou-se a recomendação sugerida pelo roteiro \cite{roteiro} para usar Leaky ReLU no Keras, ou seja, foi adicionado uma camada do tipo LeakyRelu após ter definido uma camada (usando função de ativação linear).
+A rede então foi treinada utilizando o script \textit{train\underline{\space}lenet5.py} e os resultados desse treinamento foi exibido no \textit{Tensorboard}, mostrado a partir da execução do script \textit{run\underline{\space}tensorboard.py}. Ambos scripts já foram fornecidos previamente no código básico disponibilizado para esse laboratório.
 
-Além disso, para configurar o modelo, setou-se o parâmetro \textit{loss} da função \textit{compile()} para \textit{losses.mean\underline{\space}squared\underline{\space}error}, uma vez que foi utilizado erro quadrático.
-
-Por fim, para treinar, o tamanho do \textit{batch} foi o tamanho total de entradas, para que seja usado todo o \textit{dataset} em cada iteração do treinamento.
-
-\begin{figure}[htbp]
-%\centering
-\centerline{\includegraphics[scale=0.25]{imagens/acc.png}}
-\caption{Arquitetura da rede neural usada para o imitation learning. Essa imagem foi apresentada no roteiro \cite{roteiro}}.
-\label{acc}
-\end{figure}
+Por fim, a rede foi avaliada no \textit{test set} usando o script \textit{evaluate\underline{\space}lenet5.py}, gerando exemplos gráficos de predições corretas e outras erradas.
 
 \section{Resultados e Conclusões}
 
-\subsection{Estudo de implementação de Rede Neural com Keras}
-O código do arquivo \textit{test\underline{\space}keras.py} foi estudado para se entender a utilização do \textit{framework} Keras na implementação de redes neurais. O que foi aprendido resultou no texto escrito na Introdução.
+\subsection{Gráficos gerados no Tensorboard}
+Os gráficos gerados pelo treinamento da rede e apresentados no Tensorboard foram reproduzidos nas Figuras de \ref{acc} a \ref{val_loss}.
+
+Nas Figuras \ref{acc} e \ref{loss}, pode-se observar o aumento da acurácia no conjunto de treinamento e a diminuição na função de custo ao passar das épocas, respectivamente. Já nas Figuras \ref{val_acc} e \ref{val_loss}, esses resultados também são apresentados, mas para os conjuntos de validação. Esses comportamentos estão conforme o desejado e esperado.
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.25]{imagens/acc.png}}
+\caption{Acurácia do conjunto de treinamento, com o passar das épocas.}.
+\label{acc}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.25]{imagens/loss.png}}
+\caption{Custo do conjunto de treinamento, com o passar das épocas.}.
+\label{loss}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.25]{imagens/val_acc.png}}
+\caption{Acurácia do conjunto de validação, com o passar das épocas.}.
+\label{val_acc}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.25]{imagens/val_loss.png}}
+\caption{Custo do conjunto de validação, com o passar das épocas.}
+\label{val_loss}
+\end{figure}
 
 \subsection{Análise do efeito de Regularização}
 Esse arquivo \textit{test\underline{\space}keras.py} continha a implentação do aprendizado das funções "soma maior que zero" e "xor" para diferentes valores de regularização.
@@ -90,27 +111,6 @@ Após a execução desse arquivo, obteve-se os resultados apresentados nas Figur
 Analisando os resultados, é possível notar que em todas as situações (com e sem regularização, e para as duas funções) a rede obtive uma classificação satisfatória. A classificação com regularização, entretando, apresentou-se muito mais acertiva, conforme se pode observar pelas comparação das Figuras \ref{sum_gt_zero/lambda_zero/nn_classification_sgz} e \ref{sum_gt_zero/nn_classification_sgz} para "soma maior que zero" e \ref{xor/lambda_zero/nn_classification_xor} e \ref{xor/nn_classification_xor} para "xor". 
 
 A questão da convergência da função de custo também pode ser comparada. Para os casos com regularização, a convergência se deu bem antes em número de épocas. Isso pode ser observado nas Figuras \ref{sum_gt_zero/lambda_zero/convergence_sgz} e \ref{sum_gt_zero/convergence_sgz}, para "soma maior que zero" e nas Figuras \ref{xor/lambda_zero/convergence_xor} e \ref{xor/convergence_xor} para "xor". 
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.25]{imagens/loss.png}}
-\caption{\textit{Dataset} utilizado para o aprendizado da função $soma > 0$}.
-\label{loss}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.25]{imagens/val_acc.png}}
-\caption{Convergência da função de custo para a função $soma > 0$, sem regularização.}.
-\label{val_acc}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.25]{imagens/val_loss.png}}
-\caption{Resultado da classificação por rede neural para a função $soma > 0$, sem regularização.}
-\label{val_loss}
-\end{figure}
 
 \begin{figure}[htbp]
 \centering
