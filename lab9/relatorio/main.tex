@@ -54,66 +54,15 @@ isabelle.ferreira3000@gmail.com}
 \maketitle
 
 \begin{abstract}
-Esse relatório documenta a cópia de um movimento de caminhada de um robô humanoide usando a técnica chamada \textit{imitation learning}. Para isso, foi utilizado o \textit{framework} de \textit{Deep Learning} Keras, que facilita o uso do \textit{framework} Tensorflow.
+Esse relatório documenta a implementação, treino e teste da rede neural LeNet-5 usando o \textit{dataset} MNIST, que consiste num conjunto grande de imangens anotadas de dígitos decimais escritos à mão. Assim, será reproduzido um trabalho clássico da literatura de Redes Neurais Convolucionais (CNNs), que foi realizado originalmente por Yann LeCun.
 \end{abstract}
 
 \begin{IEEEkeywords}
-\textit{Imitation learning}, \textit{deep learning}, Keras, Tensorflow
+\textit{LeNet-5}, \textit{MNIST}, Redes Neurais Convolucionais, Keras, Tensorflow
 \end{IEEEkeywords}
 
-\section{Introdução}
-\textit{Deep learning} é um tipo de aprendizado de máquina que treina para aprender através do reconhecimento de padrões em várias camadas de processamento. Entre as tarefas possíveis realizáveis estão o reconhecimento de fala, identificação de imagem e previsões, entre outras tarefas realizadas por seres humanos. 
-
-Esse tipo de estratégia possibilita, também, aprender por imitação. Assim, o comportamento desejado (uma política de controle, por exemplo) é copiado usando aprendizado supervisionado.
-
-O \textit{framework} Keras facilita o uso do \textit{framework} Tensorflow para problemas de \textit{Deep learning}, transformando a implementação, treino e resultado da rede neural em chamadas de API. O funcionamento dessas chamadas pode ser visto a seguir. Em seguida, será apresentado como isso foi aplicado no contexto do laboratório.
-
-\begin{lstlisting}
-from keras import models
-
-# Creates the neural network model in Keras
-model = models.Sequential()
-\end{lstlisting}
-
-\textit{Sequential()} cria uma pilha linear de camadas.
-
-\begin{lstlisting}
-from keras import layers, activations, regularizers
-
-# Adds the first layer
-model.add(layers.Dense(num_neurons,
-	activation=activations.some_function,
-	input_shape=(input_size,),
-	kernel_regularizer=regularizers.l2(lambda)))
-
-# Adds another layer (not first)
-model.add(layers.Dense(num_neurons,
-	activation=activations.some_function,
-	kernel_regularizer=regularizers.l2(lambda)))
-\end{lstlisting}
-
-Para a criação de uma camada na rede neural através do Keras, utiliza-se a função \textit{model.add(layers.Dense())}, sendo o primeiro argumento referente ao número de neurônios nessa camada; "activation" configura a função de ativação; "input\underline{\space}shape" representa o tamanho da entrada; e "kernel\underline{\space}regularizer" configura a regularização para essa camada.
-
-\begin{lstlisting}
-from keras import losses, optimizers, metrics
-
-# Configures the model for training
-model.compile(optimizer=optimizers.Adam(),
-	loss=losses.binary_crossentropy,
-	metrics=[metrics.binary_accuracy])
-
-# Trains the model for a given number of epochs
-history = model.fit(inputs,
-	expected_outputs,
-	batch_size=size_of_batch,
-	epochs=num_epochs)
-
-\end{lstlisting}
-
-Por fim, configura-se o modelo para o treino, escolhendo o otimizer, a função de custo e as métricas; e se treina o modelo para um determinado conjunto de entrada, tendo as saídas esperadas, o tamanho do batch e quantas épocas serão efetuadas.
-
 \section{Implementação}
-Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro} e apresentada na tabela da Figura \ref{arquitetura_rede_neural}, era necessário utilizar do código de adição de camadas a uma rede, além de configuração e treino do modelo, apresentado na Introdução. 
+Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro}, era necessário utilizar do código de adição de camadas a uma rede, apresentado na seção Dicas do roteiro do laboratório \cite{roteiro}. 
 
 Tendo em vista que em \textit{keras.activations} não há função de ativação Leaky ReLU, utilizou-se a recomendação sugerida pelo roteiro \cite{roteiro} para usar Leaky ReLU no Keras, ou seja, foi adicionado uma camada do tipo LeakyRelu após ter definido uma camada (usando função de ativação linear).
 
