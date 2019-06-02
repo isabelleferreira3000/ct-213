@@ -1,6 +1,5 @@
 \BOOKMARK [1][-]{section.1}{Implementa\347\343o}{}% 1
 \BOOKMARK [1][-]{section.2}{Resultados e Conclus\365es}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Estudo de implementa\347\343o de Rede Neural com Keras}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{An\341lise do efeito de Regulariza\347\343o}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Imitation Learning}{section.2}% 5
-\BOOKMARK [1][-]{section*.1}{Refer\352ncias}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Gr\341ficos gerados no Tensorboard}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Predi\347\365es realizadas pela rede}{section.2}% 4
+\BOOKMARK [1][-]{section*.1}{Refer\352ncias}{}% 5

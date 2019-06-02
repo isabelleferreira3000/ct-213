@@ -103,92 +103,27 @@ Nas Figuras \ref{acc} e \ref{loss}, pode-se observar o aumento da acurácia no c
 \label{val_loss}
 \end{figure}
 
-\subsection{Análise do efeito de Regularização}
-Esse arquivo \textit{test\underline{\space}keras.py} continha a implentação do aprendizado das funções "soma maior que zero" e "xor" para diferentes valores de regularização.
+\subsection{Predições realizadas pela rede}
+Após a implementação e treino da rede, avaliou-se os resultados da predição para novas entradas. Algumas imagens dos resultados foram apresentadas na Figura \ref{test_image_3758} para um número manuscrito corretamente predito, e na Figura \ref{misclassified_image_8} para uma predição incorreta. Chegou-se a uma acurácia de 0.9883 nesses casos testes.
 
-Após a execução desse arquivo, obteve-se os resultados apresentados nas Figuras de \ref{sum_gt_zero/lambda_zero/dataset_sgz} a \ref{xor/nn_classification_xor}, sendo as Figuras \ref{sum_gt_zero/lambda_zero/dataset_sgz} e \ref{xor/lambda_zero/dataset_xor} os \textit{dataset} utilizados para as funções "soma maior que zero" e "xor", respectivamente.
-
-Analisando os resultados, é possível notar que em todas as situações (com e sem regularização, e para as duas funções) a rede obtive uma classificação satisfatória. A classificação com regularização, entretando, apresentou-se muito mais acertiva, conforme se pode observar pelas comparação das Figuras \ref{sum_gt_zero/lambda_zero/nn_classification_sgz} e \ref{sum_gt_zero/nn_classification_sgz} para "soma maior que zero" e \ref{xor/lambda_zero/nn_classification_xor} e \ref{xor/nn_classification_xor} para "xor". 
-
-A questão da convergência da função de custo também pode ser comparada. Para os casos com regularização, a convergência se deu bem antes em número de épocas. Isso pode ser observado nas Figuras \ref{sum_gt_zero/lambda_zero/convergence_sgz} e \ref{sum_gt_zero/convergence_sgz}, para "soma maior que zero" e nas Figuras \ref{xor/lambda_zero/convergence_xor} e \ref{xor/convergence_xor} para "xor". 
+Tendo em vista o que foi apresentado, pode-se notar, por fim, que a rede neural realmente se demonstrou eficaz em realizar essa predição de números manuscritos.
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/test_image_3758.png}}
-\caption{Convergência da função de custo para a função $soma > 0$, com regularização.}
+\caption{Número predito corretamente.}
 \label{test_image_3758}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/test_image_4449.png}}
-\caption{Resultado da classificação por rede neural para a função $soma > 0$, com regularização.}
-\label{test_image_4449}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/test_image_1798.png}}
-\caption{\textit{Dataset} utilizado para o aprendizado da função $xor$.}
-\label{test_image_1798}
-\end{figure} 
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/test_image_2082.png}}
-\caption{Convergência da função de custo para a função $xor$, sem regularização.}
-\label{test_image_2082}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/test_image_2439.png}}
-\caption{Resultado da classificação por rede neural para a função $xor$, sem regularização.}
-\label{test_image_2439}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
 \centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_8.png}}
-\caption{Convergência da função de custo para a função $xor$, com regularização.}
+\caption{Número predito incorretamente.}
 \label{misclassified_image_8}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_92.png}}
-\caption{Resultado da classificação por rede neural para a função $xor$, com regularização.}
-\label{misclassified_image_92}
-\end{figure}
-
-\subsection{Imitation Learning}
-Após a implementação da rede neural com Keras conforme o explicado na seção Implementação, os resultados obtidos estão apresentados nas Figuras de \ref{imitation_learning/rightAnklePitch} a \ref{imitation_learning/rightKneePitch}. A comparação entre os gráficos de azul (curva original) e laranja (função aprendida por rede neural) dessas figuras demonstra que a implementação aconteceu de maneira satisfatória, uma vez que as funções ficaram bastante semelhantes.
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_18.png}}
-\caption{Resultado da classificação por rede neural para a função \textit{soma > 0}.}
-\label{misclassified_image_18}
-\end{figure} 
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_247.png}}
-\caption{Resultado do \textit{Imitation learning} para Right Ankle Roll.}
-\label{misclassified_image_247}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/misclassified_image_321.png}}
-\caption{Resultado do \textit{Imitation learning} para Right Hip Pitch.}
-\label{misclassified_image_321}
-\end{figure}
-
-Tendo em vista o que foi apresentado, pode-se notar, por fim, que algoritmos de \textit{Deep leaning} e o \textit{framework} Keras realmente se demonstraram eficazes em realizar aprendizado por imitação.
-
 \begin{thebibliography}{00}
-\bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 8 - Imitation Learning com Keras''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+\bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 9 - Redes Neurais Convolucionais''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 \end{thebibliography}
 
 \end{document}
