@@ -27,6 +27,32 @@ def make_detector_network(img_cols, img_rows):
     layer = LeakyReLU(alpha=0.1, name='leaky_relu_1')(layer)
 
     # Todo: Implement layers 2 to 5
+    # Layer 2
+    layer = Conv2D(filters=8, kernel_size=(3, 3), strides=(1, 1), padding='same', name='conv_2', use_bias=False)(
+        input_image)
+    layer = BatchNormalization(name='norm_2')(layer)
+    layer = LeakyReLU(alpha=0.1, name='leaky_relu_2')(layer)
+
+    # Layer 3
+    layer = Conv2D(filters=8, kernel_size=(3, 3), strides=(1, 1), padding='same', name='conv_3', use_bias=False)(
+        input_image)
+    layer = BatchNormalization(name='norm_3')(layer)
+    layer = LeakyReLU(alpha=0.1, name='leaky_relu_3')(layer)
+    layer = MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding='same', name='max_pool_3')(layer)
+
+    # Layer 4
+    layer = Conv2D(filters=8, kernel_size=(3, 3), strides=(1, 1), padding='same', name='conv_4', use_bias=False)(
+        input_image)
+    layer = BatchNormalization(name='norm_4')(layer)
+    layer = LeakyReLU(alpha=0.1, name='leaky_relu_4')(layer)
+    layer = MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding='same', name='max_pool_4')(layer)
+
+    # Layer 5
+    layer = Conv2D(filters=8, kernel_size=(3, 3), strides=(1, 1), padding='same', name='conv_5', use_bias=False)(
+        input_image)
+    layer = BatchNormalization(name='norm_5')(layer)
+    layer = LeakyReLU(alpha=0.1, name='leaky_relu_5')(layer)
+    layer = MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding='same', name='max_pool_5')(layer)
 
     # Layer 6
     layer = Conv2D(filters=64, kernel_size=(3, 3), strides=(1, 1), padding='same', name='conv_6', use_bias=False)(layer)
