@@ -35,10 +35,10 @@ class YoloDetector:
         :rtype: 3-dimensional tuple of 5-dimensional tuples.
         """
         # Todo: implement object detection logic
-        self.preprocess_image(image)
-        ball_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: remove this line
-        post1_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: remove this line
-        post2_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: remove this line
+        preprocessed_image = self.preprocess_image(image)
+        output = self.network.predict(preprocessed_image)
+        ball_detection, post1_detection, post2_detection = self.process_yolo_output(output)
+
         return ball_detection, post1_detection, post2_detection
 
     def preprocess_image(self, image):
@@ -72,7 +72,59 @@ class YoloDetector:
         bb_scale = 640  # bounding box scale used for computing width and height
         output = np.reshape(output, (15, 20, 10))  # reshaping to remove the first dimension
         # Todo: implement YOLO logic
-        ball_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: change this line
-        post1_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: change this line
-        post2_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: change this line
+        biggest_tb = output[0][0][0]
+        biggest_tb_i = 0
+        biggest_tb_j = 0
+
+        biggest_tp = output[0][0][5]
+        biggest_tp_i = 0
+        biggest_tp_j = 0
+
+        second_biggest_tp = biggest_tb
+        second_biggest_tp_i = 0
+        second_biggest_tp_j = 0
+
+        for i in range(15):
+            for j in range(20):
+                if output[i][j][0] > biggest_tb:
+                    biggest_tb = output[i][j][0]
+                    biggest_tb_i = i
+                    biggest_tb_j = j
+
+                if output[i][j][5] > biggest_tp:
+                    second_biggest_tp = biggest_tb
+                    second_biggest_tp_i = biggest_tp_i
+                    second_biggest_tp_j = biggest_tp_j
+
+                    biggest_tp = output[i][j][5]
+                    biggest_tp_i = i
+                    biggest_tp_j = j
+
+                elif output[i][j][5] > second_biggest_tp:
+                    second_biggest_tp = output[i][j][5]
+                    second_biggest_tp_i = i
+                    second_biggest_tp_j = j
+
+        pb = sigmoid(biggest_tb)
+        xb = (biggest_tb_j + sigmoid(output[biggest_tb_i][biggest_tb_j][1])) * coord_scale
+        yb = (biggest_tb_i + sigmoid(output[biggest_tb_i][biggest_tb_j][2])) * coord_scale
+        wb = bb_scale * 5 * np.exp(output[biggest_tb_i][biggest_tb_j][3])
+        hb = bb_scale * 5 * np.exp(output[biggest_tb_i][biggest_tb_j][4])
+
+        pp1 = sigmoid(biggest_tp)
+        xp1 = (biggest_tp_j + sigmoid(output[biggest_tp_i][biggest_tp_j][6])) * coord_scale
+        yp1 = (biggest_tp_i + sigmoid(output[biggest_tp_i][biggest_tp_j][7])) * coord_scale
+        wp1 = bb_scale * 2 * np.exp(output[biggest_tp_i][biggest_tp_j][8])
+        hp1 = bb_scale * 5 * np.exp(output[biggest_tp_i][biggest_tp_j][9])
+
+        pp2 = sigmoid(second_biggest_tp)
+        xp2 = (second_biggest_tp_j + sigmoid(output[second_biggest_tp_i][second_biggest_tp_j][6])) * coord_scale
+        yp2 = (second_biggest_tp_i + sigmoid(output[second_biggest_tp_i][second_biggest_tp_j][7])) * coord_scale
+        wp2 = bb_scale * 2 * np.exp(output[second_biggest_tp_i][second_biggest_tp_j][8])
+        hp2 = bb_scale * 5 * np.exp(output[second_biggest_tp_i][second_biggest_tp_j][9])
+
+        ball_detection = (pb, xb, yb, wb, hb)
+        post1_detection = (pp1, xp1, yp1, wp1, hp1)
+        post2_detection = (pp2, xp2, yp2, wp2, hp2)
+
         return ball_detection, post1_detection, post2_detection
