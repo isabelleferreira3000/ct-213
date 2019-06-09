@@ -35,6 +35,7 @@ class YoloDetector:
         :rtype: 3-dimensional tuple of 5-dimensional tuples.
         """
         # Todo: implement object detection logic
+        self.preprocess_image(image)
         ball_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: remove this line
         post1_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: remove this line
         post2_detection = (0.0, 0.0, 0.0, 0.0, 0.0)  # Todo: remove this line
@@ -50,6 +51,11 @@ class YoloDetector:
         :rtype: NumPy 4-dimensional array with dimensions (1, 120, 160, 3).
         """
         # Todo: implement image preprocessing logic
+        image = cv2.resize(image, (160, 120), interpolation=cv2.INTER_AREA)
+        image = np.array(image)
+        image = image/255
+        image = np.reshape(image, (1, 120, 160, 3))
+
         return image
 
     def process_yolo_output(self, output):
