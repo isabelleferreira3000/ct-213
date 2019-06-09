@@ -71,37 +71,35 @@ Por fim, a rede foi avaliada no \textit{test set} usando o script \textit{evalua
 \section{Resultados e Conclusões}
 
 \subsection{Gráficos gerados no Tensorboard}
-Os gráficos gerados pelo treinamento da rede e apresentados no Tensorboard foram reproduzidos nas Figuras de \ref{acc} a \ref{val_loss}.
-
-Nas Figuras \ref{acc} e \ref{loss}, pode-se observar o aumento da acurácia no conjunto de treinamento e a diminuição na função de custo ao passar das épocas, respectivamente. Já nas Figuras \ref{val_acc} e \ref{val_loss}, esses resultados também são apresentados, mas para os conjuntos de validação. Esses comportamentos estão conforme o desejado e esperado.
+Uma amostra das imagens geradas pelo algorito de detecção de objetos YOLO foram reproduzidos nas Figuras de \ref{imagem1_detection} a \ref{imagem7_detection}. Por essas imagens consegue-se observar o correto funcionamento do algoritmo, indicando que a implementação foi feita corretamente. Assim como esperado, então, conseguiu-se detectar a bola e os postes das traves nas imagens fornecidas pelo professor.
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/imagem1_detection.png}}
-\caption{detecção de objetos do futebol de robôs através do algoritmo de YOLO.}.
+\caption{Detecção de uma bola através do algoritmo de YOLO.}.
 \label{imagem1_detection}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/imagem2_detection.png}}
-\caption{Custo do conjunto de treinamento, com o passar das épocas.}.
+\caption{Detecção de uma bola e de um dos postes da trave através do algoritmo de YOLO.}.
 \label{imagem2_detection}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/imagem3_detection.png}}
-\caption{Acurácia do conjunto de validação, com o passar das épocas.}.
+\caption{Detecção de uma bola (mesmo que não completamente na imagem) através do algoritmo de YOLO.}.
 \label{imagem3_detection}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem4_detection.png}}
-\caption{Custo do conjunto de validação, com o passar das épocas.}
-\label{imagem4_detection}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\centerline{\includegraphics[scale=0.5]{imagens/imagem4_detection.png}}
+%\caption{Custo do conjunto de validação, com o passar das épocas.}
+%\label{imagem4_detection}
+%\end{figure}
 
 \subsection{Predições realizadas pela rede}
 Após a implementação e treino da rede, avaliou-se os resultados da predição para novas entradas. Algumas imagens dos resultados foram apresentadas na Figura \ref{test_image_3758} para um número manuscrito corretamente predito, e na Figura \ref{misclassified_image_8} para uma predição incorreta. Chegou-se a uma acurácia de 0.9883 nesses casos testes.
@@ -111,44 +109,44 @@ Tendo em vista o que foi apresentado, pode-se notar, por fim, que a rede neural 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/imagem5_detection.png}}
-\caption{Número predito corretamente.}
+\caption{Detecção de um poste de trave através do algoritmo de YOLO.}
 \label{imagem5_detection}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem6_detection.png}}
-\caption{Número predito incorretamente.}
-\label{imagem6_detection}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\centerline{\includegraphics[scale=0.5]{imagens/imagem6_detection.png}}
+%\caption{Número predito incorretamente.}
+%\label{imagem6_detection}
+%\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/imagem7_detection.png}}
-\caption{Número predito incorretamente.}
+\caption{Detecção de uma bola e dois postes da trave através do algoritmo de YOLO.}
 \label{imagem7_detection}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem8_detection.png}}
-\caption{Número predito incorretamente.}
-\label{imagem8_detection}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\centerline{\includegraphics[scale=0.5]{imagens/imagem8_detection.png}}
+%\caption{Número predito incorretamente.}
+%\label{imagem8_detection}
+%\end{figure}
 
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem9_detection.png}}
-\caption{Número predito incorretamente.}
-\label{imagem9_detection}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\centerline{\includegraphics[scale=0.5]{imagens/imagem9_detection.png}}
+%\caption{Número predito incorretamente.}
+%\label{imagem9_detection}
+%\end{figure}
 
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem10_detection.png}}
-\caption{Número predito incorretamente.}
-\label{imagem10_detection}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\centerline{\includegraphics[scale=0.5]{imagens/imagem10_detection.png}}
+%\caption{Número predito incorretamente.}
+%\label{imagem10_detection}
+%\end{figure}
 
 \begin{thebibliography}{00}
 \bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 10 - Detecção de Objetos''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
