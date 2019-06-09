@@ -62,15 +62,24 @@ Esse relatório documenta a implementação de um algoritmo de detecção de obj
 \end{IEEEkeywords}
 
 \section{Implementação}
-Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro}, era necessário utilizar um código fortemente inspirado das linhas de código apresentadas na seção Dicas do roteiro do laboratório \cite{roteiro}, passando uma camada como entrada da outra camada. Um detalhe importante a ser sitado foi que na criação das camadas de average pooling no Keras, os parâmetros \textit{px} e \textit{py} (no parâmetro \textit{pool\underline{\space}size}) são os tamanhos do Kernel apresentados nos requisitos para cada uma dessas camadas.
 
-A rede foi avaliada executando-se o script \textit{make\underline{\space}detector\underline{\space}network.py}, gerando um resumo da rede, como o apresentado no roteiro do laboratório \cite{roteiro}.
+\subsection{Implementação da rede em Keras}
+Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro}, utilizou-se um código fortemente inspirado das linhas de código apresentadas na seção Dicas do roteiro do laboratório \cite{roteiro}, passando uma camada como entrada da outra camada.
+
+A rede foi avaliada executando-se o script \textit{make\underline{\space}detector\underline{\space}network.py}, gerando um resumo da rede, como o apresentado na Tabela 1 do roteiro do laboratório \cite{roteiro}.
+
+\subsection{Detecção de Objetos}
+
+\subsubsection{Função detect()}
+Essa função tratava-se principalmente de três ações, a se saber: primeiro, era pré-processada a imagem de entrada (através da função \textit{preprocess\underline{\space}image()}; segundo, essa entrada pré-processada servia de entrada para rede, levando-a a um output; por fim, esse output era processado pelo algoritmo YOLO (através da função \textit{process\underline{\space}yolo\underline{\space}output()}), retornando, então, informações de onde estariam a bola e os dois postes da trave. A predição da rede do segundo passo foi implementado com a função \textit{predict()}, do Keras.
+
+\subsubsection{Função preprocess\underline{\space}image()}
 
 \section{Resultados e Conclusões}
 
 \subsection{Implementação da rede em Keras}
 
-\subsection{Detecção de Objetos}
+\subsection{Algoritmo YOLO}
 Uma amostra das imagens geradas pelo algorito de detecção de objetos YOLO foram reproduzidos nas Figuras de \ref{imagem1_detection} a \ref{imagem7_detection}. Por essas imagens consegue-se observar o correto funcionamento do algoritmo, indicando que a implementação foi feita corretamente. Assim como esperado, então, conseguiu-se detectar a bola e os postes das traves nas imagens fornecidas pelo professor.
 
 \begin{figure}[htbp]
