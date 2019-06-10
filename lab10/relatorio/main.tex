@@ -74,10 +74,15 @@ A rede foi avaliada executando-se o script \textit{make\underline{\space}detecto
 Essa função tratava-se principalmente de três ações, a se saber: primeiro, era pré-processada a imagem de entrada (através da função \textit{preprocess\underline{\space}image()}; segundo, essa entrada pré-processada servia de entrada para rede, levando-a a um output; por fim, esse output era processado pelo algoritmo YOLO (através da função \textit{process\underline{\space}yolo\underline{\space}output()}), retornando, então, informações de onde estariam a bola e os dois postes da trave. A predição da rede do segundo passo foi implementado com a função \textit{predict()}, do Keras.
 
 \subsubsection{Função preprocess\underline{\space}image()}
+Essa função foi implementada com forte inspiração nas últimas três dicas da seção Dicas fornecidas pelo roteiro \cite{roteiro}, com o detalhe adicional de dividir os elementos do vetor da imagem por 255, a fim de transformar os valores RGB em valores de 0 a 1.
+
+\subsubsection{Função process\underline{\space}yolo\underline{\space}output()}
+Para processar o output através do algoritmo YOLO, percorreu-se a matriz output, guardando quais índices detinham a maior probabilidade de haver bola, a maior e a segunda maior probabilidade de haver postes de trave. Tendo posse desses índices, o restante das informações eram processados de acordo com as equações apresentadas na página 3 do roteiro do laboratório \cite{roteiro}. Por fim, era retornada essas informações processadas da bola e das duas traves.
 
 \section{Resultados e Conclusões}
 
 \subsection{Implementação da rede em Keras}
+Ao se executar o script \textit{make\underline{\space}detector\underline{\space}network.py}, o resultado foi igual ao apresentado na Tabela 1 do roteiro \cite{roteiro}, comprovando a correta implementação da rede.
 
 \subsection{Algoritmo YOLO}
 Uma amostra das imagens geradas pelo algorito de detecção de objetos YOLO foram reproduzidos nas Figuras de \ref{imagem1_detection} a \ref{imagem7_detection}. Por essas imagens consegue-se observar o correto funcionamento do algoritmo, indicando que a implementação foi feita corretamente. Assim como esperado, então, conseguiu-se detectar a bola e os postes das traves nas imagens fornecidas pelo professor.
