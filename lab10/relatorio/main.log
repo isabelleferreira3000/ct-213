@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  9 JUN 2019 21:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  9 JUN 2019 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1133,45 +1133,73 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 82.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 84.
+<imagens/tabela1.png, id=52, 700.6175pt x 596.2275pt>
+File: imagens/tabela1.png Graphic file (type png)
+
+<use imagens/tabela1.png>
+Package pdftex.def Info: imagens/tabela1.png used on input line 89.
+(pdftex.def)             Requested size: 245.21979pt x 208.68274pt.
+
+<imagens/tabela2.png, id=53, 701.62125pt x 552.0625pt>
+File: imagens/tabela2.png Graphic file (type png)
+
+<use imagens/tabela2.png>
+Package pdftex.def Info: imagens/tabela2.png used on input line 96.
+(pdftex.def)             Requested size: 245.5711pt x 193.22476pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 87.
-<imagens/imagem1_detection.png, id=48, 462.528pt x 346.896pt>
+(babel)             in language  on input line 101.
+
+<imagens/imagem1_detection.png, id=58, 462.528pt x 346.896pt>
 File: imagens/imagem1_detection.png Graphic file (type png)
 
 <use imagens/imagem1_detection.png>
-Package pdftex.def Info: imagens/imagem1_detection.png used on input line 92.
+Package pdftex.def Info: imagens/imagem1_detection.png used on input line 106.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem2_detection.png, id=50, 462.528pt x 346.896pt>
+<imagens/imagem2_detection.png, id=60, 462.528pt x 346.896pt>
 File: imagens/imagem2_detection.png Graphic file (type png)
 
 <use imagens/imagem2_detection.png>
-Package pdftex.def Info: imagens/imagem2_detection.png used on input line 99.
+Package pdftex.def Info: imagens/imagem2_detection.png used on input line 113.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem3_detection.png, id=51, 462.528pt x 346.896pt>
+<imagens/imagem3_detection.png, id=61, 462.528pt x 346.896pt>
 File: imagens/imagem3_detection.png Graphic file (type png)
 
 <use imagens/imagem3_detection.png>
-Package pdftex.def Info: imagens/imagem3_detection.png used on input line 106.
+Package pdftex.def Info: imagens/imagem3_detection.png used on input line 120.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem5_detection.png, id=52, 462.528pt x 346.896pt>
+<imagens/imagem5_detection.png, id=62, 462.528pt x 346.896pt>
 File: imagens/imagem5_detection.png Graphic file (type png)
 
 <use imagens/imagem5_detection.png>
-Package pdftex.def Info: imagens/imagem5_detection.png used on input line 120.
+Package pdftex.def Info: imagens/imagem5_detection.png used on input line 134.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem7_detection.png, id=53, 462.528pt x 346.896pt>
+<imagens/imagem7_detection.png, id=63, 462.528pt x 346.896pt>
 File: imagens/imagem7_detection.png Graphic file (type png)
 
 <use imagens/imagem7_detection.png>
-Package pdftex.def Info: imagens/imagem7_detection.png used on input line 134.
+Package pdftex.def Info: imagens/imagem7_detection.png used on input line 148.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 176.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 178.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 178.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
+
+ <./imagens/tabela1.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 178.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 178.
+ [2 <./imagens/tabela2.png> <./imagens/imagem1_detection.png> <./imagens/imagem
+2_detection.png> <./imagens/imagem3_detection.png> <./imagens/imagem5_detection
+.png> <./imagens/imagem7_detection.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1183,57 +1211,39 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language  on input line 180.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(babel)             in language  on input line 180.
+[3
 
-
- <./imagens/imagem1_detection.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
- [2 <./imagens/imagem2_detection.png> <./imagens/imagem3_detection.png> <./imag
-ens/imagem5_detection.png> <./imagens/imagem7_detection.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
-
-(./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 96D6C0633F4635A875858CDBBA742545;646
-(rerunfilecheck)             After:  A69439C1C812571BF3DEAD8BC2CDA0D5;742.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: A69439C1C812571BF3DEAD8BC2CDA0D5;742.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 10380 strings out of 493029
- 148823 string characters out of 6136235
- 271579 words of memory out of 5000000
- 13746 multiletter control sequences out of 15000+600000
+ 10396 strings out of 493029
+ 149096 string characters out of 6136235
+ 272579 words of memory out of 5000000
+ 13757 multiletter control sequences out of 15000+600000
  105438 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,40p,641b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,40p,641b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on main.pdf (2 pages, 1660683 bytes).
+Output written on main.pdf (3 pages, 1773805 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
+ 22 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 

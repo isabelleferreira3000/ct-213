@@ -82,7 +82,21 @@ Para processar o output através do algoritmo YOLO, percorreu-se a matriz output
 \section{Resultados e Conclusões}
 
 \subsection{Implementação da rede em Keras}
-Ao se executar o script \textit{make\underline{\space}detector\underline{\space}network.py}, o resultado foi igual ao apresentado na Tabela 1 do roteiro \cite{roteiro}, comprovando a correta implementação da rede.
+Ao se executar o script \textit{make\underline{\space}detector\underline{\space}network.py}, o resultado foi igual ao apresentado na Tabela 1 do roteiro \cite{roteiro}, comprovando a correta implementação da rede. Esse resultado pode ser visto nas Figuras \ref{tabela1} e \ref{tabela2}.
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.35]{imagens/tabela1.png}}
+\caption{Primeira parte do summary da rede implementada em Keras.}.
+\label{tabela1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.35]{imagens/tabela2.png}}
+\caption{Segunda parte do summary da rede implementada em Keras, com a última linha da Figura \ref{tabela1} como primeira linha dessa figura.}.
+\label{tabela2}
+\end{figure} 
 
 \subsection{Algoritmo YOLO}
 Uma amostra das imagens geradas pelo algorito de detecção de objetos YOLO foram reproduzidos nas Figuras de \ref{imagem1_detection} a \ref{imagem7_detection}. Por essas imagens consegue-se observar o correto funcionamento do algoritmo, indicando que a implementação foi feita corretamente. Assim como esperado, então, conseguiu-se detectar a bola e os postes das traves nas imagens fornecidas pelo professor.
