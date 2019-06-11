@@ -169,7 +169,7 @@ class GridWorld:
         if di == 0 and dj == 0:
             no_move_prob = mistake_prob + count * mistake_prob
             if not self.is_cell_valid(predicted_next_state):
-                no_move_prob += self.correct_action_prob
+                no_move_prob += self.correct_action_prob - mistake_prob
             return no_move_prob
         return mistake_prob
 
