@@ -66,13 +66,19 @@ Esse relatório documenta a implementação de algoritmos de programação dinâ
 \subsection{Implementação de Avaliação de Política}
 Essa parte tratava-se da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. De maneira simples, essa função consiste na equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
 
-Para implementá-la, os estados $s$ (como também $s'$) se tornaram tuplas $(i, j)$, que foram iteradas por todo o grid world. Foram feitos loops também para iterar pelas ações $a$, e os resultados da equação acima foram somados ao valor associado ao estado em que se estava nessa iteração. O valor de $\pi \left ( a|s \right )$ era encontrado no parâmetro \textit{policy[current\underline{\space}state][action]}, assim como $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward(current\underline{\space}state, action)}, $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability(current\underline{\space}state, action, next\underline{\space}state)}, e $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
+Para implementá-la, os estados $s$ (como também $s'$) se tornaram tuplas $(i, j)$, que foram iteradas por todo o grid world. Foram feitos loops também para iterar pelas ações $a$, e os resultados da equação acima foram somados ao valor associado ao estado em que se estava nessa iteração. 
 
-tratava-se principalmente de três ações, a se saber: primeiro, era pré-processada a imagem de entrada (através da função \textit{preprocess\underline{\space}image()}; segundo, essa entrada pré-processada servia de entrada para rede, levando-a a um output; por fim, esse output era processado pelo algoritmo YOLO (através da função \textit{process\underline{\space}yolo\underline{\space}output()}), retornando, então, informações de onde estariam a bola e os dois postes da trave. A predição da rede do segundo passo foi implementado com a função \textit{predict()}, do Keras.
+\begin{enumerate}
+\item $\pi \left ( a|s \right )$ era encontrado em \textit{policy};
 
-Para a implementação da rede neural conforme os parâmetros requisitados pelo roteiro do laboratório \cite{roteiro}, utilizou-se um código fortemente inspirado das linhas de código apresentadas na seção Dicas do roteiro do laboratório \cite{roteiro}, passando uma camada como entrada da outra camada.
+\item $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward()};
 
-A rede foi avaliada executando-se o script \textit{make\underline{\space}detector\underline{\space}network.py}, gerando um resumo da rede, como o apresentado na Tabela 1 do roteiro do laboratório \cite{roteiro}.
+\item $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability()};
+
+\item $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
+\end{enumerate}
+
+O valor de $\pi \left ( a|s \right )$ era encontrado no parâmetro \textit{policy[current\underline{\space}state][action]}, assim como $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward(current\underline{\space}state, action)}, $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability(current\underline{\space}state, action, next\underline{\space}state)}, e $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
 
 \subsection{Implementação de Iteração de Valor}
 
