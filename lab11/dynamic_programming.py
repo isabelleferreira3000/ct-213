@@ -107,6 +107,8 @@ def policy_evaluation(grid_world, initial_value, policy, num_iterations=10000, e
         if np.abs(value - last_value) < epsilon:
             break
 
+        last_value = np.copy(value)
+
     return value
 
 
