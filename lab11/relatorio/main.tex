@@ -68,7 +68,11 @@ Para a implementação da rede neural conforme os parâmetros requisitados pelo 
 
 A rede foi avaliada executando-se o script \textit{make\underline{\space}detector\underline{\space}network.py}, gerando um resumo da rede, como o apresentado na Tabela 1 do roteiro do laboratório \cite{roteiro}.
 
-\subsection{Detecção de Objetos}
+\subsection{Implementação de Iteração de Valor}
+
+\subsection{Implementação de Iteração de Política}
+
+\subsection{Comparação entre Grid Worlds diferentes}
 
 \subsubsection{Função detect()}
 Essa função tratava-se principalmente de três ações, a se saber: primeiro, era pré-processada a imagem de entrada (através da função \textit{preprocess\underline{\space}image()}; segundo, essa entrada pré-processada servia de entrada para rede, levando-a a um output; por fim, esse output era processado pelo algoritmo YOLO (através da função \textit{process\underline{\space}yolo\underline{\space}output()}), retornando, então, informações de onde estariam a bola e os dois postes da trave. A predição da rede do segundo passo foi implementado com a função \textit{predict()}, do Keras.
