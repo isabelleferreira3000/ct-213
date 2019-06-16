@@ -130,6 +130,39 @@ def value_iteration(grid_world, initial_value, num_iterations=10000, epsilon=1.0
     dimensions = grid_world.dimensions
     value = np.copy(initial_value)
     # Todo: implement value iteration.
+    max_value = np.copy(initial_value)
+    last_value = np.copy(initial_value)
+
+    for iteration in range(num_iterations):
+
+        for i in range(dimensions[0]):
+            for j in range(dimensions[1]):
+                current_state = (i, j)
+
+                if not grid_world.is_cell_valid(current_state):
+                    # Assuming random action if the cell is an obstacle
+                    continue
+
+                for action in range(NUM_ACTIONS):
+                    r = grid_world.reward(current_state, action)
+                    value[current_state] += r
+
+                    for m in range(dimensions[0]):
+                        for n in range(dimensions[1]):
+                            next_state = (m, n)
+                            prob = grid_world.transition_probability(current_state, action, next_state)
+                            value[current_state] += grid_world.gamma * prob * last_value[next_state]
+
+                    if value[current_state] > max_value[current_state]:
+                        max_value[current_state] = value[current_state]
+
+                value[current_state] = np.copy(max_value[current_state])
+
+        if np.abs(value - last_value) < epsilon:
+            break
+
+        last_value = np.copy(value)
+
     return value
 
 
