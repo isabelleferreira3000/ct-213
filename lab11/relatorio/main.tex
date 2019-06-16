@@ -64,7 +64,7 @@ Esse relatório documenta a implementação de algoritmos de programação dinâ
 \section{Implementação}
 
 \subsection{Implementação de Avaliação de Política}
-Essa parte tratava-se da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. 
+Essa parte do laboratório se tratava da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. 
 
 De maneira simples, essa função consiste na equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
 
@@ -83,7 +83,7 @@ Para implementá-la, os estados $s$ (como também $s'$) se tornaram tuplas $(i, 
 Vale ressaltar que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop era interrompido.
 
 \subsection{Implementação de Iteração de Valor}
-Essa parte tratava-se da implementação da função \textit{value\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
+Já essa parte tratava-se da implementação da função \textit{value\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
 
 Análogo a função anterior, essa função consiste na equação: $v_{k+1}\left ( s \right ) = max_{a \in A} \left (  r \left ( s, a \right ) + \gamma \sum_{s'\in S} p \left ( s' | s, a \right ) v_k \left ( s' \right ) \right )$, também presente no roteiro do laboratório \cite{roteiro}.
 
@@ -102,15 +102,6 @@ Vale ressaltar que, após um número definido previamente de iterações, ou ap�
 \subsection{Implementação de Iteração de Política}
 
 \subsection{Comparação entre Grid Worlds diferentes}
-
-\subsubsection{Função detect()}
-Essa função tratava-se principalmente de três ações, a se saber: primeiro, era pré-processada a imagem de entrada (através da função \textit{preprocess\underline{\space}image()}; segundo, essa entrada pré-processada servia de entrada para rede, levando-a a um output; por fim, esse output era processado pelo algoritmo YOLO (através da função \textit{process\underline{\space}yolo\underline{\space}output()}), retornando, então, informações de onde estariam a bola e os dois postes da trave. A predição da rede do segundo passo foi implementado com a função \textit{predict()}, do Keras.
-
-\subsubsection{Função preprocess\underline{\space}image()}
-Essa função foi implementada com forte inspiração nas últimas três dicas da seção Dicas fornecidas pelo roteiro \cite{roteiro}, com o detalhe adicional de dividir os elementos do vetor da imagem por 255, a fim de transformar os valores RGB em valores de 0 a 1.
-
-\subsubsection{Função process\underline{\space}yolo\underline{\space}output()}
-Para processar o output através do algoritmo YOLO, percorreu-se a matriz output, guardando quais índices detinham a maior probabilidade de haver bola, a maior e a segunda maior probabilidade de haver postes de trave. Tendo posse desses índices, o restante das informações eram processados de acordo com as equações apresentadas na página 3 do roteiro do laboratório \cite{roteiro}. Por fim, era retornada essas informações processadas da bola e das duas traves.
 
 \section{Resultados e Conclusões}
 

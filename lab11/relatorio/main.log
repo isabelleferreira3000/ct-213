@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  16 JUN 2019 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  16 JUN 2019 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1029,20 +1029,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-[]\T1/ptm/m/n/10 Essa parte tratava-se da im-ple-men-ta-ção da
+Underfull \hbox (badness 2376) in paragraph at lines 67--68
+[]\T1/ptm/m/n/10 Essa parte do la-bo-ra-tó-rio se tra-tava da im-ple-men-ta-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-\T1/ptm/m/n/10 fun-ção \T1/ptm/m/it/10 policy$[]$evaluation()\T1/ptm/m/n/10 , p
-re-sente no ar-quivo
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-\T1/ptm/m/it/10 dynamic$[]$programming.py\T1/ptm/m/n/10 , for-ne-cido pelo có-d
-igo base
+Underfull \hbox (badness 2970) in paragraph at lines 67--68
+\T1/ptm/m/n/10 ção da fun-ção \T1/ptm/m/it/10 policy$[]$evaluation()\T1/ptm/m/n
+/10 , pre-sente no ar-quivo
  []
 
 
@@ -1065,20 +1059,20 @@ a de
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 85.
 
-Underfull \hbox (badness 6978) in paragraph at lines 86--87
-[]\T1/ptm/m/n/10 Essa parte tratava-se da im-ple-men-ta-ção da fun-ção
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+[]\T1/ptm/m/n/10 Já essa parte tratava-se da im-ple-men-ta-ção da
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
-\T1/ptm/m/it/10 value$[]$iteration()\T1/ptm/m/n/10 , tam-bém pre-sente no ar-qu
-ivo
+\T1/ptm/m/n/10 fun-ção \T1/ptm/m/it/10 value$[]$iteration()\T1/ptm/m/n/10 , tam
+-bém pre-sente no ar-quivo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 1377) in paragraph at lines 86--87
 \T1/ptm/m/it/10 dynamic$[]$programming.py\T1/ptm/m/n/10 , for-ne-cido pelo có-d
-igo base
+igo base do
  []
 
 Package babel Info: Redefining portuges shorthand "|
@@ -1086,161 +1080,69 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 104.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 107.
-
-Underfull \hbox (badness 2547) in paragraph at lines 107--108
-\T1/ptm/m/n/10 se-gundo, essa en-trada pré-processada ser-via de en-trada
- []
-
-
-Underfull \hbox (badness 2080) in paragraph at lines 107--108
-\T1/ptm/m/n/10 para rede, levando-a a um out-put; por fim, esse out-
- []
-
+(babel)             in language  on input line 106.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 110.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 110.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 110.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 110.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 110.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 110.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 110.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 113.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 113.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 115.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 117.
-<imagens/tabela1.png, id=59, 700.6175pt x 596.2275pt>
+(babel)             in language  on input line 108.
+<imagens/tabela1.png, id=45, 700.6175pt x 596.2275pt>
 File: imagens/tabela1.png Graphic file (type png)
 
 <use imagens/tabela1.png>
-Package pdftex.def Info: imagens/tabela1.png used on input line 122.
+Package pdftex.def Info: imagens/tabela1.png used on input line 113.
 (pdftex.def)             Requested size: 245.21979pt x 208.68274pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 125.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 125.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-
-] <imagens/tabela2.png, id=85, 701.62125pt x 552.0625pt>
+<imagens/tabela2.png, id=46, 701.62125pt x 552.0625pt>
 File: imagens/tabela2.png Graphic file (type png)
 
 <use imagens/tabela2.png>
-Package pdftex.def Info: imagens/tabela2.png used on input line 129.
+Package pdftex.def Info: imagens/tabela2.png used on input line 120.
 (pdftex.def)             Requested size: 245.5711pt x 193.22476pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 125.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 127.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 127.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-<imagens/imagem1_detection.png, id=90, 462.528pt x 346.896pt>
+
+ <./imagens/tabela1.png>]
+<imagens/imagem1_detection.png, id=78, 462.528pt x 346.896pt>
 File: imagens/imagem1_detection.png Graphic file (type png)
 
 <use imagens/imagem1_detection.png>
-Package pdftex.def Info: imagens/imagem1_detection.png used on input line 139.
+Package pdftex.def Info: imagens/imagem1_detection.png used on input line 130.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem2_detection.png, id=92, 462.528pt x 346.896pt>
+<imagens/imagem2_detection.png, id=80, 462.528pt x 346.896pt>
 File: imagens/imagem2_detection.png Graphic file (type png)
 
 <use imagens/imagem2_detection.png>
-Package pdftex.def Info: imagens/imagem2_detection.png used on input line 146.
+Package pdftex.def Info: imagens/imagem2_detection.png used on input line 137.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem3_detection.png, id=93, 462.528pt x 346.896pt>
+<imagens/imagem3_detection.png, id=81, 462.528pt x 346.896pt>
 File: imagens/imagem3_detection.png Graphic file (type png)
 
 <use imagens/imagem3_detection.png>
-Package pdftex.def Info: imagens/imagem3_detection.png used on input line 153.
+Package pdftex.def Info: imagens/imagem3_detection.png used on input line 144.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem5_detection.png, id=94, 462.528pt x 346.896pt>
+<imagens/imagem5_detection.png, id=82, 462.528pt x 346.896pt>
 File: imagens/imagem5_detection.png Graphic file (type png)
 
 <use imagens/imagem5_detection.png>
-Package pdftex.def Info: imagens/imagem5_detection.png used on input line 167.
+Package pdftex.def Info: imagens/imagem5_detection.png used on input line 158.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/imagem7_detection.png, id=95, 462.528pt x 346.896pt>
+<imagens/imagem7_detection.png, id=83, 462.528pt x 346.896pt>
 File: imagens/imagem7_detection.png Graphic file (type png)
 
 <use imagens/imagem7_detection.png>
-Package pdftex.def Info: imagens/imagem7_detection.png used on input line 181.
+Package pdftex.def Info: imagens/imagem7_detection.png used on input line 172.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 209.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 211.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 211.
- [2 <./imagens/tabela1.png> <./imagens/tabela2.png> <./imagens/imagem1_detectio
-n.png> <./imagens/imagem2_detection.png> <./imagens/imagem3_detection.png>]
+(babel)             in language  on input line 200.
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1252,31 +1154,37 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
+(babel)             in language  on input line 204.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
-[3
+(babel)             in language  on input line 204.
+[2 <./imagens/tabela2.png> <./imagens/imagem1_detection.png> <./imagens/imagem2
+_detection.png> <./imagens/imagem3_detection.png> <./imagens/imagem5_detection.
+png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 204.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 204.
+ [3
 
- <./imagens/imagem5_detection.png> <./imagens/imagem7_detection.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
-
-(./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
+ <./imagens/imagem7_detection.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 204.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0B48498A60F58E285AE9F12CA916B390;977.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
+(rerunfilecheck)             Checksum: 138381E5A5CE5A7DC38C818764BB23B7;705.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
  ) 
 Here is how much of TeX's memory you used:
- 10407 strings out of 493029
- 149198 string characters out of 6136235
- 274579 words of memory out of 5000000
- 13759 multiletter control sequences out of 15000+600000
+ 10401 strings out of 493029
+ 149078 string characters out of 6136235
+ 273579 words of memory out of 5000000
+ 13756 multiletter control sequences out of 15000+600000
  105438 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,40p,641b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,40p,452b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1289,10 +1197,10 @@ y7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 1839018 bytes).
+Output written on main.pdf (3 pages, 1836759 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 150 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 
