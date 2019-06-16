@@ -64,7 +64,9 @@ Esse relatório documenta a implementação de algoritmos de programação dinâ
 \section{Implementação}
 
 \subsection{Implementação de Avaliação de Política}
-Essa parte tratava-se da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. De maneira simples, essa função consiste na equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
+Essa parte tratava-se da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. 
+
+De maneira simples, essa função consiste na equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
 
 Para implementá-la, os estados $s$ (como também $s'$) se tornaram tuplas $(i, j)$, que foram iteradas por todo o grid world. Foram feitos loops também para iterar pelas ações $a$, e os resultados da equação acima foram somados ao valor associado ao estado em que se estava nessa iteração. 
 
@@ -78,9 +80,24 @@ Para implementá-la, os estados $s$ (como também $s'$) se tornaram tuplas $(i, 
 \item $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
 \end{enumerate}
 
-O valor de $\pi \left ( a|s \right )$ era encontrado no parâmetro \textit{policy[current\underline{\space}state][action]}, assim como $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward(current\underline{\space}state, action)}, $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability(current\underline{\space}state, action, next\underline{\space}state)}, e $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
+Vale ressaltar que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop era interrompido.
 
 \subsection{Implementação de Iteração de Valor}
+Essa parte tratava-se da implementação da função \textit{value\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
+
+Análogo a função anterior, essa função consiste na equação: $v_{k+1}\left ( s \right ) = max_{a \in A} \left (  r \left ( s, a \right ) + \gamma \sum_{s'\in S} p \left ( s' | s, a \right ) v_k \left ( s' \right ) \right )$, também presente no roteiro do laboratório \cite{roteiro}.
+
+A implementação também se tornou bastante semelhante à função de Avaliação de Política, com os estados $s$ (como também $s'$) sendo tuplas $(i, j)$, que foram iteradas por todo o grid world, e loops para iterar pelas ações $a$, dessa vez buscando os valores máximos dos resultados da equação, para serem considerados como valor associado ao estado em que se estava nessa iteração. 
+
+\begin{enumerate}
+\item $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward()};
+
+\item $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability()};
+
+\item $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
+\end{enumerate}
+
+Vale ressaltar que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop também era interrompido.
 
 \subsection{Implementação de Iteração de Política}
 
