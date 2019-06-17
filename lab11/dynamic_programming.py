@@ -85,32 +85,28 @@ def policy_evaluation(grid_world, initial_value, policy, num_iterations=10000, e
     last_value = np.copy(initial_value)
 
     for iteration in range(num_iterations):
+        value = np.zeros(dimensions)
 
         for i in range(dimensions[0]):
             for j in range(dimensions[1]):
                 current_state = (i, j)
 
-                if not grid_world.is_cell_valid(current_state):
-                    # Assuming random action if the cell is an obstacle
-                    continue
-
                 for action in range(NUM_ACTIONS):
-                    pi = policy[current_state][action]
+                    pi = policy[i][j][action]
                     r = grid_world.reward(current_state, action)
-                    value[current_state] += pi * r
+                    value[i][j] += pi * r
 
-                    for m in range(dimensions[0]):
-                        for n in range(dimensions[1]):
-                            next_state = (m, n)
-                            prob = grid_world.transition_probability(current_state, action, next_state)
-                            value[current_state] += grid_world.gamma * pi * prob * last_value[next_state]
+                    for next_state in grid_world.get_valid_sucessors((i, j), action):
+                        prob = grid_world.transition_probability(current_state, action, next_state)
+                        value[i][j] += grid_world.gamma * pi * prob * last_value[next_state[0]][next_state[1]]
 
-        if fabs(np.max(value - last_value)) < epsilon:
+        if np.max(np.abs(value - last_value)) < epsilon:
+            last_value = value
             break
 
-        last_value = np.copy(value)
+        last_value = value
 
-    return value
+    return last_value
 
 
 def value_iteration(grid_world, initial_value, num_iterations=10000, epsilon=1.0e-5):
@@ -135,31 +131,26 @@ def value_iteration(grid_world, initial_value, num_iterations=10000, epsilon=1.0
     last_value = np.copy(initial_value)
 
     for iteration in range(num_iterations):
+        print("VALUE ITERATION ITERATION: " + str(iteration))
 
         for i in range(dimensions[0]):
             for j in range(dimensions[1]):
                 current_state = (i, j)
 
-                if not grid_world.is_cell_valid(current_state):
-                    # Assuming random action if the cell is an obstacle
-                    continue
-
                 for action in range(NUM_ACTIONS):
                     r = grid_world.reward(current_state, action)
                     value[current_state] += r
 
-                    for m in range(dimensions[0]):
-                        for n in range(dimensions[1]):
-                            next_state = (m, n)
-                            prob = grid_world.transition_probability(current_state, action, next_state)
-                            value[current_state] += grid_world.gamma * prob * last_value[next_state]
+                    for next_state in grid_world.get_valid_sucessors((i, j), action):
+                        prob = grid_world.transition_probability(current_state, action, next_state)
+                        value[current_state] += grid_world.gamma * prob * last_value[next_state]
 
                     if value[current_state] > max_value[current_state]:
                         max_value[current_state] = value[current_state]
 
                 value[current_state] = np.copy(max_value[current_state])
 
-        if fabs(np.max(value - last_value)) < epsilon:
+        if np.max(np.fabs(value - last_value)) < epsilon:
             break
 
         last_value = np.copy(value)
@@ -196,7 +187,7 @@ def policy_iteration(grid_world, initial_value, initial_policy, evaluations_per_
     last_value = np.copy(initial_value)
 
     for iteration in range(num_iterations):
-        print(iteration)
+        print("POLICY ITERATION ITERATION: " + str(iteration))
 
         last_value = np.copy(value)
         value = policy_evaluation(grid_world, initial_value, last_policy, evaluations_per_policy, epsilon)
@@ -204,11 +195,11 @@ def policy_iteration(grid_world, initial_value, initial_policy, evaluations_per_
         last_policy = np.copy(policy)
         policy = greedy_policy(grid_world, value, epsilon)
 
-        if np.max(np.abs(policy - last_policy)) < epsilon:
+        if np.max(np.fabs(policy - last_policy)) < epsilon:
             print("saiu no policy")
             break
 
-        if np.max(np.abs(value - last_value)) < epsilon:
+        if np.max(np.fabs(value - last_value)) < epsilon:
             print("saiu no value")
             break
 
