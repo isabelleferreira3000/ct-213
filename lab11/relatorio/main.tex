@@ -85,19 +85,19 @@ Vale ressaltar que, após um número definido previamente de iterações, ou ap�
 \subsection{Implementação de Iteração de Valor}
 Já essa parte tratava-se da implementação da função \textit{value\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
 
-Análogo a função anterior, essa função consiste na equação: $v_{k+1}\left ( s \right ) = max_{a \in A} \left (  r \left ( s, a \right ) + \gamma \sum_{s'\in S} p \left ( s' | s, a \right ) v_k \left ( s' \right ) \right )$, também presente no roteiro do laboratório \cite{roteiro}.
+Análogo a função anterior, essa função consiste na codificação da equação: $v_{k+1}\left ( s \right ) = max_{a \in A} \left (  r \left ( s, a \right ) + \gamma \sum_{s'\in S} p \left ( s' | s, a \right ) v_k \left ( s' \right ) \right )$, também presente no roteiro do laboratório \cite{roteiro}.
 
-A implementação também se tornou bastante semelhante à função de Avaliação de Política, com os estados $s$ (como também $s'$) sendo tuplas $(i, j)$, que foram iteradas por todo o grid world, e loops para iterar pelas ações $a$, dessa vez buscando os valores máximos dos resultados da equação, para serem considerados como valor associado ao estado em que se estava nessa iteração. 
+A implementação também se tornou bastante semelhante à função de Avaliação de Política, com os estados $s$ sendo tuplas $(i, j)$, que foram iteradas por todo o grid world, e loops para iterar pelas ações $a$ e pelos possíveis próximos estados $s'$, dessa vez buscando os valores máximos dos resultados da equação, para serem considerados como valor associado ao estado $s$ em que se estava nessa situação. 
 
 \begin{enumerate}
 \item $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward()};
 
 \item $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability()};
 
-\item $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
+\item $v_k \left ( s' \right )$ era a \textit{policy} para um próximo estado $s'$, encontrado iterando-se sobre \textit{grid\underline{\space}world.get\underline{\space}valid\underline{\space}sucessors()}.
 \end{enumerate}
 
-Vale ressaltar que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop também era interrompido.
+Vale ressaltar novamente que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop também era interrompido.
 
 \subsection{Implementação de Iteração de Política}
 
