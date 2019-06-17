@@ -127,7 +127,6 @@ def value_iteration(grid_world, initial_value, num_iterations=10000, epsilon=1.0
     dimensions = grid_world.dimensions
     value = np.copy(initial_value)
     # Todo: implement value iteration.
-    max_value = np.copy(initial_value)
     last_value = np.copy(initial_value)
 
     for iteration in range(num_iterations):
@@ -136,22 +135,21 @@ def value_iteration(grid_world, initial_value, num_iterations=10000, epsilon=1.0
 
         for i in range(dimensions[0]):
             for j in range(dimensions[1]):
+                max_value = -inf
                 current_state = (i, j)
 
                 for action in range(NUM_ACTIONS):
                     r = grid_world.reward(current_state, action)
-                    value[i][j] += r
+                    aux_value = r
 
                     for next_state in grid_world.get_valid_sucessors((i, j), action):
                         prob = grid_world.transition_probability(current_state, action, next_state)
-                        value[i][j] += grid_world.gamma * prob * last_value[next_state[0]][next_state[1]]
+                        aux_value += grid_world.gamma * prob * last_value[next_state[0]][next_state[1]]
 
-                    if value[i][j] > max_value[i][j]:
-                        max_value[i][j] = value[i][j]
+                    if aux_value > max_value:
+                        max_value = aux_value
 
-                value[i][j] = np.copy(max_value[i][j])
-
-        print(value)
+                value[i][j] = max_value
 
         if np.max(np.abs(value - last_value)) < epsilon:
             last_value = value
