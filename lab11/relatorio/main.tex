@@ -128,7 +128,7 @@ Foram gerados os resultados para os parâmetros de Grid World abaixo:
 
 Primeiro comparando-se os resultados apresentados nas Figuras \ref{grid1/value_iteration} e \ref{grid1/policy_iteration}, é possível notar que eles são idênticos, o que é esperado, uma vez que ambas as técnicas levam a convergência dos valores corretos de \textit{policy} e \textit{value}.
 
-Sobre a Figura \ref{grid1/policy_evaluation}, a tendência observada é o \textit{value} calculado ser maior para estados mais distantes do estado objetivo.
+Sobre a Figura \ref{grid1/policy_evaluation}, a tendência observada é o \textit{value} calculado ser maior em módulo para estados mais distantes do estado objetivo.
 
 Nos três resultados é possível notar o \textit{value} 0.0 para o estado objetivo, o que também condiz com o esperado. 
 
@@ -153,31 +153,45 @@ Nos três resultados é possível notar o \textit{value} 0.0 para o estado objet
 \label{grid1/policy_iteration}
 \end{figure}
 
-\subsection{Algoritmo YOLO}
-Uma amostra das imagens geradas pelo algorito de detecção de objetos YOLO foram reproduzidos nas Figuras de \ref{imagem1_detection} a \ref{imagem7_detection}. Por essas imagens consegue-se observar o correto funcionamento do algoritmo, indicando que a implementação foi feita corretamente. Assim como esperado, então, conseguiu-se detectar a bola e os postes das traves nas imagens fornecidas pelo professor.
+\subsection{Segundo Grid World}
+Foram gerados os resultados para os parâmetros de Grid World abaixo:
+
+\begin{enumerate}
+\item CORRECT\underline{\space}ACTION\underline{\space}PROB = 0.8
+
+\item GAMMA = 0.98
+\end{enumerate}
+
+Primeiro comparando-se os resultados apresentados nas Figuras \ref{grid2/value_iteration} e \ref{grid2/policy_iteration}, também é possível notar que eles são idênticos, o que é novamente esperado, uma vez que ambas as técnicas levam a convergência dos valores corretos de \textit{policy} e \textit{value}.
+
+Sobre a Figura \ref{grid2/policy_evaluation}, a mesma tendência que no primeiro Grid World é observada, ou seja, o \textit{value} calculado é maior em módulo para estados mais distantes do estado objetivo.
+
+Nos três resultados também é possível notar o \textit{value} 0.0 para o estado objetivo, o que também condiz com o esperado. 
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/grid2/policy_evaluation.png}}
-\caption{Detecção de uma bola e de um dos postes da trave através do algoritmo de YOLO.}.
+\caption{Resultado observado para o teste da \textit{policy\underline{\space}evaluation()}, para a segunda opção de Grid World.}.
 \label{grid2/policy_evaluation}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/grid2/value_iteration.png}}
-\caption{Detecção de uma bola (mesmo que não completamente na imagem) através do algoritmo de YOLO.}.
+\caption{Resultado observado para o teste da \textit{value\underline{\space}iteration()}, para a segunda opção de Grid World.}.
 \label{grid2/value_iteration}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/grid2/policy_iteration.png}}
-\caption{Detecção de um poste de trave através do algoritmo de YOLO.}
+\caption{Resultado observado para o teste da \textit{policy\underline{\space}iteration()}, para a segunda opção de Grid World.}
 \label{grid2/policy_iteration}
 \end{figure}
 
-Tendo em vista o que foi apresentado, pode-se notar, por fim, que a rede e o algoritmo YOLO realmente se demonstrou eficaz em realizar essa detecção de objetos em imagens.
+Por fim, comparando-se as duas situações de Grid World, é possível notar que, com a adição do desconto \textit{GAMMA}, e agora com a probabilidade de o agente executar uma ação diferente da escolhida para cada estado, tem-se que os \textit{value} referentes a cada estado são maiores em módulo do que os calculados na primeira situação.
+
+Isso se justifica e condiz com o esperado, uma vez que não se sabendo deterministicamente a ação tomada em cada estado, a função valor entende esse estado como "pior" quando comparado a situação na qual \textit{CORRECT\underline{\space}ACTION\underline{\space}PROB} = 1. Além disso, o fator \textit{GAMMA} adiciona mais imediatismo à recompensa das ações do agente, o que também diminui a medida de quão "bom" é determinado estado em comparação a situação no qual todas as recompensas até o objetivo são igualmente contabilizadas.
 
 \begin{thebibliography}{00}
 \bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 11 - Programação Dinâmica''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
