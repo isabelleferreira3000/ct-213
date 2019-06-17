@@ -130,7 +130,6 @@ def value_iteration(grid_world, initial_value, num_iterations=10000, epsilon=1.0
     last_value = np.copy(initial_value)
 
     for iteration in range(num_iterations):
-        print("VALUE ITERATION ITERATION: " + str(iteration))
         value = np.zeros(dimensions)
 
         for i in range(dimensions[0]):
@@ -189,8 +188,6 @@ def policy_iteration(grid_world, initial_value, initial_policy, evaluations_per_
     last_value = np.copy(initial_value)
 
     for iteration in range(num_iterations):
-        print("POLICY ITERATION ITERATION: " + str(iteration))
-
         value = policy_evaluation(grid_world, last_value, last_policy, evaluations_per_policy, epsilon)
 
         policy = greedy_policy(grid_world, value, epsilon)

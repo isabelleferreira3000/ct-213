@@ -70,15 +70,15 @@ goal_state = (5, 5)
 grid_world = GridWorld(dimensions, num_obstacles, goal_state, CORRECT_ACTION_PROB, GAMMA)
 
 # Testing policy evaluation
-# print('Evaluating random policy, except for the goal state, where policy always executes stop:')
-# policy = random_policy(grid_world)
-# policy[goal_state[0], goal_state[1], STOP] = 1.0
-# policy[goal_state[0], goal_state[1], UP:NUM_ACTIONS] = np.zeros(NUM_ACTIONS - 1)
+print('Evaluating random policy, except for the goal state, where policy always executes stop:')
+policy = random_policy(grid_world)
+policy[goal_state[0], goal_state[1], STOP] = 1.0
+policy[goal_state[0], goal_state[1], UP:NUM_ACTIONS] = np.zeros(NUM_ACTIONS - 1)
 initial_value = np.zeros(dimensions)
-# value = policy_evaluation(grid_world, initial_value, policy)
-# print_value(value)
-# print_policy(policy)
-# print('----------------------------------------------------------------\n')
+value = policy_evaluation(grid_world, initial_value, policy)
+print_value(value)
+print_policy(policy)
+print('----------------------------------------------------------------\n')
 
 # Testing value iteration
 print('Value iteration:')
