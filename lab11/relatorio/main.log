@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  16 JUN 2019 23:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  16 JUN 2019 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,8 +1116,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-\T1/ptm/m/n/10 no ro-teiro do la-bo-ra-tó-rio [[]1[]] e exe-cu-tar o script
+Underfull \hbox (badness 3525) in paragraph at lines 116--117
+\T1/ptm/m/it/10 CORRECT$[]$ACTION$[]$PROB \T1/ptm/m/n/10 e \T1/ptm/m/it/10 GAMM
+A \T1/ptm/m/n/10 en-tre os va-lo-res
  []
 
 Package babel Info: Redefining portuges shorthand "|
@@ -1125,71 +1126,73 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 120.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 126.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 126.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<imagens/tabela1.png, id=73, 700.6175pt x 596.2275pt>
-File: imagens/tabela1.png Graphic file (type png)
+<imagens/grid1/policy_evaluation.png, id=73, 460.72125pt x 226.8475pt>
+File: imagens/grid1/policy_evaluation.png Graphic file (type png)
 
-<use imagens/tabela1.png>
-Package pdftex.def Info: imagens/tabela1.png used on input line 125.
-(pdftex.def)             Requested size: 245.21979pt x 208.68274pt.
+<use imagens/grid1/policy_evaluation.png>
+Package pdftex.def Info: imagens/grid1/policy_evaluation.png used on input line
+ 137.
+(pdftex.def)             Requested size: 230.36006pt x 113.42346pt.
 
-<imagens/tabela2.png, id=74, 701.62125pt x 552.0625pt>
-File: imagens/tabela2.png Graphic file (type png)
+<imagens/grid1/value_iteration.png, id=74, 461.725pt x 248.93pt>
+File: imagens/grid1/value_iteration.png Graphic file (type png)
 
-<use imagens/tabela2.png>
-Package pdftex.def Info: imagens/tabela2.png used on input line 132.
-(pdftex.def)             Requested size: 245.5711pt x 193.22476pt.
+<use imagens/grid1/value_iteration.png>
+Package pdftex.def Info: imagens/grid1/value_iteration.png used on input line 1
+44.
+(pdftex.def)             Requested size: 230.86194pt x 124.46469pt.
+
+<imagens/grid1/policy_iteration.png, id=75, 459.7175pt x 243.91125pt>
+File: imagens/grid1/policy_iteration.png Graphic file (type png)
+
+<use imagens/grid1/policy_iteration.png>
+Package pdftex.def Info: imagens/grid1/policy_iteration.png used on input line 
+151.
+(pdftex.def)             Requested size: 229.85818pt x 121.95532pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 156.
 
-<imagens/imagem1_detection.png, id=79, 462.528pt x 346.896pt>
-File: imagens/imagem1_detection.png Graphic file (type png)
 
-<use imagens/imagem1_detection.png>
-Package pdftex.def Info: imagens/imagem1_detection.png used on input line 142.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+LaTeX Warning: Reference `imagem1_detection' on page 2 undefined on input line 
+157.
 
-<imagens/imagem2_detection.png, id=81, 462.528pt x 346.896pt>
-File: imagens/imagem2_detection.png Graphic file (type png)
 
-<use imagens/imagem2_detection.png>
-Package pdftex.def Info: imagens/imagem2_detection.png used on input line 149.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+LaTeX Warning: Reference `imagem7_detection' on page 2 undefined on input line 
+157.
 
-<imagens/imagem3_detection.png, id=82, 462.528pt x 346.896pt>
-File: imagens/imagem3_detection.png Graphic file (type png)
+<imagens/grid2/policy_evaluation.png, id=76, 459.7175pt x 231.86626pt>
+File: imagens/grid2/policy_evaluation.png Graphic file (type png)
 
-<use imagens/imagem3_detection.png>
-Package pdftex.def Info: imagens/imagem3_detection.png used on input line 156.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<use imagens/grid2/policy_evaluation.png>
+Package pdftex.def Info: imagens/grid2/policy_evaluation.png used on input line
+ 161.
+(pdftex.def)             Requested size: 229.85818pt x 115.93283pt.
 
-<imagens/imagem5_detection.png, id=83, 462.528pt x 346.896pt>
-File: imagens/imagem5_detection.png Graphic file (type png)
+<imagens/grid2/value_iteration.png, id=77, 460.72125pt x 242.9075pt>
+File: imagens/grid2/value_iteration.png Graphic file (type png)
 
-<use imagens/imagem5_detection.png>
-Package pdftex.def Info: imagens/imagem5_detection.png used on input line 170.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<use imagens/grid2/value_iteration.png>
+Package pdftex.def Info: imagens/grid2/value_iteration.png used on input line 1
+68.
+(pdftex.def)             Requested size: 230.36006pt x 121.45345pt.
 
-<imagens/imagem7_detection.png, id=84, 462.528pt x 346.896pt>
-File: imagens/imagem7_detection.png Graphic file (type png)
+<imagens/grid2/policy_iteration.png, id=78, 460.72125pt x 241.90375pt>
+File: imagens/grid2/policy_iteration.png Graphic file (type png)
 
-<use imagens/imagem7_detection.png>
-Package pdftex.def Info: imagens/imagem7_detection.png used on input line 184.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<use imagens/grid2/policy_iteration.png>
+Package pdftex.def Info: imagens/grid2/policy_iteration.png used on input line 
+175.
+(pdftex.def)             Requested size: 230.36006pt x 120.95157pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 212.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
- [2 <./imagens/tabela1.png> <./imagens/tabela2.png> <./imagens/imagem1_detectio
-n.png> <./imagens/imagem2_detection.png> <./imagens/imagem3_detection.png>]
+(babel)             in language  on input line 182.
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1201,31 +1204,37 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 216.
+(babel)             in language  on input line 186.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 216.
-[3
-
- <./imagens/imagem5_detection.png> <./imagens/imagem7_detection.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
-
+(babel)             in language  on input line 186.
+[2 <./imagens/grid1/policy_evaluation.png> <./imagens/grid1/value_iteration.png
+> <./imagens/grid1/policy_iteration.png> <./imagens/grid2/policy_evaluation.png
+> <./imagens/grid2/value_iteration.png> <./imagens/grid2/policy_iteration.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
 (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 216.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 138381E5A5CE5A7DC38C818764BB23B7;705.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
+(rerunfilecheck)             Checksum: 65CEBC5A8DAEFEDE1121239C1506AF9A;688.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 10403 strings out of 493029
- 149090 string characters out of 6136235
+ 10418 strings out of 493029
+ 149389 string characters out of 6136235
  274579 words of memory out of 5000000
- 13756 multiletter control sequences out of 15000+600000
- 105438 words of font info for 110 fonts, out of 8000000 for 9000
+ 13765 multiletter control sequences out of 15000+600000
+ 110781 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,40p,452b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,40p,452b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1238,10 +1247,10 @@ y7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 1839077 bytes).
+Output written on main.pdf (2 pages, 177455 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+ 139 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
  30 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

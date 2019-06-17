@@ -113,99 +113,69 @@ Dessa vez, o interior do loop se tratava da atualização dos valores de policy 
 \end{enumerate}
 
 \subsection{Comparação entre Grid Worlds diferentes}
-Para gerar os resultados a serem comparados para Grid Worlds diferentes, bastou alterar-se os valores \textit{CORRECT\underline{\space}ACTION\underline{\space}PROB} e \textit{GAMMA} entre os propostos no roteiro do laboratório \cite{roteiro} e executar o script \textit{test\underline{\space}dynamic\underline{\space}programming.py} novamente.
+Para gerar os resultados a serem comparados para Grid Worlds diferentes, bastou alterar-se os valores \textit{CORRECT\underline{\space}ACTION\underline{\space}PROB} e \textit{GAMMA} entre os valores propostos no roteiro do laboratório \cite{roteiro} e executar o script \textit{test\underline{\space}dynamic\underline{\space}programming.py} novamente.
 
 \section{Resultados e Conclusões}
 
-\subsection{Implementação da rede em Keras}
-Ao se executar o script \textit{make\underline{\space}detector\underline{\space}network.py}, o resultado foi igual ao apresentado na Tabela 1 do roteiro \cite{roteiro}, comprovando a correta implementação da rede. Esse resultado pode ser visto nas Figuras \ref{tabela1} e \ref{tabela2}.
+\subsection{Primeiro Grid World}
+Foram gerados os resultados para os parâmetros de Grid World abaixo:
+
+\begin{enumerate}
+\item CORRECT\underline{\space}ACTION\underline{\space}PROB = 1.0
+
+\item GAMMA = 1.0
+\end{enumerate}
+
+Primeiro comparando-se os resultados apresentados nas Figuras \ref{grid1/value_iteration} e \ref{grid1/policy_iteration}, é possível notar que eles são idênticos, o que é esperado, uma vez que ambas as técnicas levam a convergência dos valores corretos de \textit{policy} e \textit{value}.
+
+Sobre a Figura \ref{grid1/policy_evaluation}, a tendência observada é o \textit{value} calculado ser maior para estados mais distantes do estado objetivo.
+
+Nos três resultados é possível notar o \textit{value} 0.0 para o estado objetivo, o que também condiz com o esperado. 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.35]{imagens/tabela1.png}}
-\caption{Primeira parte do summary da rede implementada em Keras.}.
-\label{tabela1}
+\centerline{\includegraphics[scale=0.5]{imagens/grid1/policy_evaluation.png}}
+\caption{Resultado observado para o teste da \textit{policy\underline{\space}evaluation()}, para a primeira opção de Grid World.}.
+\label{grid1/policy_evaluation}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.35]{imagens/tabela2.png}}
-\caption{Segunda parte do summary da rede implementada em Keras, com a última linha da Figura \ref{tabela1} como primeira linha dessa figura.}.
-\label{tabela2}
+\centerline{\includegraphics[scale=0.5]{imagens/grid1/value_iteration.png}}
+\caption{Resultado observado para o teste da \textit{value\underline{\space}iteration()}, para a primeira opção de Grid World.}.
+\label{grid1/value_iteration}
 \end{figure} 
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/grid1/policy_iteration.png}}
+\caption{Resultado observado para o teste da \textit{policy\underline{\space}iteration()}, para a primeira opção de Grid World.}.
+\label{grid1/policy_iteration}
+\end{figure}
 
 \subsection{Algoritmo YOLO}
 Uma amostra das imagens geradas pelo algorito de detecção de objetos YOLO foram reproduzidos nas Figuras de \ref{imagem1_detection} a \ref{imagem7_detection}. Por essas imagens consegue-se observar o correto funcionamento do algoritmo, indicando que a implementação foi feita corretamente. Assim como esperado, então, conseguiu-se detectar a bola e os postes das traves nas imagens fornecidas pelo professor.
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem1_detection.png}}
-\caption{Detecção de uma bola através do algoritmo de YOLO.}.
-\label{imagem1_detection}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem2_detection.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/grid2/policy_evaluation.png}}
 \caption{Detecção de uma bola e de um dos postes da trave através do algoritmo de YOLO.}.
-\label{imagem2_detection}
+\label{grid2/policy_evaluation}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem3_detection.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/grid2/value_iteration.png}}
 \caption{Detecção de uma bola (mesmo que não completamente na imagem) através do algoritmo de YOLO.}.
-\label{imagem3_detection}
+\label{grid2/value_iteration}
 \end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\centerline{\includegraphics[scale=0.5]{imagens/imagem4_detection.png}}
-%\caption{Custo do conjunto de validação, com o passar das épocas.}
-%\label{imagem4_detection}
-%\end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem5_detection.png}}
+\centerline{\includegraphics[scale=0.5]{imagens/grid2/policy_iteration.png}}
 \caption{Detecção de um poste de trave através do algoritmo de YOLO.}
-\label{imagem5_detection}
+\label{grid2/policy_iteration}
 \end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\centerline{\includegraphics[scale=0.5]{imagens/imagem6_detection.png}}
-%\caption{Número predito incorretamente.}
-%\label{imagem6_detection}
-%\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/imagem7_detection.png}}
-\caption{Detecção de uma bola e dois postes da trave através do algoritmo de YOLO.}
-\label{imagem7_detection}
-\end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\centerline{\includegraphics[scale=0.5]{imagens/imagem8_detection.png}}
-%\caption{Número predito incorretamente.}
-%\label{imagem8_detection}
-%\end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\centerline{\includegraphics[scale=0.5]{imagens/imagem9_detection.png}}
-%\caption{Número predito incorretamente.}
-%\label{imagem9_detection}
-%\end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\centerline{\includegraphics[scale=0.5]{imagens/imagem10_detection.png}}
-%\caption{Número predito incorretamente.}
-%\label{imagem10_detection}
-%\end{figure}
 
 Tendo em vista o que foi apresentado, pode-se notar, por fim, que a rede e o algoritmo YOLO realmente se demonstrou eficaz em realizar essa detecção de objetos em imagens.
 
