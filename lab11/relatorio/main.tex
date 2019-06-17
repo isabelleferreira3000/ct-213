@@ -66,18 +66,18 @@ Esse relatório documenta a implementação de algoritmos de programação dinâ
 \subsection{Implementação de Avaliação de Política}
 Essa parte do laboratório se tratava da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. 
 
-De maneira simples, essa função consiste na equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
+De maneira simples, essa função consiste em codificar a equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
 
-Para implementá-la, os estados $s$ (como também $s'$) se tornaram tuplas $(i, j)$, que foram iteradas por todo o grid world. Foram feitos loops também para iterar pelas ações $a$, e os resultados da equação acima foram somados ao valor associado ao estado em que se estava nessa iteração. 
+Para implementá-la, os estados $s$ se tornaram tuplas $(i, j)$, que foram iteradas por todo o grid world. Foram feitos loops também para iterar pelas ações $a$ e pelos possíveis próximos estados $s'$, e os resultados da equação acima foram somados ao valor associado ao estado $s$ em que se estava. 
 
 \begin{enumerate}
 \item $\pi \left ( a|s \right )$ era encontrado em \textit{policy};
 
-\item $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward()};
+\item $r \left ( s, a \right )$ era encontrado em \textit{grid\underline{\space}world.reward()};
 
-\item $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability()};
+\item $p \left ( s' | s, a \right )$ era encontrado em \textit{grid\underline{\space}world.transition\underline{\space}probability()};
 
-\item $v_k \left ( s' \right )$ era a \textit{policy} para um outro estado $s'$.
+\item $v_k \left ( s' \right )$ era a \textit{policy} para um próximo estado $s'$, encontrado iterando-se sobre \textit{grid\underline{\space}world.get\underline{\space}valid\underline{\space}sucessors()}.
 \end{enumerate}
 
 Vale ressaltar que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop era interrompido.
