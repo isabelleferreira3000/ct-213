@@ -100,6 +100,17 @@ A implementação também se tornou bastante semelhante à função de Avaliaç�
 Vale ressaltar novamente que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop também era interrompido.
 
 \subsection{Implementação de Iteração de Política}
+Por fim, essa parte tratava-se da implementação da função \textit{policy\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
+
+Assim com as anteriores, essa função também se tratava de um loop, que era interrompido em duas condições: ou ao chegar em um número máximo de iterações, ou após a convergência tanto da \textit{policy}, quanto do \textit{value}.
+
+Dessa vez, o interior do loop se tratava da atualização dos valores de policy e value da seguinte maneira:
+
+\begin{enumerate}
+\item \textit{value} era atualizado a partir da chamada da função \textit{policy\underline{\space}evaluation()}, usando como parâmetros os valores até então de \textit{policy} e \textit{value};
+
+\item \textit{policy} era atualizado a partir da chamada da função \textit{greedy\underline{\space}policy()}, usando como parâmetros o valor até então de \textit{value}, ou seja, calculado acima.
+\end{enumerate}
 
 \subsection{Comparação entre Grid Worlds diferentes}
 
