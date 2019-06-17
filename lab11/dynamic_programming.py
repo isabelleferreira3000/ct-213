@@ -83,6 +83,7 @@ def policy_evaluation(grid_world, initial_value, policy, num_iterations=10000, e
     value = np.copy(initial_value)
     # Todo: implement policy evaluation.
     last_value = np.copy(initial_value)
+
     for iteration in range(num_iterations):
 
         for i in range(dimensions[0]):
@@ -104,7 +105,7 @@ def policy_evaluation(grid_world, initial_value, policy, num_iterations=10000, e
                             prob = grid_world.transition_probability(current_state, action, next_state)
                             value[current_state] += grid_world.gamma * pi * prob * last_value[next_state]
 
-        if np.abs(value - last_value) < epsilon:
+        if fabs(np.max(value - last_value)) < epsilon:
             break
 
         last_value = np.copy(value)
@@ -158,7 +159,7 @@ def value_iteration(grid_world, initial_value, num_iterations=10000, epsilon=1.0
 
                 value[current_state] = np.copy(max_value[current_state])
 
-        if np.abs(value - last_value) < epsilon:
+        if fabs(np.max(value - last_value)) < epsilon:
             break
 
         last_value = np.copy(value)
@@ -191,5 +192,25 @@ def policy_iteration(grid_world, initial_value, initial_policy, evaluations_per_
     value = np.copy(initial_value)
     policy = np.copy(initial_policy)
     # Todo: implement policy iteration.
+    last_policy = np.copy(initial_policy)
+    last_value = np.copy(initial_value)
+
+    for iteration in range(num_iterations):
+        print(iteration)
+
+        last_value = np.copy(value)
+        value = policy_evaluation(grid_world, initial_value, last_policy, evaluations_per_policy, epsilon)
+
+        last_policy = np.copy(policy)
+        policy = greedy_policy(grid_world, value, epsilon)
+
+        if np.max(np.abs(policy - last_policy)) < epsilon:
+            print("saiu no policy")
+            break
+
+        if np.max(np.abs(value - last_value)) < epsilon:
+            print("saiu no value")
+            break
+
     return value, policy
 
