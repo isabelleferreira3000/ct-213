@@ -131,7 +131,8 @@ class Sarsa(RLAlgorithm):
         :rtype: int.
         """
         # Todo: implement
-        return 0
+        return greedy_action(self.q, state)
+        # return 0
 
     def learn(self, state, action, reward, next_state, next_action):
         # Todo: implement
@@ -144,7 +145,8 @@ class QLearning(RLAlgorithm):
 
     def get_greedy_action(self, state):
         # Todo: implement
-        return 0
+        return greedy_action(self.q, state)
+        # return 0
 
     def learn(self, state, action, reward, next_state, next_action):
         # Todo: implement
