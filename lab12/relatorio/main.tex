@@ -67,13 +67,21 @@ Aprendizado por reforço, Sarsa, Q-Learning
 
 \subsubsection{Função epsilon\underline{\space}greedy\underline{\space}action}
 
+A política epsilon-greedy foi implementada da seguinte maneira: gerou-se um número aleatório entre 0 e 1 e, caso esse valor aleatório seja menor que epsilon, então uma ação aleatória é escolhida; caso contrário, é escolhida a ação gulosa, através da chamada de greedy\underline{\space}action. 
+
 \subsubsection{Função greedy\underline{\space}action}
 
+Conforme sugerido na seção Dicas do roteiro \cite{roteiro}, foi pegue o índice do máximo elemento do array q[state], que é a tabela action-value para o estado naquele momento.
+
 \subsubsection{Função get\underline{\space}greedy\underline{\space}action para algoritmo Sarsa}
+
+Retorna a função epsilon\underline{\space}greedy\underline{\space}action, aplicada na tabela action-value q, no estado em questão e com o episolon especificado.
 
 \subsubsection{Função learn para algoritmo Sarsa}
 
 \subsubsection{Função get\underline{\space}greedy\underline{\space}action para algoritmo Q-Learning}
+
+Retorna a função greedy\underline{\space}action, aplicada na tabela action-value q e no estado em questão.
 
 \subsubsection{Função learn para algoritmo Q-learning}
 
