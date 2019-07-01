@@ -1,9 +1,13 @@
 \BOOKMARK [1][-]{section.1}{Implementa\347\343o}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Implementa\347\343o de Avalia\347\343o de Pol\355tica}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Implementa\347\343o de Itera\347\343o de Valor}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Implementa\347\343o de Itera\347\343o de Pol\355tica}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Compara\347\343o entre Grid Worlds diferentes}{section.1}% 5
-\BOOKMARK [1][-]{section.2}{Resultados e Conclus\365es}{}% 6
-\BOOKMARK [2][-]{subsection.2.1}{Primeiro Grid World}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.2}{Segundo Grid World}{section.2}% 8
-\BOOKMARK [1][-]{section*.1}{Refer\352ncias}{}% 9
+\BOOKMARK [2][-]{subsection.1.1}{Implementa\347\343o dos algoritmos de RL}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Fun\347\343o epsilon greedy action}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Fun\347\343o greedy action}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Fun\347\343o get greedy action para algoritmo Sarsa}{subsection.1.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.1.4}{Fun\347\343o learn para algoritmo Sarsa}{subsection.1.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.1.5}{Fun\347\343o get greedy action para algoritmo Q-Learning}{subsection.1.1}% 7
+\BOOKMARK [3][-]{subsubsection.1.1.6}{Fun\347\343o learn para algoritmo Q-learning}{subsection.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.2}{Aprendizado da pol\355tica do rob\364 seguidor de linha}{section.1}% 9
+\BOOKMARK [1][-]{section.2}{Resultados e Conclus\365es}{}% 10
+\BOOKMARK [2][-]{subsection.2.1}{Primeiro Grid World}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.2}{Segundo Grid World}{section.2}% 12
+\BOOKMARK [1][-]{section*.1}{Refer\352ncias}{}% 13

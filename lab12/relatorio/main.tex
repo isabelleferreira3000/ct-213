@@ -41,7 +41,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Relatório do Laboratório 11: \\ Programação Dinâmica\\
+\title{Relatório do Laboratório 12: \\ Aprendizado por Reforço Livre de Modelo\\
 }
 
 \author{\IEEEauthorblockN{Isabelle Ferreira de Oliveira}
@@ -54,16 +54,29 @@ isabelle.ferreira3000@gmail.com}
 \maketitle
 
 \begin{abstract}
-Esse relatório documenta a implementação de algoritmos de programação dinâmica no contexto de solução de um Processo Decisório de Markov (Markov Decision Process - MDP). Os algoritmos implementados serão avaliação de política (policy evaluation), iteração de política (policy iteration) e iteração de valor (value iteration), com o objetivo de avaliar políticas e determinar políticas ótimas para um grid world.
+Esse relatório documenta a implementação de algoritmos de Aprendizado por Reforço (RL) Livre de Modelo, a saber Sarsa e Q-Learning, e utilizá-los para resolver o problema do robô seguidor de linha.
 \end{abstract}
 
 \begin{IEEEkeywords}
-\textit{MDP}, policy evaluation, policy iteration, value iteration
+Aprendizado por reforço, Sarsa, Q-Learning
 \end{IEEEkeywords}
 
 \section{Implementação}
 
-\subsection{Implementação de Avaliação de Política}
+\subsection{Implementação dos algoritmos de RL}
+
+\subsubsection{Função epsilon\underline{\space}greedy\underline{\space}action}
+
+\subsubsection{Função greedy\underline{\space}action}
+
+\subsubsection{Função get\underline{\space}greedy\underline{\space}action para algoritmo Sarsa}
+
+\subsubsection{Função learn para algoritmo Sarsa}
+
+\subsubsection{Função get\underline{\space}greedy\underline{\space}action para algoritmo Q-Learning}
+
+\subsubsection{Função learn para algoritmo Q-learning}
+
 Essa parte do laboratório se tratava da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. 
 
 De maneira simples, essa função consiste em codificar a equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
@@ -82,7 +95,7 @@ Para implementá-la, os estados $s$ se tornaram tuplas $(i, j)$, que foram itera
 
 Vale ressaltar que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop era interrompido.
 
-\subsection{Implementação de Iteração de Valor}
+\subsection{Aprendizado da política do robô seguidor de linha}
 Já essa parte tratava-se da implementação da função \textit{value\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
 
 Análogo a função anterior, essa função consiste na codificação da equação: $v_{k+1}\left ( s \right ) = max_{a \in A} \left (  r \left ( s, a \right ) + \gamma \sum_{s'\in S} p \left ( s' | s, a \right ) v_k \left ( s' \right ) \right )$, também presente no roteiro do laboratório \cite{roteiro}.
@@ -98,22 +111,6 @@ A implementação também se tornou bastante semelhante à função de Avaliaç�
 \end{enumerate}
 
 Vale ressaltar novamente que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop também era interrompido.
-
-\subsection{Implementação de Iteração de Política}
-Por fim, essa parte tratava-se da implementação da função \textit{policy\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
-
-Assim com as anteriores, essa função também se tratava de um loop, que era interrompido em duas condições: ou ao chegar em um número máximo de iterações, ou após a convergência tanto da \textit{policy}, quanto do \textit{value}.
-
-Dessa vez, o interior do loop se tratava da atualização dos valores de policy e value da seguinte maneira:
-
-\begin{enumerate}
-\item \textit{value} era atualizado a partir da chamada da função \textit{policy\underline{\space}evaluation()}, usando como parâmetros os valores até então de \textit{policy} e \textit{value};
-
-\item \textit{policy} era atualizado a partir da chamada da função \textit{greedy\underline{\space}policy()}, usando como parâmetros o valor até então de \textit{value}, ou seja, calculado acima.
-\end{enumerate}
-
-\subsection{Comparação entre Grid Worlds diferentes}
-Para gerar os resultados a serem comparados para Grid Worlds diferentes, bastou alterar-se os valores \textit{CORRECT\underline{\space}ACTION\underline{\space}PROB} e \textit{GAMMA} entre os valores propostos no roteiro do laboratório \cite{roteiro} e executar o script \textit{test\underline{\space}dynamic\underline{\space}programming.py} novamente.
 
 \section{Resultados e Conclusões}
 
