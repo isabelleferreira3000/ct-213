@@ -97,7 +97,7 @@ Para realizar o aprendizado do robô seguidor de linha, utilizando as duas técn
 
 \subsection{Implementação dos algoritmos de RL}
 
-Conforme apresentado nas Figuras \ref{sarsa_test_rl} e \ref{qlearning_test_rl}, pode-se observar resultados equivalentes para ambas as técnicas. Assim, tanto a tabela de action-value possuiu valores similares, como as sequências de ações foram idênticas nas duas situações.
+Conforme apresentado nas Figuras \ref{sarsa_test_rl} e \ref{qlearning_test_rl}, pode-se observar resultados equivalentes para ambas as técnicas. Assim, tanto a tabela de action-value possuiu valores similares, como as sequências de ações foram idênticas nas duas situações. Nota-se também que quanto mais perto do objetivo, maior o valor da action-value.
 
 \begin{figure}[htbp]
 \centering
@@ -115,7 +115,13 @@ Conforme apresentado nas Figuras \ref{sarsa_test_rl} e \ref{qlearning_test_rl}, 
 
 \subsection{Aprendizado da política do robô seguidor de linha}
 
-Os resultados do aprendizado da política do robô seguidor de linha, utilizando os algoritmos de Sarsa e Q-Learning estão representados nas Figuras de \ref{sarsa/action_value_table} a \ref{sarsa/line_follower_solution} e \ref{q-learning/action_value_table} a \ref{q-learning/line_follower_solution}, respectivamente. 
+Os resultados do aprendizado da política do robô seguidor de linha, utilizando os algoritmos de Sarsa e Q-Learning estão representados nas Figuras de \ref{sarsa/action_value_table} a \ref{sarsa/line_follower_solution} e \ref{q-learning/action_value_table} a \ref{q-learning/line_follower_solution}, respectivamente.
+
+Comparando as tabelas de action-value para os dois algoritmos, em \ref{sarsa/action_value_table} e \ref{q-learning/action_value_table}, pode-se notar a quase equivalência entre os resultados. Nota-se também que quanto mais perto do objetivo, maior o valor da action-value. Nas Figuras \ref{sarsa/greedy_policy_table} e \ref{q-learning/greedy_policy_table}, a tendência das duas também são semelhantes, embora já se consiga ver mais claramente algumas diferenças, nada que prejudique o processo de aprendizado.
+
+Por fim, as Figuras \ref{sarsa/return_convergence} e \ref{q-learning/return_convergence} comprovam a convergência (até consideravelmente rápida) dos métodos, chegando aos resultados de caminho apresentados nas Figuras \ref{sarsa/line_follower_solution} e \ref{q-learning/line_follower_solution} para Sarsa e Q-Learning, respectivamente.
+
+Esses resultados foram obtidos após 500 iterações no algoritmo Sarsa, e 556 no algoritmo Q-Learning, e demonstraram a correta implementação do código e funcionalidade para problemas de aprendizado por reforço.
 
 \begin{figure}[htbp]
 \centering
@@ -145,8 +151,6 @@ Os resultados do aprendizado da política do robô seguidor de linha, utilizando
 \label{sarsa/line_follower_solution}
 \end{figure}
 
-bçabjfjfça
-
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.5]{imagens/q-learning/action_value_table.png}}
@@ -175,24 +179,8 @@ bçabjfjfça
 \label{q-learning/line_follower_solution}
 \end{figure}
 
-\begin{enumerate}
-\item CORRECT\underline{\space}ACTION\underline{\space}PROB = 0.8
-
-\item GAMMA = 0.98
-\end{enumerate}
-
-Primeiro comparando-se os resultados apresentados nas Figuras \ref{grid2/value_iteration} e \ref{grid2/policy_iteration}, também é possível notar que eles são idênticos, o que é novamente esperado, uma vez que ambas as técnicas levam a convergência dos valores corretos de \textit{policy} e \textit{value}.
-
-Sobre a Figura \ref{grid2/policy_evaluation}, a mesma tendência que no primeiro Grid World é observada, ou seja, o \textit{value} calculado é maior em módulo para estados mais distantes do estado objetivo.
-
-Nos três resultados também é possível notar o \textit{value} 0.0 para o estado objetivo, o que também condiz com o esperado. 
-
-Por fim, comparando-se as duas situações de Grid World, é possível notar que, com a adição do desconto \textit{GAMMA}, e agora com a probabilidade de o agente executar uma ação diferente da escolhida para cada estado, tem-se que os \textit{value} referentes a cada estado são maiores em módulo do que os calculados na primeira situação.
-
-Isso se justifica e condiz com o esperado, uma vez que não se sabendo deterministicamente a ação tomada em cada estado, a função valor entende esse estado como "pior" quando comparado a situação na qual \textit{CORRECT\underline{\space}ACTION\underline{\space}PROB} = 1. Além disso, o fator \textit{GAMMA} adiciona mais imediatismo à recompensa das ações do agente, o que também diminui a medida de quão "bom" é determinado estado em comparação a situação no qual todas as recompensas até o objetivo são igualmente contabilizadas.
-
 \begin{thebibliography}{00}
-\bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 11 - Programação Dinâmica''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+\bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 12 - Aprendizado por Reforço Livre de Modelo''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 \end{thebibliography}
 
 \end{document}

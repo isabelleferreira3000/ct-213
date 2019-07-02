@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  1 JUL 2019 21:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  1 JUL 2019 22:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1243,101 +1243,79 @@ Package pdftex.def Info: imagens/qlearning_test_rl.png used on input line 111.
 (pdftex.def)             Requested size: 152.56961pt x 103.38599pt.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 116.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 123.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 123.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-<imagens/sarsa/action_value_table.png, id=66, 462.528pt x 346.896pt>
+
+ <./imagens/sarsa_test_rl.png> <./imagens/qlearning_test_rl.png>]
+<imagens/sarsa/action_value_table.png, id=95, 462.528pt x 346.896pt>
 File: imagens/sarsa/action_value_table.png Graphic file (type png)
 
 <use imagens/sarsa/action_value_table.png>
 Package pdftex.def Info: imagens/sarsa/action_value_table.png used on input lin
-e 122.
+e 128.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sarsa/greedy_policy_table.png, id=68, 462.528pt x 346.896pt>
+<imagens/sarsa/greedy_policy_table.png, id=97, 462.528pt x 346.896pt>
 File: imagens/sarsa/greedy_policy_table.png Graphic file (type png)
 
 <use imagens/sarsa/greedy_policy_table.png>
 Package pdftex.def Info: imagens/sarsa/greedy_policy_table.png used on input li
-ne 129.
+ne 135.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sarsa/return_convergence.png, id=69, 462.528pt x 346.896pt>
+<imagens/sarsa/return_convergence.png, id=98, 462.528pt x 346.896pt>
 File: imagens/sarsa/return_convergence.png Graphic file (type png)
 
 <use imagens/sarsa/return_convergence.png>
 Package pdftex.def Info: imagens/sarsa/return_convergence.png used on input lin
-e 136.
+e 142.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/sarsa/line_follower_solution.jpeg, id=70, 803.0pt x 602.25pt>
+<imagens/sarsa/line_follower_solution.jpeg, id=99, 803.0pt x 602.25pt>
 File: imagens/sarsa/line_follower_solution.jpeg Graphic file (type jpg)
 
 <use imagens/sarsa/line_follower_solution.jpeg>
 Package pdftex.def Info: imagens/sarsa/line_follower_solution.jpeg used on inpu
-t line 143.
+t line 149.
 (pdftex.def)             Requested size: 200.74951pt x 150.56212pt.
 
-<imagens/q-learning/action_value_table.png, id=71, 462.528pt x 346.896pt>
+<imagens/q-learning/action_value_table.png, id=100, 462.528pt x 346.896pt>
 File: imagens/q-learning/action_value_table.png Graphic file (type png)
 
 <use imagens/q-learning/action_value_table.png>
 Package pdftex.def Info: imagens/q-learning/action_value_table.png used on inpu
-t line 152.
+t line 156.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/q-learning/greedy_policy_table.png, id=72, 462.528pt x 346.896pt>
+<imagens/q-learning/greedy_policy_table.png, id=101, 462.528pt x 346.896pt>
 File: imagens/q-learning/greedy_policy_table.png Graphic file (type png)
 
 <use imagens/q-learning/greedy_policy_table.png>
 Package pdftex.def Info: imagens/q-learning/greedy_policy_table.png used on inp
-ut line 159.
+ut line 163.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/q-learning/return_convergence.png, id=73, 462.528pt x 346.896pt>
+<imagens/q-learning/return_convergence.png, id=102, 462.528pt x 346.896pt>
 File: imagens/q-learning/return_convergence.png Graphic file (type png)
 
 <use imagens/q-learning/return_convergence.png>
 Package pdftex.def Info: imagens/q-learning/return_convergence.png used on inpu
-t line 166.
+t line 170.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<imagens/q-learning/line_follower_solution.jpeg, id=74, 803.0pt x 602.25pt>
+<imagens/q-learning/line_follower_solution.jpeg, id=103, 803.0pt x 602.25pt>
 File: imagens/q-learning/line_follower_solution.jpeg Graphic file (type jpg)
 
 <use imagens/q-learning/line_follower_solution.jpeg>
 Package pdftex.def Info: imagens/q-learning/line_follower_solution.jpeg used on
- input line 173.
+ input line 177.
 (pdftex.def)             Requested size: 200.74951pt x 150.56212pt.
-
-
-LaTeX Warning: Reference `grid2/value_iteration' on page 1 undefined on input l
-ine 184.
-
-
-LaTeX Warning: Reference `grid2/policy_iteration' on page 1 undefined on input 
-line 184.
-
-
-LaTeX Warning: Reference `grid2/policy_evaluation' on page 1 undefined on input
- line 186.
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 190.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 190.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
- <./imagens/sarsa_test_rl.png> <./imagens/qlearning_test_rl.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 190.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 190.
- [2 <./imagens/sarsa/action_value_table.png> <./imagens/sarsa/greedy_policy_tab
-le.png> <./imagens/sarsa/return_convergence.png> <./imagens/sarsa/line_follower
-_solution.jpeg> <./imagens/q-learning/action_value_table.png> <./imagens/q-lear
-ning/greedy_policy_table.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 182.
 
 
 ** Conference Paper **
@@ -1350,38 +1328,38 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 198.
+(babel)             in language  on input line 186.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 198.
-[3
+(babel)             in language  on input line 186.
+[2 <./imagens/sarsa/action_value_table.png> <./imagens/sarsa/greedy_policy_tabl
+e.png> <./imagens/sarsa/return_convergence.png> <./imagens/sarsa/line_follower_
+solution.jpeg> <./imagens/q-learning/action_value_table.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 186.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 186.
+ [3
 
- <./imagens/q-learning/return_convergence.png> <./imagens/q-learning/line_follo
-wer_solution.jpeg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
+ <./imagens/q-learning/greedy_policy_table.png> <./imagens/q-learning/return_co
+nvergence.png> <./imagens/q-learning/line_follower_solution.jpeg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 191E66DA6F4B54F9CC8E3FD354BC0F82;1159.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 10438 strings out of 493029
- 150510 string characters out of 6136235
- 274579 words of memory out of 5000000
- 13788 multiletter control sequences out of 15000+600000
- 106545 words of font info for 111 fonts, out of 8000000 for 9000
+ 10423 strings out of 493029
+ 150292 string characters out of 6136235
+ 271579 words of memory out of 5000000
+ 13776 multiletter control sequences out of 15000+600000
+ 105438 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,40p,582b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,40p,560b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -1389,10 +1367,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 300818 bytes).
+Output written on main.pdf (3 pages, 298312 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 153 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
  155 words of extra memory for PDF output out of 10000 (max. 10000000)
 
