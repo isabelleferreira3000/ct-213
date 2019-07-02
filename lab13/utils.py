@@ -19,6 +19,15 @@ def reward_engineering_mountain_car(state, action, reward, next_state, done):
     :rtype: float.
     """
     # Todo: implement reward engineering
+    reward = reward + \
+             (state[0] - START_POSITION_CAR) * (state[0] - START_POSITION_CAR) + \
+             state[1] * state[1]
+    aux = 0
+    if next_state[0] >= 0.5:
+        aux = 1
+
+    reward = reward + 50 * aux
+
     return reward
 
 
