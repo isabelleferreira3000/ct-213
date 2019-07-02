@@ -2,6 +2,7 @@ import random
 import numpy as np
 from collections import deque
 from keras import models, layers, optimizers, activations, losses
+from math import floor
 
 
 class DQNAgent:
@@ -71,7 +72,15 @@ class DQNAgent:
         :rtype: int.
         """
         # Todo: implement epsilon-greey action selection.
-        return 1  # Todo: change this line
+        aux = np.random.rand(1)[0]
+
+        if aux < self.epsilon:
+            return floor(np.random.rand(1)[0] * self.action_size)
+
+        else:
+            return 1
+            # return np.argmax(q[state])
+        # return 1  # Todo: change this line
 
     def append_experience(self, state, action, reward, next_state, done):
         """
