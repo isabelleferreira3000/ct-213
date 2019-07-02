@@ -71,13 +71,15 @@ A política epsilon-greedy foi implementada da seguinte maneira: gerou-se um nú
 
 \subsubsection{Função greedy\underline{\space}action}
 
-Conforme sugerido na seção Dicas do roteiro \cite{roteiro}, foi pegue o índice do máximo elemento do array q[state], que é a tabela action-value para o estado naquele momento.
+Conforme sugerido na seção Dicas do roteiro \cite{roteiro}, foi pegue o índice do máximo elemento do array q[state], que é a tabela action-value para o estado naquele momento, e foi retornado esse valor.
 
 \subsubsection{Função get\underline{\space}greedy\underline{\space}action para algoritmo Sarsa}
 
 Retorna a função epsilon\underline{\space}greedy\underline{\space}action, aplicada na tabela action-value q, no estado em questão e com o episolon especificado.
 
-\subsubsection{Função learn para algoritmo Sarsa}
+\subsubsection{Função learn para algoritmo Sarsa} \label{learn_sarsa}
+
+O aprendizado é feito atualizando o valor da tabela de action-value, acrescentando ao valor anterior o resultado de $ \alpha * (recompensa + \gamma * q[next state][next action] - q[state][action])$.
 
 \subsubsection{Função get\underline{\space}greedy\underline{\space}action para algoritmo Q-Learning}
 
@@ -85,81 +87,93 @@ Retorna a função greedy\underline{\space}action, aplicada na tabela action-val
 
 \subsubsection{Função learn para algoritmo Q-learning}
 
-Essa parte do laboratório se tratava da implementação da função \textit{policy\underline{\space}evaluation()}, presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor. 
-
-De maneira simples, essa função consiste em codificar a equação: $v_{k+1}\left ( s \right ) = \sum_{a\in A} \pi \left ( a|s \right ) r \left ( s, a \right ) + \gamma \sum_{a\in A} \sum_{s'\in S} \pi \left ( a|s \right ) p \left ( s' | s, a \right ) v_k \left ( s' \right )$, apresentada de forma bem semelhante no roteiro do laboratório \cite{roteiro}.
-
-Para implementá-la, os estados $s$ se tornaram tuplas $(i, j)$, que foram iteradas por todo o grid world. Foram feitos loops também para iterar pelas ações $a$ e pelos possíveis próximos estados $s'$, e os resultados da equação acima foram somados ao valor associado ao estado $s$ em que se estava. 
-
-\begin{enumerate}
-\item $\pi \left ( a|s \right )$ era encontrado em \textit{policy};
-
-\item $r \left ( s, a \right )$ era encontrado em \textit{grid\underline{\space}world.reward()};
-
-\item $p \left ( s' | s, a \right )$ era encontrado em \textit{grid\underline{\space}world.transition\underline{\space}probability()};
-
-\item $v_k \left ( s' \right )$ era a \textit{policy} para um próximo estado $s'$, encontrado iterando-se sobre \textit{grid\underline{\space}world.get\underline{\space}valid\underline{\space}sucessors()}.
-\end{enumerate}
-
-Vale ressaltar que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop era interrompido.
+Foi feito de forma análoga ao descrito em Função learn para algortimo Sarsa, \ref{learn_sarsa}.
 
 \subsection{Aprendizado da política do robô seguidor de linha}
-Já essa parte tratava-se da implementação da função \textit{value\underline{\space}iteration()}, também presente no arquivo \textit{dynamic\underline{\space}programming.py}, fornecido pelo código base do professor.
 
-Análogo a função anterior, essa função consiste na codificação da equação: $v_{k+1}\left ( s \right ) = max_{a \in A} \left (  r \left ( s, a \right ) + \gamma \sum_{s'\in S} p \left ( s' | s, a \right ) v_k \left ( s' \right ) \right )$, também presente no roteiro do laboratório \cite{roteiro}.
-
-A implementação também se tornou bastante semelhante à função de Avaliação de Política, com os estados $s$ sendo tuplas $(i, j)$, que foram iteradas por todo o grid world, e loops para iterar pelas ações $a$ e pelos possíveis próximos estados $s'$, dessa vez buscando os valores máximos dos resultados da equação, para serem considerados como valor associado ao estado $s$ em que se estava nessa situação. 
-
-\begin{enumerate}
-\item $r \left ( s, a \right )$ estava em \textit{grid\underline{\space}world.reward()};
-
-\item $p \left ( s' | s, a \right )$ estava em \textit{grid\underline{\space}world.transition\underline{\space}probability()};
-
-\item $v_k \left ( s' \right )$ era a \textit{policy} para um próximo estado $s'$, encontrado iterando-se sobre \textit{grid\underline{\space}world.get\underline{\space}valid\underline{\space}sucessors()}.
-\end{enumerate}
-
-Vale ressaltar novamente que, após um número definido previamente de iterações, ou após a convergência dos valores de $v_{k+1}(s)$, o loop também era interrompido.
+Para realizar o aprendizado do robô seguidor de linha, utilizando as duas técnicas implementadas anteriormente (Sarsa e Q-Learning), foi executado o script main.py, alterando-se o valor da variável rl\underline{\space}algorithm, entre os construtores: Sarsa e QLearning, com seus respectivos parâmetros.
 
 \section{Resultados e Conclusões}
 
-\subsection{Primeiro Grid World}
-Foram gerados os resultados para os parâmetros de Grid World abaixo:
+\subsection{Implementação dos algoritmos de RL}
 
-\begin{enumerate}
-\item CORRECT\underline{\space}ACTION\underline{\space}PROB = 1.0
-
-\item GAMMA = 1.0
-\end{enumerate}
-
-Primeiro comparando-se os resultados apresentados nas Figuras \ref{grid1/value_iteration} e \ref{grid1/policy_iteration}, é possível notar que eles são idênticos, o que é esperado, uma vez que ambas as técnicas levam a convergência dos valores corretos de \textit{policy} e \textit{value}.
-
-Sobre a Figura \ref{grid1/policy_evaluation}, a tendência observada é o \textit{value} calculado ser maior em módulo para estados mais distantes do estado objetivo.
-
-Nos três resultados é possível notar o \textit{value} 0.0 para o estado objetivo, o que também condiz com o esperado. 
+Conforme apresentado nas Figuras \ref{sarsa_test_rl} e \ref{qlearning_test_rl}, pode-se observar resultados equivalentes para ambas as técnicas. Assim, tanto a tabela de action-value possuiu valores similares, como as sequências de ações foram idênticas nas duas situações.
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/grid1/policy_evaluation.png}}
-\caption{Resultado observado para o teste da \textit{policy\underline{\space}evaluation()}, para a primeira opção de Grid World.}.
-\label{grid1/policy_evaluation}
+\centerline{\includegraphics[scale=0.5]{imagens/sarsa_test_rl.png}}
+\caption{Resultado obtido para algoritmo Sarsa, para tabela action-value e a sequência de ações.}.
+\label{sarsa_test_rl}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/grid1/value_iteration.png}}
-\caption{Resultado observado para o teste da \textit{value\underline{\space}iteration()}, para a primeira opção de Grid World.}.
-\label{grid1/value_iteration}
+\centerline{\includegraphics[scale=0.5]{imagens/qlearning_test_rl.png}}
+\caption{Resultado obtido para algoritmo Q-Learning, para tabela action-value e a sequência de ações.}.
+\label{qlearning_test_rl}
+\end{figure} 
+
+\subsection{Aprendizado da política do robô seguidor de linha}
+
+Os resultados do aprendizado da política do robô seguidor de linha, utilizando os algoritmos de Sarsa e Q-Learning estão representados nas Figuras de \ref{sarsa/action_value_table} a \ref{sarsa/line_follower_solution} e \ref{q-learning/action_value_table} a \ref{q-learning/line_follower_solution}, respectivamente. 
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/sarsa/action_value_table.png}}
+\caption{Representação em cores da tabela de action-value calculada, para algoritmo de Sarsa.}.
+\label{sarsa/action_value_table}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/sarsa/greedy_policy_table.png}}
+\caption{Representação em cores da tabela de greedy-policy calculada, para algoritmo de Sarsa.}.
+\label{sarsa/greedy_policy_table}
 \end{figure} 
 
 \begin{figure}[htbp]
 \centering
-\centerline{\includegraphics[scale=0.5]{imagens/grid1/policy_iteration.png}}
-\caption{Resultado observado para o teste da \textit{policy\underline{\space}iteration()}, para a primeira opção de Grid World.}.
-\label{grid1/policy_iteration}
+\centerline{\includegraphics[scale=0.5]{imagens/sarsa/return_convergence.png}}
+\caption{Recompensa acumulada em função das iterações, para algoritmo de Sarsa.}.
+\label{sarsa/return_convergence}
 \end{figure}
 
-\subsection{Segundo Grid World}
-Foram gerados os resultados para os parâmetros de Grid World abaixo:
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.25]{imagens/sarsa/line_follower_solution.jpeg}}
+\caption{Percurso aprendido pelo algoritmo de Sarsa.}.
+\label{sarsa/line_follower_solution}
+\end{figure}
+
+bçabjfjfça
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/q-learning/action_value_table.png}}
+\caption{Representação em cores da tabela de action-value calculada, para algoritmo de Q-Learning.}.
+\label{q-learning/action_value_table}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/q-learning/greedy_policy_table.png}}
+\caption{Representação em cores da tabela de greedy-policy calculada, para algoritmo de Q-Learning.}.
+\label{q-learning/greedy_policy_table}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.5]{imagens/q-learning/return_convergence.png}}
+\caption{Recompensa acumulada em função das iterações, para algoritmo de Q-Learning.}.
+\label{q-learning/return_convergence}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[scale=0.25]{imagens/q-learning/line_follower_solution.jpeg}}
+\caption{Percurso aprendido pelo algoritmo de Q-Learning.}.
+\label{q-learning/line_follower_solution}
+\end{figure}
 
 \begin{enumerate}
 \item CORRECT\underline{\space}ACTION\underline{\space}PROB = 0.8
@@ -172,27 +186,6 @@ Primeiro comparando-se os resultados apresentados nas Figuras \ref{grid2/value_i
 Sobre a Figura \ref{grid2/policy_evaluation}, a mesma tendência que no primeiro Grid World é observada, ou seja, o \textit{value} calculado é maior em módulo para estados mais distantes do estado objetivo.
 
 Nos três resultados também é possível notar o \textit{value} 0.0 para o estado objetivo, o que também condiz com o esperado. 
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/grid2/policy_evaluation.png}}
-\caption{Resultado observado para o teste da \textit{policy\underline{\space}evaluation()}, para a segunda opção de Grid World.}.
-\label{grid2/policy_evaluation}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/grid2/value_iteration.png}}
-\caption{Resultado observado para o teste da \textit{value\underline{\space}iteration()}, para a segunda opção de Grid World.}.
-\label{grid2/value_iteration}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\centerline{\includegraphics[scale=0.5]{imagens/grid2/policy_iteration.png}}
-\caption{Resultado observado para o teste da \textit{policy\underline{\space}iteration()}, para a segunda opção de Grid World.}
-\label{grid2/policy_iteration}
-\end{figure}
 
 Por fim, comparando-se as duas situações de Grid World, é possível notar que, com a adição do desconto \textit{GAMMA}, e agora com a probabilidade de o agente executar uma ação diferente da escolhida para cada estado, tem-se que os \textit{value} referentes a cada estado são maiores em módulo do que os calculados na primeira situação.
 
