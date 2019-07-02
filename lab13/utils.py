@@ -19,15 +19,16 @@ def reward_engineering_mountain_car(state, action, reward, next_state, done):
     :rtype: float.
     """
     # Todo: implement reward engineering
-    reward = reward + \
-             (state[0] - START_POSITION_CAR) * (state[0] - START_POSITION_CAR) + \
-             state[1] * state[1]
+    # print("previous reward: " + str(reward))
+    reward2 = reward + (state[0] - START_POSITION_CAR) * (state[0] - START_POSITION_CAR) + state[1] * state[1]
+
     aux = 0
-    if next_state[0] >= 0.5:
+    if next_state[0] > 0.5:
         aux = 1
+    reward2 += 50 * aux
 
-    reward = reward + 50 * aux
+    # print("reward: " + str(reward2))
 
-    return reward
+    return reward2
 
 

@@ -78,9 +78,7 @@ class DQNAgent:
             return floor(np.random.rand(1)[0] * self.action_size)
 
         else:
-            return 1
-            # return np.argmax(q[state])
-        # return 1  # Todo: change this line
+            return np.argmax(self.model.predict(state)[0])
 
     def append_experience(self, state, action, reward, next_state, done):
         """
