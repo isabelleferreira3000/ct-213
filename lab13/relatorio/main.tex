@@ -82,23 +82,43 @@ model.add(layers.Dense(num_neurons,
 
 	Vale ressaltar que, para atender os critérios requisitados, some\underline{\space}function do pseudo-código acima se tratou de \textit{relu} para as duas primeiras camadas, e de \textit{linear} para terceira camada. Além disso, num\underline{\space}neurons foram 24, 24 e action\underline{\space}size para as primeira, segunda e terceira camada, respectivamente.
 
-	Fora isso, bastou-se descomentar as linhas de criação de uma pilha linear de camadas, as linhas compilação do modelo e impressão do summary do modelo, apresentado futuramente na seção Resultados e Conclusões \ref{results}, e a linha de retorno da função.
+	Fora isso, bastou-se descomentar as linhas de criação de uma pilha linear de camadas, as linhas compilação do modelo e impressão do summary do modelo, apresentado futuramente na seção \ref{results} (Resultados e Conclusões), e a linha de retorno da função.
 
 	\subsection{Escolha de Ação usando Rede Neural}
 
-Para realizar o aprendizado do robô seguidor de linha, utilizando as duas técnicas implementadas anteriormente (Sarsa e Q-Learning), foi executado o script main.py, alterando-se o valor da variável rl\underline{\space}algorithm, entre os construtores: Sarsa e QLearning, com seus respectivos parâmetros.
+	Já essa etapa se tratou da implementação do método act() também da classe DQNAgent de dqn\underline{\space}agent.py. Nesse método, era escolhido e retornado uma ação de acordo com a política $\epsilon$-greedy.
+	
+	Essa implementação foi feita de forma bastante análoga à maneira do laboratório 12 \cite{roteiro12}. Assim, gerou-se um número aleatório entre 0 e 1 e, caso esse valor aleatório seja menor que epsilon, então uma ação aleatória é escolhida; caso contrário, é escolhida a ação gulosa, através do retorno do índice do máximo elemento do array \textit{model.predict(state)[0]}.
+		
+	\subsection{Reward Engineering}
+	
+	Nesse momento, foi implementado o método reward\underline{\space}engineering\underline{\space}mountain\underline{\space}car() de utils.py, script também fornecido no código base do laboratório. Nesse método, eram calculadas e retornadas as recompensas intermediárias "artificias", chamadas reward engineering, a fim de tornar o treino mais rápido no ambiente do Mountain Car.
+	
+	Essa implementação foi feita conforme as equações apresentadas na seção 4.3 do roteiro do laboratório \cite{roteiro}, ou seja, assim como apresentado no pseudo-código em Python a seguir.
+	
+\begin{lstlisting}
+reward = reward + (position - start) * (position - start) + velocity * velocity
 
-		\subsection{Reward Engineering}
+aux = 0
+if next_position >= 0.5:
+    aux = 1
 
-		\subsection{Treinamento usando DQN}
+reward += 50 * aux
+\end{lstlisting}
 
-		\subsection{Avaliação da Política}
+	Os valores de position, start, velocity e next\underline{\space}position também eram fornecidos no roteiro \cite{roteiro}, e bastava substituí-los no pseudo-código acima.
+
+	\subsection{Treinamento usando DQN}
+	
+	Bastava treinar o modelo implementado, executando o script train\underline{\space}dqn.py, também do código base, e observar os resultados e os gráficos obtidos.
+
+	\subsection{Avaliação da Política}
+	
+	Bastava aplicar o modelo implementado no ambiente do Mountain Car, executando o script evaluate\underline{\space}dqn.py, também do código base, e observar a simulação, os resultados e os gráficos obtidos.
 
 \section{Resultados e Conclusões} \label{results}
 
-	\subsection{Implementação dos algoritmos de RL}
-
-Conforme apresentado nas Figuras \ref{sarsa_test_rl} e \ref{qlearning_test_rl}, pode-se observar resultados equivalentes para ambas as técnicas. Assim, tanto a tabela de action-value possuiu valores similares, como as sequências de ações foram idênticas nas duas situações. Nota-se também que quanto mais perto do objetivo, maior o valor da action-value.
+	O summary do modelo implementado em make\underline{\space}model() foi apresentado na Figura \ref{summary}, e condiz com os requisitos pedidos na Tabela 3 do roteiro do laboratório \cite{roteiro}. 
 
 \begin{figure}[htbp]
 \centering
@@ -107,10 +127,14 @@ Conforme apresentado nas Figuras \ref{sarsa_test_rl} e \ref{qlearning_test_rl}, 
 \label{summary}
 \end{figure}
 
+	Já a Figura \ref{train/15} representa as recompensas acumulativas advindas do treinamento do modelo em 300 episódios. Esse resultado dependem diretamente da correta implementação e funcionamento dos métodos make\underline{\space}model() e act().
+	
+	Pode-se dizer que esse gráfico condiz com o esperado, uma vez que é possível notar inicialmente recompensas pequenas para os primeiros episódios e, mais ou menos a partir do episódio 80, tornou-se frequente recompensas com valores elevados, chegando a valores próximos de 40, indicando um aprendizado significantemente correto.
+
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[scale=0.3]{imagens/train/15.png}}
-\caption{Gráfico gerado a partir do treinamento do modelo para 300 episódios.}.
+\caption{Recompensa acumulativa com o passar dos episódios, no treinamento do modelo para 300 episódios.}.
 \label{train/15}
 \end{figure} 
 
@@ -155,6 +179,8 @@ Esses resultados foram obtidos após 500 iterações no algoritmo Sarsa, e 556 n
 \bibitem{roteiro} M. Maximo, ``Roteiro: Laboratório 12 - Deep Q-Learning''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 
 \bibitem{roteiro8} M. Maximo, ``Roteiro: Laboratório 8 - Imitation Learning com Keras''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
+
+\bibitem{roteiro12} M. Maximo, ``Roteiro: Laboratório 12 - Aprendizado por Reforço Livre de Modelo''. Instituto Tecnológico de Aeronáutica, Departamento de Computação. CT-213, 2019.
 
 \end{thebibliography}
 
